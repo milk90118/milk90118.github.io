@@ -2,165 +2,242 @@
 ---
 
 /* stylelint-disable */
-// 告訴 VS Code 忽略語法檢查錯誤
 
-// 載入可愛的 Google Fonts 日本字體
-@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;400;500;700&family=Kosugi+Maru&family=Sawarabi+Gothic&display=swap');
+// 載入日本雜誌風格字體組合
+@import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
 @import "minimal-mistakes";
 
 /* =============================================================================
-   可愛日本字體設定
+   日本雜誌風格字體設定
    ============================================================================= */
 
 :root {
-  --cute-font-main: 'M PLUS Rounded 1c', 'Kosugi Maru', 'Noto Sans CJK TC', 
-                    'PingFang TC', 'Microsoft JhengHei', sans-serif;
-  --cute-font-title: 'Kosugi Maru', 'M PLUS Rounded 1c', 'Noto Sans CJK TC', 
-                     'PingFang TC', 'Microsoft JhengHei', sans-serif;
-  --cute-font-accent: 'Sawarabi Gothic', 'M PLUS Rounded 1c', sans-serif;
+  // 中日文使用 Zen Maru Gothic
+  --jp-font-main: 'Zen Maru Gothic', 'Noto Sans CJK TC', 
+                  'PingFang TC', 'Microsoft JhengHei', sans-serif;
+  
+  // 英文標題使用 Playfair Display (高級雜誌風)
+  --en-title-font: 'Playfair Display', 'Times New Roman', serif;
+  
+  // 英文內文使用 Lora (易讀的襯線字體)
+  --en-body-font: 'Lora', 'Georgia', serif;
+  
+  // 英文裝飾用字體 (Crimson Text)
+  --en-accent-font: 'Crimson Text', 'Times New Roman', serif;
 }
 
-/* 主要內容字體 */
+/* 主要內容字體 - 混合搭配 */
 body {
-  font-family: var(--cute-font-main);
+  font-family: var(--en-body-font), var(--jp-font-main) !important;
   font-weight: 400;
   line-height: 1.8;
   letter-spacing: 0.02em;
 }
 
-/* 標題字體 */
-h1, h2, h3, h4, h5, h6,
+/* 大標題 - 英文用 Playfair Display */
+h1,
 .page__title,
 .page__hero-title,
 .site-title {
-  font-family: var(--cute-font-title) !important;
-  font-weight: 500;
-  letter-spacing: 0.05em;
+  font-family: var(--en-title-font), var(--jp-font-main) !important;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.3;
 }
 
-/* 導航和選單 */
+/* 中小標題 - 混合字體 */
+h2, h3, h4, h5, h6 {
+  font-family: var(--en-title-font), var(--jp-font-main) !important;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  line-height: 1.4;
+}
+
+/* 導航選單 - 簡潔英文字體 */
 .greedy-nav,
 .nav__title,
 .masthead {
-  font-family: var(--cute-font-title);
-  font-weight: 500;
-}
-
-/* 按鈕文字 */
-.btn {
-  font-family: var(--cute-font-accent);
+  font-family: var(--en-accent-font), var(--jp-font-main) !important;
   font-weight: 500;
   letter-spacing: 0.05em;
 }
 
-/* 側邊欄文字 */
-.sidebar {
-  font-family: var(--cute-font-main);
-}
-
-/* 文章內容 */
-.page__content {
-  font-family: var(--cute-font-main);
-  font-size: 1.1em;
-}
-
-/* 標籤文字 */
-.page__taxonomy-item {
-  font-family: var(--cute-font-accent);
+/* 按鈕文字 - 優雅英文 */
+.btn {
+  font-family: var(--en-accent-font), var(--jp-font-main) !important;
   font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase; /* 英文大寫，更有雜誌感 */
+}
+
+/* 側邊欄 - 內文字體 */
+.sidebar {
+  font-family: var(--en-body-font), var(--jp-font-main) !important;
+}
+
+/* 文章內容 - 主要閱讀字體 */
+.page__content {
+  font-family: var(--en-body-font), var(--jp-font-main) !important;
+  font-size: 1.1em;
+  line-height: 1.75;
+}
+
+/* 標籤 - 裝飾字體 */
+.page__taxonomy-item {
+  font-family: var(--en-accent-font), var(--jp-font-main) !important;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+/* 特殊：英文斜體強調 */
+em, .italic {
+  font-style: italic;
+  font-family: var(--en-body-font), var(--jp-font-main) !important;
+}
+
+/* 引用文字 - 雜誌風格 */
+blockquote {
+  font-family: var(--en-title-font), var(--jp-font-main) !important;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.1em;
+  line-height: 1.6;
 }
 
 /* =============================================================================
-   日本傳統色彩 - 春櫻主題
+   日本雜誌風色彩 - 提升質感
    ============================================================================= */
 
-/* 頂部導航列 */
+/* 頂部導航列 - 更精緻的漸層 */
 .masthead {
-  background: linear-gradient(135deg, #FFADD6 0%, #F5B2B2 100%);
-  border-bottom: 1px solid rgba(47, 93, 98, 0.1);
+  background: linear-gradient(135deg, 
+    #FFADD6 0%,     /* 櫻花色 */
+    #F5B2B2 50%,    /* 鴇色 */
+    #E8F4F8 100%    /* 藍白色 */
+  ) !important;
+  border-bottom: 1px solid rgba(47, 93, 98, 0.15) !important;
+  box-shadow: 0 2px 10px rgba(255, 173, 214, 0.2);
 }
 
 .site-title {
   color: #2F5D62 !important;
-  font-weight: 500;
-  text-decoration: none;
+  font-weight: 600 !important;
+  text-decoration: none !important;
   transition: all 0.3s ease;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
 }
 
 .site-title:hover {
-  transform: scale(1.05);
-  text-shadow: 2px 2px 4px rgba(255, 173, 214, 0.3);
+  transform: scale(1.02);
+  text-shadow: 2px 2px 8px rgba(255, 173, 214, 0.4);
 }
 
 /* 導航選單連結 */
 .greedy-nav a {
   color: #2F5D62 !important;
-  font-weight: 500;
+  font-weight: 500 !important;
+  transition: all 0.3s ease;
 }
 
 .greedy-nav a:hover {
   color: #1E50A2 !important;
+  text-shadow: 1px 1px 3px rgba(30, 80, 162, 0.3);
 }
 
-/* 頁面標題 */
+/* 頁面標題 - 雜誌風格 */
 .page__title {
-  color: #2F5D62;
-  border-bottom: 3px solid #F8B500;
-  padding-bottom: 10px;
-  margin-bottom: 20px;
+  color: #2F5D62 !important;
+  border-bottom: 3px solid #F8B500 !important;
+  padding-bottom: 15px !important;
+  margin-bottom: 25px !important;
   position: relative;
+  text-align: center; /* 雜誌風格居中 */
 }
 
 .page__title::before {
-  content: "🌸 ";
-  margin-right: 8px;
+  content: "🌸";
+  position: absolute;
+  left: -40px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2em;
 }
 
-/* 所有連結 */
+.page__title::after {
+  content: "🌸";
+  position: absolute;
+  right: -40px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2em;
+}
+
+/* 文章標題層級 */
+h1 { 
+  font-size: 2.2em; 
+  color: #2F5D62 !important;
+  margin-bottom: 0.5em;
+}
+
+h2 { 
+  font-size: 1.8em; 
+  color: #1E50A2 !important;
+  margin-top: 1.5em;
+  margin-bottom: 0.8em;
+}
+
+h3 { 
+  font-size: 1.4em; 
+  color: #566C73 !important;
+  margin-top: 1.2em;
+}
+
+/* 連結 - 更精緻的樣式 */
 a {
-  color: #1E50A2;
-  text-decoration: none;
+  color: #1E50A2 !important;
+  text-decoration: none !important;
   transition: all 0.3s ease;
   position: relative;
+  border-bottom: 1px solid transparent;
 }
 
 a:hover {
-  color: #F17C67;
-  text-decoration: none;
-  transform: translateY(-1px);
-  text-shadow: 1px 1px 3px rgba(30, 80, 162, 0.2);
+  color: #F17C67 !important;
+  border-bottom: 1px solid #F17C67 !important;
+  text-shadow: 1px 1px 3px rgba(241, 124, 103, 0.2);
 }
 
-/* 按鈕樣式 */
+/* 按鈕 - 雜誌風格 */
 .btn {
-  background-color: #68BE8D;
-  color: white;
-  border: none;
-  border-radius: 20px;
-  padding: 8px 16px;
-  font-weight: 500;
+  background: linear-gradient(135deg, #68BE8D 0%, #93B881 100%) !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 25px !important;
+  padding: 10px 20px !important;
+  font-weight: 500 !important;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(104, 190, 141, 0.2);
+  box-shadow: 0 3px 12px rgba(104, 190, 141, 0.3);
+  letter-spacing: 0.1em;
 }
 
 .btn:hover {
-  background-color: #93B881;
-  color: white;
+  background: linear-gradient(135deg, #93B881 0%, #C5C56A 100%) !important;
+  color: white !important;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(104, 190, 141, 0.3);
+  box-shadow: 0 5px 20px rgba(104, 190, 141, 0.4);
 }
 
-/* 文章列表項目 */
+/* 文章卡片 - 雜誌版面風格 */
 .archive__item {
-  background: white;
-  border-left: 4px solid #C5C56A;
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(47, 93, 98, 0.08);
-  transition: all 0.3s ease;
+  background: white !important;
+  border-left: 5px solid #C5C56A !important;
+  padding: 25px !important;
+  margin-bottom: 25px !important;
+  border-radius: 12px !important;
+  box-shadow: 0 5px 20px rgba(47, 93, 98, 0.1) !important;
+  transition: all 0.4s ease;
   position: relative;
   overflow: hidden;
 }
@@ -168,130 +245,137 @@ a:hover {
 .archive__item::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, 
-    transparent, 
-    rgba(255, 173, 214, 0.1), 
-    transparent);
-  transition: left 0.5s ease;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, 
+    #FFADD6, #F5B2B2, #E8F4F8, #B8D4E3);
+  z-index: -1;
+  border-radius: 12px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
 }
 
 .archive__item:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 20px rgba(47, 93, 98, 0.12);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(47, 93, 98, 0.15) !important;
 }
 
 .archive__item:hover::before {
-  left: 100%;
+  opacity: 0.1;
 }
 
-/* 側邊欄 */
+/* 側邊欄 - 雜誌風格 */
 .sidebar {
-  background-color: rgba(232, 244, 248, 0.5);
-  padding: 20px;
-  border-radius: 10px;
+  background: linear-gradient(135deg, 
+    rgba(232, 244, 248, 0.8) 0%, 
+    rgba(184, 212, 227, 0.6) 100%) !important;
+  padding: 25px !important;
+  border-radius: 15px !important;
   backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 173, 214, 0.2);
 }
 
-/* 作者頭像 */
+/* 作者頭像 - 雜誌風格框架 */
 .author__avatar img {
-  border: 3px solid #F8B500;
-  box-shadow: 0 2px 10px rgba(248, 181, 0, 0.3);
+  border: 4px solid #F8B500 !important;
+  box-shadow: 0 4px 15px rgba(248, 181, 0, 0.3) !important;
+  border-radius: 50% !important;
 }
 
-/* 標籤 */
+/* 標籤 - 雜誌風格 */
 .page__taxonomy-item {
-  background-color: #B8D4E3;
-  color: #2F5D62;
-  border-radius: 15px;
-  padding: 4px 12px;
-  font-size: 0.85em;
-  font-weight: 500;
+  background: linear-gradient(135deg, #B8D4E3 0%, #A6A5A0 100%) !important;
+  color: white !important;
+  border-radius: 20px !important;
+  padding: 6px 15px !important;
+  font-size: 0.85em !important;
+  font-weight: 500 !important;
   transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.page__taxonomy-item::before {
-  content: "#";
-  margin-right: 2px;
-  opacity: 0.7;
+  box-shadow: 0 2px 8px rgba(184, 212, 227, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .page__taxonomy-item:hover {
-  background-color: #A6A5A0;
-  color: white;
+  background: linear-gradient(135deg, #68BE8D 0%, #93B881 100%) !important;
+  color: white !important;
   transform: scale(1.05);
-  box-shadow: 0 2px 8px rgba(184, 212, 227, 0.4);
+  box-shadow: 0 4px 15px rgba(104, 190, 141, 0.4);
 }
 
-/* 頁腳 */
-.page__footer {
-  background-color: #566C73;
-  color: #E8F4F8;
-  margin-top: 40px;
-}
-
-.page__footer a {
-  color: #B8D4E3;
-}
-
-/* 程式碼區塊 */
-.highlight {
-  background-color: #E8F4F8;
-  border-left: 4px solid #1E50A2;
-  border-radius: 6px;
-  padding: 15px;
-  margin: 20px 0;
-}
-
-/* 引用文字 */
+/* 引用文字 - 雜誌風格 */
 blockquote {
-  border-left: 4px solid #F17C67;
-  background-color: rgba(255, 173, 214, 0.1);
-  padding: 15px 20px;
-  margin: 20px 0;
-  border-radius: 0 6px 6px 0;
-  font-family: var(--cute-font-title);
-  font-style: normal;
-  font-weight: 400;
+  border-left: 5px solid #F17C67 !important;
+  background: linear-gradient(135deg, 
+    rgba(255, 173, 214, 0.1) 0%, 
+    rgba(245, 178, 178, 0.05) 100%) !important;
+  padding: 20px 25px !important;
+  margin: 25px 0 !important;
+  border-radius: 0 15px 15px 0 !important;
   position: relative;
+  box-shadow: 0 3px 10px rgba(241, 124, 103, 0.1);
 }
 
 blockquote::before {
   content: "💭";
   position: absolute;
-  left: -10px;
-  top: -5px;
-  font-size: 1.2em;
+  left: -15px;
+  top: -10px;
+  font-size: 1.5em;
+  background: white;
+  padding: 5px;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* 程式碼區塊 - 雜誌風格 */
+.highlight {
+  background: linear-gradient(135deg, 
+    #E8F4F8 0%, 
+    rgba(232, 244, 248, 0.8) 100%) !important;
+  border-left: 5px solid #1E50A2 !important;
+  border-radius: 10px !important;
+  padding: 20px !important;
+  margin: 25px 0 !important;
+  box-shadow: 0 3px 15px rgba(30, 80, 162, 0.1);
+}
+
+/* 頁腳 - 精緻風格 */
+.page__footer {
+  background: linear-gradient(135deg, #566C73 0%, #2F5D62 100%) !important;
+  color: #E8F4F8 !important;
+  margin-top: 50px !important;
+  padding: 30px 0 !important;
 }
 
 /* 文章內容區域 */
 .page__content {
   background: linear-gradient(to bottom, 
-    rgba(232, 244, 248, 0.02) 0%, 
-    rgba(255, 173, 214, 0.02) 100%);
-  padding: 30px;
-  border-radius: 10px;
+    rgba(232, 244, 248, 0.03) 0%, 
+    rgba(255, 173, 214, 0.03) 50%,
+    rgba(184, 212, 227, 0.02) 100%) !important;
+  padding: 40px !important;
+  border-radius: 15px !important;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.02);
 }
 
-/* 輸入框樣式 */
-input[type="search"],
-input[type="text"] {
-  border: 2px solid #B8D4E3;
-  border-radius: 6px;
-  padding: 8px 12px;
-  font-family: var(--cute-font-main);
+/* 段落間距 - 雜誌風格 */
+.page__content p {
+  margin-bottom: 1.2em;
+  text-align: justify; /* 兩端對齊，更像雜誌 */
 }
 
-input[type="search"]:focus,
-input[type="text"]:focus {
-  border-color: #1E50A2;
-  outline: none;
-  box-shadow: 0 0 5px rgba(30, 80, 162, 0.3);
+/* 首字放大 (雜誌風格，可選) */
+.page__content > p:first-of-type::first-letter {
+  font-size: 3em;
+  font-family: var(--en-title-font);
+  float: left;
+  line-height: 0.8;
+  margin: 0.1em 0.1em 0 0;
+  color: #F8B500;
+  font-weight: 600;
 }
 
 /* stylelint-enable */
