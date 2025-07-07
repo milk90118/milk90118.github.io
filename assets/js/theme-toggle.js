@@ -11,8 +11,8 @@
         
         const toggle = document.createElement('button');
         toggle.className = 'theme-toggle';
-        toggle.setAttribute('aria-label', '切換日夜模式');
-        toggle.innerHTML = '日間模式';
+        toggle.setAttribute('aria-label', 'Day/Night Mode');
+        toggle.innerHTML = 'Light';
         
         // 插入到頁面
         document.body.appendChild(toggle);
@@ -36,12 +36,12 @@
         if (theme === 'dark') {
             html.setAttribute('data-theme', 'dark');
             if (toggle) {
-                toggle.innerHTML = '夜間模式';
+                toggle.innerHTML = 'Dark';
             }
         } else {
             html.removeAttribute('data-theme');
             if (toggle) {
-                toggle.innerHTML = '日間模式';
+                toggle.innerHTML = 'Light';
             }
         }
         
