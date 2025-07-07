@@ -106,7 +106,9 @@ footer:
     # - label: "Instagram"
     #   icon: "fab fa-fw fa-instagram"
     #   url: "https://instagram.com/"
-
+# 在 _config.yml 中添加
+footer_scripts:
+  - /assets/js/theme-toggle.js
 # 預設設定（你原有的很好，稍微增強）
 defaults:
   # _posts
