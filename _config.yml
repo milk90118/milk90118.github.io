@@ -109,6 +109,7 @@ footer:
 # 在 _config.yml 中添加
 footer_scripts:
   - /assets/js/theme-toggle.js
+  - /assets/js/toc-enhance.js
 # 預設設定（你原有的很好，稍微增強）
 defaults:
   # _posts
@@ -123,10 +124,11 @@ defaults:
       share: true
       related: true
       show_date: true
-      classes: wide  # 添加寬版面
-      toc: true  # 自動生成目錄
-      toc_label: "📋 文章目錄"
-      toc_icon: "list-ul"
+      classes: wide
+      toc: true                    # 啟用目錄 ⭐
+      toc_label: "📖 文章目錄"      # 目錄標題 ⭐
+      toc_icon: "list-ul"          # 目錄圖示 ⭐
+      toc_sticky: true             # 目錄黏性定位 ⭐
   # _pages
   - scope:
       path: "_pages"
@@ -135,6 +137,8 @@ defaults:
       layout: single
       author_profile: true
       classes: wide
+      toc: true                    # 頁面也啟用目錄 ⭐
+      toc_label: "📖 頁面目錄"      # 頁面目錄標題 ⭐
 
 # 歸檔設定（保留你原有的）
 category_archive:

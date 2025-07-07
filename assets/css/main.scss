@@ -336,7 +336,7 @@ a:hover {
   margin-top: 0 !important;
 }
 
-/* 側邊欄 - 緊湊版 */
+/* 側邊欄 - 緊湊版 + 目錄樣式 */
 .sidebar {
   background: linear-gradient(135deg, 
     var(--current-bg-light) 0%, 
@@ -345,6 +345,97 @@ a:hover {
   border-radius: 10px !important; /* 更小圓角 */
   border: 1px solid var(--current-border);
   backdrop-filter: blur(10px);
+  position: sticky !important; /* 讓側邊欄固定 */
+  top: 20px !important; /* 距離頂部 20px */
+  max-height: calc(100vh - 40px) !important; /* 最大高度 */
+  overflow-y: auto !important; /* 內容過多時可滾動 */
+}
+
+/* 側邊欄目錄樣式 */
+.sidebar .toc {
+  background: rgba(var(--current-bg-light), 0.3) !important;
+  border: 1px solid var(--current-border) !important;
+  border-radius: 8px !important;
+  margin-bottom: 20px !important;
+  max-height: 60vh !important; /* 限制目錄最大高度 */
+  overflow-y: auto !important; /* 目錄過長時可滾動 */
+}
+
+.sidebar .toc .nav__title {
+  background: var(--current-tag) !important;
+  color: var(--current-bg) !important;
+  font-family: var(--en-accent-font), var(--jp-font-main) !important;
+  font-weight: 600 !important;
+  font-size: 0.9em !important;
+  padding: 12px 15px !important;
+  margin: 0 !important;
+  border-radius: 8px 8px 0 0 !important;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+.sidebar .toc .nav__title::before {
+  content: "📖 ";
+  margin-right: 5px;
+}
+
+/* 目錄列表樣式 */
+.sidebar .toc nav ul {
+  margin: 0 !important;
+  padding: 15px !important;
+  list-style: none !important;
+}
+
+.sidebar .toc nav li {
+  margin-bottom: 8px !important;
+  line-height: 1.4 !important;
+}
+
+.sidebar .toc nav a {
+  color: var(--current-text) !important;
+  text-decoration: none !important;
+  font-size: 0.85em !important;
+  font-family: var(--en-body-font), var(--jp-font-main) !important;
+  font-weight: 400 !important;
+  padding: 4px 8px !important;
+  border-radius: 4px !important;
+  display: block !important;
+  transition: all 0.2s ease !important;
+  border-left: 3px solid transparent !important;
+}
+
+.sidebar .toc nav a:hover {
+  background: var(--current-bg-light) !important;
+  color: var(--current-link) !important;
+  border-left: 3px solid var(--current-accent) !important;
+  transform: translateX(3px) !important;
+}
+
+/* 目錄層級縮排 */
+.sidebar .toc nav ul ul {
+  padding-left: 15px !important;
+}
+
+.sidebar .toc nav ul ul a {
+  font-size: 0.8em !important;
+  color: var(--current-text-light) !important;
+}
+
+.sidebar .toc nav ul ul ul {
+  padding-left: 25px !important;
+}
+
+.sidebar .toc nav ul ul ul a {
+  font-size: 0.75em !important;
+  opacity: 0.8;
+}
+
+/* 當前閱讀位置高亮 */
+.sidebar .toc nav a.active {
+  background: var(--current-accent) !important;
+  color: var(--current-bg) !important;
+  border-left: 3px solid var(--current-link) !important;
+  font-weight: 500 !important;
 }
 
 /* 作者資訊緊湊化 */
@@ -359,11 +450,34 @@ a:hover {
 }
 
 .author__urls {
-  margin-bottom: 0 !important; /* 移除底部間距 */
+  margin-bottom: 15px !important; /* 為目錄留出空間 */
 }
 
 .author__urls li {
   margin-bottom: 5px !important; /* 減少連結間距 */
+}
+
+/* 滾動條樣式 (for WebKit browsers) */
+.sidebar::-webkit-scrollbar,
+.sidebar .toc::-webkit-scrollbar {
+  width: 4px;
+}
+
+.sidebar::-webkit-scrollbar-track,
+.sidebar .toc::-webkit-scrollbar-track {
+  background: var(--current-bg-light);
+  border-radius: 2px;
+}
+
+.sidebar::-webkit-scrollbar-thumb,
+.sidebar .toc::-webkit-scrollbar-thumb {
+  background: var(--current-border);
+  border-radius: 2px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover,
+.sidebar .toc::-webkit-scrollbar-thumb:hover {
+  background: var(--current-tag);
 }
 
 /* 作者頭像 */
@@ -431,16 +545,22 @@ blockquote::before {
   content: "🌌";
 }
 
-/* 程式碼區塊 */
+/* 程式碼區塊 - 緊湊版 */
 .highlight {
   background: linear-gradient(135deg, 
     var(--current-bg-light) 0%, 
     var(--current-border) 100%) !important;
-  border-left: 5px solid var(--current-link) !important;
-  border-radius: 10px !important;
-  padding: 20px !important;
-  margin: 25px 0 !important;
-  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid var(--current-link) !important; /* 更細邊框 */
+  border-radius: 6px !important; /* 更小圓角 */
+  padding: 12px 15px !important; /* 減少內邊距 */
+  margin: 15px 0 !important; /* 減少外邊距 */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); /* 更淺陰影 */
+}
+
+/* 程式碼文字 */
+.highlight code {
+  font-size: 0.9em !important; /* 稍微小一點 */
+  line-height: 1.4 !important; /* 緊密行距 */
 }
 
 /* 頁腳 */
