@@ -239,14 +239,7 @@ h6 {
 }
 
 /* 文章內容區域的標題間距調整 */
-.page__content h1,
-.page__content h2,
-.page__content h3,
-.page__content h4,
-.page__content h5,
-.page__content h6 {
-  /* 使用上面定義的 margin 值 */
-}
+/* 已移除空的 .page__content 標題 ruleset，避免空規則錯誤 */
 
 /* 標題懸停效果 */
 h1:hover, h2:hover, h3:hover {
