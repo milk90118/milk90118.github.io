@@ -15,7 +15,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
 @import "minimal-mistakes";
 
@@ -217,13 +217,12 @@ h5 {
 
 /* H6 - 最小標題 */
 h6 { 
-  font-size: 1.0em; 
+  font-size: 0.9em;
   font-weight: 400 !important; /* 正常權重，但保持標題樣式 */
   letter-spacing: 0 !important; /* 正常間距 */
   margin-top: 1em !important;
   margin-bottom: 0.5em !important;
   text-transform: uppercase; /* 大寫增加區別性 */
-  font-size: 0.9em;
 }
 
 /* 特殊標題樣式 */
@@ -237,9 +236,6 @@ h6 {
   font-weight: 800 !important; /* 網站標題很重但不超過頁面標題 */
   letter-spacing: -0.02em !important;
 }
-
-/* 文章內容區域的標題間距調整 */
-/* 已移除空的 .page__content 標題 ruleset，避免空規則錯誤 */
 
 /* 標題懸停效果 */
 h1:hover, h2:hover, h3:hover {
@@ -273,6 +269,365 @@ h1:hover, h2:hover, h3:hover {
 }
 
 /* =============================================================================
+   美化個人介紹區塊樣式
+   ============================================================================= */
+
+/* 個人介紹主容器 */
+.introduction,
+.intro-section,
+.about-me {
+  background: linear-gradient(135deg, 
+    var(--current-bg) 0%, 
+    var(--current-bg-light) 50%,
+    var(--current-border) 100%) !important;
+  border: 2px solid var(--current-primary) !important;
+  border-radius: 20px !important;
+  padding: 35px 40px !important;
+  margin: 30px 0 !important;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+  backdrop-filter: blur(10px) !important;
+  animation: slideInUp 0.8s ease-out;
+}
+
+/* 背景裝飾圖案 */
+.introduction::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, 
+    var(--current-primary) 0%, 
+    transparent 70%);
+  opacity: 0.03;
+  animation: float 20s ease-in-out infinite;
+  pointer-events: none;
+}
+
+[data-theme="dark"] .introduction::before {
+  opacity: 0.05;
+}
+
+/* 浮動動畫 */
+@keyframes float {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  33% { transform: translate(10px, -10px) rotate(1deg); }
+  66% { transform: translate(-5px, 5px) rotate(-1deg); }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 個人介紹標題 */
+.introduction h2,
+.introduction .intro-title {
+  font-family: var(--en-title-font), var(--interface-font) !important;
+  font-size: 2.2em !important;
+  font-weight: 700 !important;
+  color: var(--current-text) !important;
+  text-align: center;
+  margin-bottom: 25px !important;
+  position: relative;
+  letter-spacing: -0.02em !important;
+}
+
+/* 標題裝飾 */
+.introduction h2::after,
+.introduction .intro-title::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, 
+    var(--current-accent) 0%, 
+    var(--current-primary) 100%);
+  border-radius: 2px;
+}
+
+/* 個人頭像樣式 */
+.introduction .profile-image,
+.introduction .avatar {
+  width: 120px !important;
+  height: 120px !important;
+  border-radius: 50% !important;
+  border: 4px solid var(--current-accent) !important;
+  box-shadow: 
+    0 8px 25px rgba(0, 0, 0, 0.2),
+    0 0 0 8px var(--current-bg),
+    0 0 0 12px var(--current-primary) !important;
+  margin: 0 auto 20px auto !important;
+  display: block !important;
+  object-fit: cover !important;
+  transition: all 0.3s ease !important;
+  position: relative;
+  z-index: 2;
+}
+
+.introduction .profile-image:hover,
+.introduction .avatar:hover {
+  transform: scale(1.05) !important;
+  box-shadow: 
+    0 12px 35px rgba(0, 0, 0, 0.3),
+    0 0 0 8px var(--current-bg),
+    0 0 0 12px var(--current-accent) !important;
+}
+
+/* 個人介紹文字區塊 */
+.introduction .intro-text,
+.introduction p {
+  font-family: var(--en-body-font), var(--reading-font-sans) !important;
+  font-size: 1.1em !important;
+  line-height: 1.8 !important;
+  color: var(--current-text) !important;
+  text-align: center;
+  margin-bottom: 20px !important;
+  position: relative;
+  z-index: 2;
+}
+
+/* 第一段文字特殊樣式 */
+.introduction p:first-of-type::first-letter {
+  font-size: 3.5em;
+  font-family: var(--en-title-font) !important;
+  font-weight: 400;
+  float: left;
+  line-height: 0.8;
+  margin: 0.1em 0.15em 0 0;
+  color: var(--current-accent);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 技能標籤容器 */
+.introduction .skills,
+.introduction .tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin: 25px 0 !important;
+}
+
+/* 技能標籤樣式 */
+.introduction .skill-tag,
+.introduction .tag {
+  background: linear-gradient(135deg, 
+    var(--current-tag) 0%, 
+    var(--current-accent) 100%) !important;
+  color: var(--current-bg) !important;
+  padding: 8px 16px !important;
+  border-radius: 25px !important;
+  font-family: var(--en-accent-font), var(--interface-font) !important;
+  font-size: 0.9em !important;
+  font-weight: 600 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.5px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+  transition: all 0.3s ease !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.introduction .skill-tag::before,
+.introduction .tag::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(255, 255, 255, 0.3), 
+    transparent);
+  transition: left 0.5s ease;
+}
+
+.introduction .skill-tag:hover,
+.introduction .tag:hover {
+  transform: translateY(-3px) scale(1.05) !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25) !important;
+}
+
+.introduction .skill-tag:hover::before,
+.introduction .tag:hover::before {
+  left: 100%;
+}
+
+/* 社交連結區塊 */
+.introduction .social-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px !important;
+}
+
+.introduction .social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, 
+    var(--current-button) 0%, 
+    var(--current-button-hover) 100%) !important;
+  color: var(--current-bg) !important;
+  border-radius: 50% !important;
+  text-decoration: none !important;
+  font-size: 1.2em !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+  transition: all 0.3s ease !important;
+  border: none !important;
+}
+
+.introduction .social-link:hover {
+  transform: translateY(-5px) scale(1.1) !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3) !important;
+  color: var(--current-bg) !important;
+}
+
+/* 引言樣式 */
+.introduction blockquote,
+.introduction .quote {
+  background: linear-gradient(135deg, 
+    var(--current-bg-light) 0%, 
+    var(--current-border) 100%) !important;
+  border-left: 5px solid var(--current-accent) !important;
+  border-radius: 0 15px 15px 0 !important;
+  padding: 20px 25px !important;
+  margin: 25px 0 !important;
+  font-family: var(--en-quote-font), var(--reading-font-serif) !important;
+  font-style: italic;
+  font-size: 1.1em !important;
+  line-height: 1.6 !important;
+  color: var(--current-text-light) !important;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
+}
+
+.introduction blockquote::before,
+.introduction .quote::before {
+  content: "✨";
+  position: absolute;
+  left: -15px;
+  top: -10px;
+  font-size: 1.8em;
+  background: var(--current-bg);
+  padding: 8px;
+  border-radius: 50%;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="dark"] .introduction blockquote::before,
+[data-theme="dark"] .introduction .quote::before {
+  content: "🌟";
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+  .introduction {
+    padding: 25px 20px !important;
+    margin: 20px 0 !important;
+  }
+  
+  .introduction h2,
+  .introduction .intro-title {
+    font-size: 1.8em !important;
+  }
+  
+  .introduction .profile-image,
+  .introduction .avatar {
+    width: 100px !important;
+    height: 100px !important;
+  }
+  
+  .introduction .intro-text,
+  .introduction p {
+    font-size: 1em !important;
+    text-align: left;
+  }
+  
+  .introduction .skills,
+  .introduction .tags {
+    justify-content: flex-start;
+  }
+  
+  .introduction .social-links {
+    gap: 15px;
+  }
+  
+  .introduction .social-link {
+    width: 45px;
+    height: 45px;
+    font-size: 1.1em !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .introduction {
+    padding: 20px 15px !important;
+  }
+  
+  .introduction .skills,
+  .introduction .tags {
+    gap: 8px;
+  }
+  
+  .introduction .skill-tag,
+  .introduction .tag {
+    font-size: 0.8em !important;
+    padding: 6px 12px !important;
+  }
+}
+
+/* 側邊欄中的個人介紹簡化版 */
+.sidebar .introduction {
+  padding: 20px !important;
+  margin: 15px 0 !important;
+  border-radius: 12px !important;
+}
+
+.sidebar .introduction h2,
+.sidebar .introduction .intro-title {
+  font-size: 1.4em !important;
+  margin-bottom: 15px !important;
+}
+
+.sidebar .introduction .profile-image,
+.sidebar .introduction .avatar {
+  width: 80px !important;
+  height: 80px !important;
+  margin-bottom: 15px !important;
+}
+
+.sidebar .introduction .intro-text,
+.sidebar .introduction p {
+  font-size: 0.9em !important;
+  line-height: 1.6 !important;
+}
+
+.sidebar .introduction .social-link {
+  width: 35px;
+  height: 35px;
+  font-size: 1em !important;
+}
+
+/* =============================================================================
    主要組件樣式 - 響應式主題
    ============================================================================= */
 
@@ -288,10 +643,8 @@ h1:hover, h2:hover, h3:hover {
 
 .site-title {
   color: var(--current-text) !important;
-  font-weight: 900 !important; /* 網站標題粗體 */
   text-decoration: none !important;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-  letter-spacing: -0.01em !important; /* 窄間距 */
 }
 
 .site-title:hover {
@@ -319,31 +672,7 @@ h1:hover, h2:hover, h3:hover {
   position: relative;
   padding-bottom: 15px !important;
   margin-bottom: 25px !important;
-  font-weight: 1000 !important; /* 粗體 */
-  letter-spacing: -0.02em !important; /* 窄間距 */
-  line-height: 1.1 !important; /* 緊密行距 */
 }
-
-// .page__title::before {
-//   content: "🌸";
-//   position: absolute;
-//   left: -40px;
-//   top: 50%;
-//   transform: translateY(-50%);
-// }
-
-// .page__title::after {
-//   content: "🌸";
-//   position: absolute;
-//   right: -40px;
-//   top: 50%;
-//   transform: translateY(-50%);
-// }
-
-// [data-theme="dark"] .page__title::before,
-// [data-theme="dark"] .page__title::after {
-//   content: "🌙";
-// }
 
 /* 連結樣式 */
 a {
@@ -382,45 +711,45 @@ a:hover {
 /* 文章卡片 - 更密集布局 */
 .archive__item {
   background: var(--current-bg) !important;
-  border-left: 4px solid var(--current-tag) !important; /* 更細的左邊框 */
-  border-radius: 8px !important; /* 更小的圓角 */
-  padding: 15px 18px !important; /* 減少內邊距 */
-  margin-bottom: 15px !important; /* 減少卡片間距 */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important; /* 更淺的陰影 */
+  border-left: 4px solid var(--current-tag) !important;
+  border-radius: 8px !important;
+  padding: 15px 18px !important;
+  margin-bottom: 15px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
   position: relative;
   overflow: hidden;
-  transition: all 0.2s ease; /* 更快的動畫 */
+  transition: all 0.2s ease;
 }
 
 .archive__item:hover {
-  transform: translateY(-1px); /* 更小的懸浮效果 */
+  transform: translateY(-1px);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12) !important;
 }
 
 /* 文章標題在卡片中 */
 .archive__item .archive__item-title {
-  margin-bottom: 8px !important; /* 減少標題下方間距 */
-  line-height: 1.3 !important; /* 緊密行距 */
+  margin-bottom: 8px !important;
+  line-height: 1.3 !important;
 }
 
 .archive__item .archive__item-title a {
-  font-size: 1.1em !important; /* 稍微小一點的標題 */
+  font-size: 1.1em !important;
   font-weight: 600 !important;
   line-height: 1.3 !important;
 }
 
 /* 文章摘要 */
 .archive__item .archive__item-excerpt {
-  margin-bottom: 8px !important; /* 減少摘要下方間距 */
-  font-size: 0.7em !important; /* 稍微小一點的文字 */
-  line-height: 1.5 !important; /* 緊密行距 */
+  margin-bottom: 8px !important;
+  font-size: 0.7em !important;
+  line-height: 1.5 !important;
   color: var(--current-text-light) !important;
 }
 
 /* 文章元資訊 */
 .archive__item .page__meta {
-  margin-bottom: 0 !important; /* 移除底部間距 */
-  font-size: 0.5em !important; /* 更小的元資訊文字 */
+  margin-bottom: 0 !important;
+  font-size: 0.5em !important;
   color: var(--current-text-light) !important;
 }
 
@@ -438,33 +767,33 @@ a:hover {
   background: linear-gradient(135deg, 
     var(--current-bg-light) 0%, 
     var(--current-border) 100%) !important;
-  padding: 18px !important; /* 減少內邊距 */
-  border-radius: 10px !important; /* 更小圓角 */
+  padding: 18px !important;
+  border-radius: 10px !important;
   border: 1px solid var(--current-border);
   backdrop-filter: blur(10px);
-  position: sticky !important; /* 讓側邊欄固定 */
-  top: 20px !important; /* 距離頂部 20px */
-  max-height: calc(100vh - 40px) !important; /* 最大高度 */
-  overflow-y: auto !important; /* 內容過多時可滾動 */
+  position: sticky !important;
+  top: 20px !important;
+  max-height: calc(100vh - 40px) !important;
+  overflow-y: auto !important;
 }
 
 /* 作者資訊緊湊化 */
 .author__avatar {
-  margin-bottom: 15px !important; /* 減少頭像下方間距 */
+  margin-bottom: 15px !important;
 }
 
 .author__bio {
-  margin-bottom: 15px !important; /* 減少簡介下方間距 */
-  font-size: 0.9em !important; /* 稍微小一點的文字 */
+  margin-bottom: 15px !important;
+  font-size: 0.9em !important;
   line-height: 1.5 !important;
 }
 
 .author__urls {
-  margin-bottom: 15px !important; /* 為目錄留出空間 */
+  margin-bottom: 15px !important;
 }
 
 .author__urls li {
-  margin-bottom: 5px !important; /* 減少連結間距 */
+  margin-bottom: 5px !important;
 }
 
 /* 滾動條樣式 (for WebKit browsers) */
@@ -507,9 +836,9 @@ a:hover {
   padding: 6px 15px !important;
   font-family: var(--en-accent-font), var(--interface-font) !important;
   font-size: 0.85em !important;
-  font-weight: 600 !important; /* 標籤粗體 */
+  font-weight: 600 !important;
   text-transform: uppercase;
-  letter-spacing: 0.02em !important; /* 標籤稍微窄一點 */
+  letter-spacing: 0.02em !important;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -560,17 +889,17 @@ blockquote::before {
   background: linear-gradient(135deg, 
     var(--current-bg-light) 0%, 
     var(--current-border) 100%) !important;
-  border-left: 4px solid var(--current-link) !important; /* 更細邊框 */
-  border-radius: 6px !important; /* 更小圓角 */
-  padding: 12px 15px !important; /* 減少內邊距 */
-  margin: 15px 0 !important; /* 減少外邊距 */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); /* 更淺陰影 */
+  border-left: 4px solid var(--current-link) !important;
+  border-radius: 6px !important;
+  padding: 12px 15px !important;
+  margin: 15px 0 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 /* 程式碼文字 */
 .highlight code {
-  font-size: 0.9em !important; /* 稍微小一點 */
-  line-height: 1.4 !important; /* 緊密行距 */
+  font-size: 0.9em !important;
+  line-height: 1.4 !important;
 }
 
 /* 頁腳 */
@@ -591,17 +920,17 @@ blockquote::before {
 .page__content {
   background: var(--current-bg) !important;
   color: var(--current-text) !important;
-  padding: 25px 30px !important; /* 減少內邊距 */
-  border-radius: 10px !important; /* 更小圓角 */
+  padding: 25px 30px !important;
+  border-radius: 10px !important;
   font-family: var(--en-body-font), var(--reading-font-sans) !important;
   font-size: 0.8em !important;
   line-height: 1.75;
-  margin-right: 320px !important; /* 為右側目錄留出空間 */
+  margin-right: 320px !important;
 }
 
 /* 段落樣式 - 緊密間距 */
 .page__content p {
-  margin-bottom: 1em !important; /* 減少段落間距 */
+  margin-bottom: 1em !important;
   text-align: justify;
   color: var(--current-text) !important;
 }
@@ -613,8 +942,8 @@ blockquote::before {
 .page__content h4,
 .page__content h5,
 .page__content h6 {
-  margin-top: 1.2em !important; /* 減少標題上方間距 */
-  margin-bottom: 0.6em !important; /* 減少標題下方間距 */
+  margin-top: 1.2em !important;
+  margin-bottom: 0.6em !important;
 }
 
 /* 列表間距 */
@@ -625,7 +954,7 @@ blockquote::before {
 }
 
 .page__content li {
-  margin-bottom: 0.3em !important; /* 減少列表項間距 */
+  margin-bottom: 0.3em !important;
 }
 
 /* 首字放大效果 - 使用最典雅字體 */

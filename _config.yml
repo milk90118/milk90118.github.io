@@ -68,13 +68,38 @@ plugins:
   - jemoji
   - jekyll-include-cache
 
-# 作者資訊（基於你原有的，加上可愛元素）
+# =============================================================================
+# 作者資訊（整合個人介紹功能）
+# =============================================================================
 author:
   name: "Miruku 醬"  # 保留原名，加上暱稱
   avatar: "/assets/images/bio-photo.jpg"  # 保留你的頭像路徑
   bio: "💻 Coding creater <br/>📝 Medical student <br/>🎌 Learning Journey"
-  location: "🏠 Taipei, Taiwan | 雲林小孩"  # 添加位置 # add map link of location
+  location: "🏠 Taipei, Taiwan | 雲林小孩"  # 添加位置
   email: "milk900118@gmail.com"  # 添加 email
+  
+  # 個人介紹相關設定 ⭐ 新增
+  introduction:
+    title: "關於 M醬"
+    description: >-
+      嗨！我是 M醬，一個熱愛程式設計的醫學生。在這個充滿可能性的數位時代，
+      我致力於將創意與技術完美結合，創造有意義的數位體驗。
+      歡迎來到我的小天地，一起探索知識的奧秘吧！
+    quote: "Code is like poetry, it should be elegant and expressive. ✨"
+    skills:
+      - "Web Development"
+      - "Python"
+      - "JavaScript"
+      - "React"
+      - "Medical AI"
+      - "UI/UX Design"
+    interests:
+      - "🏥 Medical Technology"
+      - "🤖 Artificial Intelligence"
+      - "📚 Continuous Learning"
+      - "🎨 Creative Design"
+      - "🌸 Japanese Culture"
+  
   links:
     - label: "📧 Email"
       icon: "fas fa-fw fa-envelope-square"
@@ -82,6 +107,12 @@ author:
     - label: "🐙 GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/milk90118"  # 修正為你的真實 GitHub
+    - label: "💼 Portfolio"
+      icon: "fas fa-fw fa-briefcase"
+      url: "/portfolio/"  # 如果有作品集頁面
+    - label: "📝 Blog"
+      icon: "fas fa-fw fa-blog"
+      url: "/posts/"  # 文章列表頁面
     # 其他社交媒體（如果沒有可以註解掉）
     # - label: "🐦 Twitter"
     #   icon: "fab fa-fw fa-twitter-square"
@@ -93,9 +124,12 @@ author:
 # 頁腳連結（保留你想要的）
 footer:
   links:
-    # - label: "GitHub"
-    #   icon: "fab fa-fw fa-github"
-    #   url: "https://github.com/milk90118"  # 修正為你的真實 GitHub
+    - label: "🐙 GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/milk90118"  # 修正為你的真實 GitHub
+    - label: "📧 聯絡我"
+      icon: "fas fa-fw fa-envelope"
+      url: "mailto:milk900118@gmail.com"
     # 其他連結如果沒有可以註解掉
     # - label: "Twitter"
     #   icon: "fab fa-fw fa-twitter-square"
@@ -103,13 +137,17 @@ footer:
     # - label: "Instagram"
     #   icon: "fab fa-fw fa-instagram"
     #   url: "https://instagram.com/"
-# 在 _config.yml 中添加
+
+# 載入自訂 JavaScript（支援日夜切換和目錄增強）⭐ 重要
 footer_scripts:
   - /assets/js/theme-toggle.js
   - /assets/js/toc-enhance.js
-# 預設設定（你原有的很好，稍微增強）
+
+# =============================================================================
+# 預設設定（優化版）
+# =============================================================================
 defaults:
-  # _posts
+  # _posts 文章設定
   - scope:
       path: ""
       type: posts
@@ -123,19 +161,47 @@ defaults:
       show_date: true
       classes: wide
       toc: true                    # 啟用目錄 ⭐
-      toc_label: "📖"      # 目錄標題 ⭐
+      toc_label: "📖 文章目錄"      # 目錄標題 ⭐
       toc_icon: "list-ul"          # 目錄圖示 ⭐
       toc_sticky: true             # 目錄黏性定位 ⭐
-  # # _pages
-  # - scope:
-  #     path: "_pages"
-  #     type: pages
-  #   values:
-  #     layout: single
-  #     author_profile: true
-  #     classes: wide
-  #     toc: true                    # 頁面也啟用目錄 ⭐
-  #     toc_label: "📖"      # 頁面目錄標題 ⭐
+      sidebar:
+        - title: "🌸 快速導航"
+          text: |
+            - [首頁](/)
+            - [文章列表](/posts/)
+            - [分類](/categories/)
+            - [標籤](/tags/)
+            - [關於我](/about/)
+  
+  # _pages 頁面設定
+  - scope:
+      path: "_pages"
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+      classes: wide
+      toc: true                    # 頁面也啟用目錄 ⭐
+      toc_label: "📖 頁面目錄"      # 頁面目錄標題 ⭐
+      sidebar:
+        - title: "🌸 快速導航"
+          text: |
+            - [首頁](/)
+            - [文章列表](/posts/)
+            - [分類](/categories/)
+            - [標籤](/tags/)
+            - [關於我](/about/)
+
+  # 關於頁面特殊設定 ⭐ 新增
+  - scope:
+      path: "_pages/about.md"
+      type: pages
+    values:
+      layout: single
+      author_profile: false  # 關閉預設作者資訊，使用自訂介紹
+      classes: wide
+      toc: false  # 關於頁面不需要目錄
+      show_introduction: true  # 顯示美化後的個人介紹
 
 # 歸檔設定（保留你原有的）
 category_archive:
@@ -145,7 +211,9 @@ tag_archive:
   type: liquid
   path: /tags/
 
-# 新增功能設定
+# =============================================================================
+# 功能設定
+# =============================================================================
 
 # 留言系統（推薦使用 utterances，免費且美觀）
 comments:
@@ -184,8 +252,66 @@ atom_feed:
   path: # 使用預設 /feed.xml
   hide: false
 
+# =============================================================================
+# 自訂功能設定 ⭐ 新增
+# =============================================================================
+
+# 日夜模式設定
+theme_settings:
+  enable_dark_mode: true
+  default_theme: "light"  # 預設淺色模式
+  theme_toggle_text:
+    light: "🌸 日間模式"
+    dark: "🌙 夜間模式"
+
+# 個人介紹頁面設定
+introduction_page:
+  enable: true
+  show_skills_animation: true
+  show_social_links: true
+  show_quote: true
+  background_animation: true
+
+# 目錄增強設定
+toc_settings:
+  enable_right_sidebar: true
+  auto_highlight: true
+  smooth_scroll: true
+  collapsible: true
+
+# 載入動畫設定
+animations:
+  enable: true
+  fade_in_duration: "0.8s"
+  slide_up_duration: "0.6s"
+
 # 分析工具（如果需要的話）
 # analytics:
 #   provider: "google-gtag"
 #   google:
 #     tracking_id: "G-XXXXXXXXXX"  # 你的 Google Analytics ID
+
+# =============================================================================
+# 開發與測試設定
+# =============================================================================
+
+# 開發模式（部署時設為 false）
+development: false
+
+# 實時重載（開發時使用）
+# livereload: true
+
+# 壓縮設定
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  blanklines: false
+  profile: false
+
+# 未來文章設定
+future: false
+unpublished: false
+
+# 限制文章數量（開發時可以設小一點加速編譯）
+# limit_posts: 10
