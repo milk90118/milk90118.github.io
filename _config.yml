@@ -70,10 +70,10 @@ plugins:
 
 # 作者資訊（基於你原有的，加上可愛元素）
 author:
-  name: "🌸 蘇玟予 (M醬)"  # 保留原名，加上暱稱
+  name: "Miruku 醬"  # 保留原名，加上暱稱
   avatar: "/assets/images/bio-photo.jpg"  # 保留你的頭像路徑
-  bio: "💻 每天都在探索新事物的工程師<br/>📝 喜歡寫作和分享生活<br/>🎌 正在學習更多有趣的技術"
-  location: "🏠 Taipei, Taiwan"  # 添加位置
+  bio: "💻 Coding creater <br/>📝 Medical student <br/>🎌 Learning Journey"
+  location: "🏠 Taipei, Taiwan | 雲林小孩"  # 添加位置
   email: "milk900118@gmail.com"  # 添加 email
   links:
     - label: "📧 Email"
@@ -129,16 +129,16 @@ defaults:
       toc_label: "📖"      # 目錄標題 ⭐
       toc_icon: "list-ul"          # 目錄圖示 ⭐
       toc_sticky: true             # 目錄黏性定位 ⭐
-  # _pages
-  - scope:
-      path: "_pages"
-      type: pages
-    values:
-      layout: single
-      author_profile: true
-      classes: wide
-      toc: true                    # 頁面也啟用目錄 ⭐
-      toc_label: "📖"      # 頁面目錄標題 ⭐
+  # # _pages
+  # - scope:
+  #     path: "_pages"
+  #     type: pages
+  #   values:
+  #     layout: single
+  #     author_profile: true
+  #     classes: wide
+  #     toc: true                    # 頁面也啟用目錄 ⭐
+  #     toc_label: "📖"      # 頁面目錄標題 ⭐
 
 # 歸檔設定（保留你原有的）
 category_archive:
