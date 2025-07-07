@@ -291,7 +291,7 @@ a:hover {
   border-left: 4px solid var(--current-tag) !important; /* 更細的左邊框 */
   border-radius: 8px !important; /* 更小的圓角 */
   padding: 15px 18px !important; /* 減少內邊距 */
-  margin-bottom: 12px !important; /* 減少卡片間距 */
+  margin-bottom: 15px !important; /* 減少卡片間距 */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important; /* 更淺的陰影 */
   position: relative;
   overflow: hidden;
@@ -318,7 +318,7 @@ a:hover {
 /* 文章摘要 */
 .archive__item .archive__item-excerpt {
   margin-bottom: 8px !important; /* 減少摘要下方間距 */
-  font-size: 0.95em !important; /* 稍微小一點的文字 */
+  font-size: 0.7em !important; /* 稍微小一點的文字 */
   line-height: 1.5 !important; /* 緊密行距 */
   color: var(--current-text-light) !important;
 }
@@ -326,7 +326,7 @@ a:hover {
 /* 文章元資訊 */
 .archive__item .page__meta {
   margin-bottom: 0 !important; /* 移除底部間距 */
-  font-size: 0.8em !important; /* 更小的元資訊文字 */
+  font-size: 0.5em !important; /* 更小的元資訊文字 */
   color: var(--current-text-light) !important;
 }
 
@@ -356,7 +356,7 @@ a:hover {
 
 /* 側邊欄目錄樣式 */
 .sidebar .toc {
-  background: rgba(var(--current-bg-light), 0.3) !important;
+  background: rgba(var(--current-bg-light), 0.2) !important;
   border: 1px solid var(--current-border) !important;
   border-radius: 8px !important;
   margin-bottom: 20px !important;
@@ -368,8 +368,8 @@ a:hover {
   background: var(--current-tag) !important;
   color: var(--current-bg) !important;
   font-family: var(--en-accent-font), var(--jp-font-main) !important;
-  font-weight: 600 !important;
-  font-size: 0.9em !important;
+  font-weight: 800 !important;
+  font-size: 0.6em !important;
   padding: 12px 15px !important;
   margin: 0 !important;
   border-radius: 8px 8px 0 0 !important;
@@ -391,7 +391,7 @@ a:hover {
 
 .sidebar .toc nav li {
   margin-bottom: 8px !important;
-  line-height: 1.4 !important;
+  line-height: 1.0 !important;
 }
 
 .sidebar .toc nav a {
