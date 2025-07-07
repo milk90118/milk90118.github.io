@@ -73,7 +73,7 @@ author:
   name: "Miruku 醬"  # 保留原名，加上暱稱
   avatar: "/assets/images/bio-photo.jpg"  # 保留你的頭像路徑
   bio: "💻 Coding creater <br/>📝 Medical student <br/>🎌 Learning Journey"
-  location: "🏠 Taipei, Taiwan | 雲林小孩"  # 添加位置
+  location: "🏠 Taipei, Taiwan | 雲林小孩"  # 添加位置 # add map link of location
   email: "milk900118@gmail.com"  # 添加 email
   links:
     - label: "📧 Email"
@@ -93,12 +93,9 @@ author:
 # 頁腳連結（保留你想要的）
 footer:
   links:
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/milk90118"  # 修正為你的真實 GitHub
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      url: "mailto:milk900118@gmail.com"
+    # - label: "GitHub"
+    #   icon: "fab fa-fw fa-github"
+    #   url: "https://github.com/milk90118"  # 修正為你的真實 GitHub
     # 其他連結如果沒有可以註解掉
     # - label: "Twitter"
     #   icon: "fab fa-fw fa-twitter-square"
