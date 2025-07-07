@@ -1,6 +1,9 @@
 ---
 ---
 
+/* stylelint-disable */
+// 告訴 VS Code 忽略語法檢查錯誤
+
 // 載入可愛的 Google Fonts 日本字體
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;400;500;700&family=Kosugi+Maru&family=Sawarabi+Gothic&display=swap');
 
@@ -290,3 +293,5 @@ input[type="text"]:focus {
   outline: none;
   box-shadow: 0 0 5px rgba(30, 80, 162, 0.3);
 }
+
+/* stylelint-enable */
