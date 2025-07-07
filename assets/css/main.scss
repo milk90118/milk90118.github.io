@@ -157,35 +157,126 @@ body {
   color: var(--current-text) !important;
 }
 
-/* 標題字體 - 粗體 + 窄間距 */
+/* =============================================================================
+   優化標題字體權重設定
+   ============================================================================= */
+
+/* 標題字體基礎設定 - 統一樣式但不同權重 */
 h1, h2, h3, h4, h5, h6,
 .page__title, .page__hero-title, .site-title {
   font-family: var(--en-title-font), var(--interface-font) !important;
   color: var(--current-text) !important;
-  font-weight: 700 !important; /* 粗體 */
-  letter-spacing: -0.02em !important; /* 稍微窄一點的間距 */
-  line-height: 1.2 !important; /* 緊密行距 */
+  letter-spacing: -0.02em !important; /* 統一窄間距 */
+  line-height: 1.2 !important; /* 統一緊密行距 */
 }
 
+/* H1 - 最重要標題 (文章主標題) */
 h1 { 
-  font-size: 2.2em; 
-  font-weight: 900 !important;
-  letter-spacing: -0.03em !important;
-  font-family: var(--en-title-font), var(--interface-font) !important;
+  font-size: 2.4em; 
+  font-weight: 800 !important; /* 極粗體，但不到 900 */
+  letter-spacing: -0.03em !important; /* 最窄間距 */
+  margin-top: 0 !important;
+  margin-bottom: 1em !important;
 }
 
+/* H2 - 主要章節標題 */
 h2 { 
-  font-size: 1.8em; 
-  font-weight: 700 !important;
-  letter-spacing: -0.02em !important;
-  font-family: var(--en-title-font), var(--interface-font) !important;
+  font-size: 2.0em; 
+  font-weight: 700 !important; /* 粗體 */
+  letter-spacing: -0.025em !important;
+  margin-top: 1.5em !important;
+  margin-bottom: 0.8em !important;
 }
 
+/* H3 - 次要章節標題 */
 h3 { 
-  font-size: 1.4em; 
-  font-weight: 600 !important;
+  font-size: 1.6em; 
+  font-weight: 600 !important; /* 半粗體 */
+  letter-spacing: -0.02em !important;
+  margin-top: 1.3em !important;
+  margin-bottom: 0.7em !important;
+}
+
+/* H4 - 小節標題 */
+h4 { 
+  font-size: 1.3em; 
+  font-weight: 500 !important; /* 中等權重 */
+  letter-spacing: -0.015em !important;
+  margin-top: 1.2em !important;
+  margin-bottom: 0.6em !important;
+}
+
+/* H5 - 子小節標題 */
+h5 { 
+  font-size: 1.1em; 
+  font-weight: 500 !important; /* 中等權重 */
   letter-spacing: -0.01em !important;
-  font-family: var(--en-title-font), var(--interface-font) !important;
+  margin-top: 1.1em !important;
+  margin-bottom: 0.5em !important;
+}
+
+/* H6 - 最小標題 */
+h6 { 
+  font-size: 1.0em; 
+  font-weight: 400 !important; /* 正常權重，但保持標題樣式 */
+  letter-spacing: 0 !important; /* 正常間距 */
+  margin-top: 1em !important;
+  margin-bottom: 0.5em !important;
+  text-transform: uppercase; /* 大寫增加區別性 */
+  font-size: 0.9em;
+}
+
+/* 特殊標題樣式 */
+.page__title {
+  font-weight: 900 !important; /* 頁面標題最重 */
+  letter-spacing: -0.03em !important;
+  line-height: 1.1 !important;
+}
+
+.site-title {
+  font-weight: 800 !important; /* 網站標題很重但不超過頁面標題 */
+  letter-spacing: -0.02em !important;
+}
+
+/* 文章內容區域的標題間距調整 */
+.page__content h1,
+.page__content h2,
+.page__content h3,
+.page__content h4,
+.page__content h5,
+.page__content h6 {
+  /* 使用上面定義的 margin 值 */
+}
+
+/* 標題懸停效果 */
+h1:hover, h2:hover, h3:hover {
+  color: var(--current-link) !important;
+  transition: color 0.3s ease;
+}
+
+/* 文章卡片中的標題 */
+.archive__item .archive__item-title a {
+  font-size: 1.2em !important;
+  font-weight: 600 !important; /* 卡片標題適中權重 */
+  line-height: 1.3 !important;
+}
+
+/* 目錄中的標題樣式對應 */
+.toc nav a {
+  font-weight: 400 !important; /* 目錄連結正常權重 */
+}
+
+.toc nav ul ul a {
+  font-weight: 300 !important; /* 二級目錄更細 */
+}
+
+.toc nav ul ul ul a {
+  font-weight: 300 !important; /* 三級目錄保持細體 */
+  opacity: 0.8;
+}
+
+.toc nav a.active {
+  font-weight: 600 !important; /* 當前位置稍微加粗 */
 }
 
 /* =============================================================================
