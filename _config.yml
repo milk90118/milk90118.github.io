@@ -126,7 +126,7 @@ defaults:
       show_date: true
       classes: wide
       toc: true                    # 啟用目錄 ⭐
-      toc_label: "📖 文章目錄"      # 目錄標題 ⭐
+      toc_label: "📖"      # 目錄標題 ⭐
       toc_icon: "list-ul"          # 目錄圖示 ⭐
       toc_sticky: true             # 目錄黏性定位 ⭐
   # _pages
@@ -138,7 +138,7 @@ defaults:
       author_profile: true
       classes: wide
       toc: true                    # 頁面也啟用目錄 ⭐
-      toc_label: "📖 頁面目錄"      # 頁面目錄標題 ⭐
+      toc_label: "📖"      # 頁面目錄標題 ⭐
 
 # 歸檔設定（保留你原有的）
 category_archive:
