@@ -3,8 +3,8 @@
 
 /* stylelint-disable */
 
-// 載入典雅英文字體 + Zen Maru Gothic 中文字體
-@import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap');
+// 載入易讀日本字體 + 典雅英文字體 + Zen Maru Gothic 介面字體
+@import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300;400;500;700;900&family=Noto+Sans+JP:wght@300;400;500;600&family=Noto+Serif+JP:wght@300;400;500;600&family=Shippori+Mincho:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap');
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
 @import "minimal-mistakes";
@@ -14,19 +14,19 @@
    ============================================================================= */
 
 :root {
-  // 字體變數 - 典雅英文 + 日文搭配
-  --jp-font-main: 'Zen Maru Gothic', 'Noto Sans CJK TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+  // 字體變數 - 分離內文與介面字體
   
-  // 英文標題使用 Cormorant Garamond (最典雅的標題字體)
+  // 介面字體 - Zen Maru Gothic (保持原有可愛風格)
+  --interface-font: 'Zen Maru Gothic', 'Noto Sans CJK TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+  
+  // 內文閱讀字體 - 易讀日本字體 (更適合長文閱讀)
+  --reading-font-sans: 'Noto Sans JP', 'Zen Maru Gothic', 'Noto Sans CJK TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+  --reading-font-serif: 'Noto Serif JP', 'Shippori Mincho', 'Noto Serif CJK TC', 'PingFang TC', 'Microsoft JhengHei', serif;
+  
+  // 英文字體 (保持典雅風格)
   --en-title-font: 'Cormorant Garamond', 'Times New Roman', serif;
-  
-  // 英文內文使用 EB Garamond (經典易讀襯線字體)
   --en-body-font: 'EB Garamond', 'Georgia', serif;
-  
-  // 英文裝飾用 Libre Baskerville (優雅裝飾字體)
   --en-accent-font: 'Libre Baskerville', 'Times New Roman', serif;
-  
-  // 英文引用用 Crimson Pro (詩意引用字體)
   --en-quote-font: 'Crimson Pro', 'Georgia', serif;
   
   // 日間模式色彩 (溫柔日本色票)
@@ -160,19 +160,22 @@ h1, h2, h3, h4, h5, h6,
 h1 { 
   font-size: 2.2em; 
   font-weight: 700 !important;
-  letter-spacing: -0.03em !important; /* H1 間距更窄 */
+  letter-spacing: -0.03em !important;
+  font-family: var(--en-title-font), var(--interface-font) !important;
 }
 
 h2 { 
   font-size: 1.8em; 
   font-weight: 700 !important;
   letter-spacing: -0.02em !important;
+  font-family: var(--en-title-font), var(--interface-font) !important;
 }
 
 h3 { 
   font-size: 1.4em; 
-  font-weight: 600 !important; /* H3 稍微輕一點 */
+  font-weight: 600 !important;
   letter-spacing: -0.01em !important;
+  font-family: var(--en-title-font), var(--interface-font) !important;
 }
 
 /* =============================================================================
@@ -202,12 +205,12 @@ h3 {
   text-shadow: 2px 2px 8px var(--current-primary);
 }
 
-/* 導航連結 - 調整粗細和間距 */
+/* 導航連結 - 保持 Zen Maru Gothic 介面風格 */
 .greedy-nav a {
   color: var(--current-text) !important;
-  font-family: var(--en-accent-font), var(--jp-font-main) !important;
-  font-weight: 600 !important; /* 導航也稍微粗一點 */
-  letter-spacing: -0.01em !important; /* 窄間距 */
+  font-family: var(--interface-font) !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.01em !important;
 }
 
 .greedy-nav a:hover {
@@ -260,7 +263,7 @@ a:hover {
   border-bottom: 1px solid var(--current-link-hover) !important;
 }
 
-/* 按鈕樣式 - 調整間距 */
+/* 按鈕樣式 - 保持 Zen Maru Gothic 介面風格 */
 .btn {
   background: linear-gradient(135deg, 
     var(--current-button) 0%, 
@@ -269,9 +272,9 @@ a:hover {
   border: none !important;
   border-radius: 25px !important;
   padding: 10px 20px !important;
-  font-family: var(--en-accent-font), var(--jp-font-main) !important;
-  font-weight: 600 !important; /* 按鈕也用粗體 */
-  letter-spacing: 0.05em !important; /* 按鈕保持稍寬間距 */
+  font-family: var(--interface-font) !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.05em !important;
   text-transform: uppercase;
   box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
 }
