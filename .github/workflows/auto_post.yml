@@ -1,0 +1,31 @@
+name: Auto Create Daily Post
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # 每日 00:00 UTC，自動觸發（台灣時間早上 8 點）
+  workflow_dispatch:     # 支援手動執行
+
+jobs:
+  generate-post:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up Git
+        run: |
+          git config --global user.name 'your-github-username'
+          git config --global user.email 'your-email@example.com'
+
+      - name: Make script executable
+        run: chmod +x _scripts/new_post.sh
+
+      - name: Run script to create post
+        run: ./_scripts/new_post.sh
+
+      - name: Commit and push
+        run: |
+          git add _posts/
+          git commit -m "📝 Auto-created daily post $(date +'%Y-%m-%d')" || echo "No changes"
+          git push
