@@ -13,25 +13,36 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: M醬的探索日記
+
+title: "🌸 M醬的探索日記"  # 加上可愛的櫻花 emoji
 email: milk900118@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-twitter_username: username
+  歡迎來到 M醬的小天地！這裡記錄著我的學習旅程、技術探索和生活點滴。
+  一起在這個充滿櫻花色彩的空間裡，分享知識與溫暖的故事吧 🌸✨
+  
+# 網站基本資訊
+url: "https://milk90118.github.io"  # 添加網站 URL
+baseurl: ""  # 留空因為使用 username.github.io
+repository: "milk90118/milk90118.github.io"  # 添加 repo 資訊
+
+# 社交媒體（修正你原有的設定）
+twitter_username: # 如果沒有 Twitter 可以留空或刪除
 github_username: milk90118
-# minimal_mistakes_skin: dark
+
+# 使用自訂樣式，不用預設 skin
+# minimal_mistakes_skin: dark  # 註解掉這行，使用我們的日本色彩
+
 search: true
 
 # Build settings
 markdown: kramdown
 remote_theme: mmistakes/minimal-mistakes
+
 # Outputting
 permalink: /:categories/:title/
 paginate: 5 # amount of posts to show
 paginate_path: /page:num/
-timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: Asia/Taipei  # 設定台灣時區
 
 include:
   - _pages
@@ -57,36 +68,46 @@ plugins:
   - jemoji
   - jekyll-include-cache
 
+# 作者資訊（基於你原有的，加上可愛元素）
 author:
-  name   : "蘇玟予"
-  avatar : "/assets/images/bio-photo.jpg"
-  bio    : "每天都在探索新事物，喜歡寫作和分享。"
+  name: "🌸 蘇玟予 (M醬)"  # 保留原名，加上暱稱
+  avatar: "/assets/images/bio-photo.jpg"  # 保留你的頭像路徑
+  bio: "💻 每天都在探索新事物的工程師<br/>📝 喜歡寫作和分享生活<br/>🎌 正在學習更多有趣的技術"
+  location: "🏠 Taipei, Taiwan"  # 添加位置
+  email: "milk900118@gmail.com"  # 添加 email
   links:
-    - label: "Website"
-      icon: "fas fa-fw fa-link"
-      url: "https://"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/"
-    - label: "GitHub"
+    - label: "📧 Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:milk900118@gmail.com"  # 修正為你的真實 email
+    - label: "🐙 GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/"
+      url: "https://github.com/milk90118"  # 修正為你的真實 GitHub
+    # 其他社交媒體（如果沒有可以註解掉）
+    # - label: "🐦 Twitter"
+    #   icon: "fab fa-fw fa-twitter-square"
+    #   url: "https://twitter.com/your-username"
+    # - label: "📷 Instagram"
+    #   icon: "fab fa-fw fa-instagram"
+    #   url: "https://instagram.com/your-username"
 
+# 頁腳連結（保留你想要的）
 footer:
   links:
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/"
+      url: "https://github.com/milk90118"  # 修正為你的真實 GitHub
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:milk900118@gmail.com"
+    # 其他連結如果沒有可以註解掉
+    # - label: "Twitter"
+    #   icon: "fab fa-fw fa-twitter-square"
+    #   url: "https://twitter.com/"
+    # - label: "Instagram"
+    #   icon: "fab fa-fw fa-instagram"
+    #   url: "https://instagram.com/"
 
+# 預設設定（你原有的很好，稍微增強）
 defaults:
   # _posts
   - scope:
@@ -99,6 +120,11 @@ defaults:
       comments: true
       share: true
       related: true
+      show_date: true
+      classes: wide  # 添加寬版面
+      toc: true  # 自動生成目錄
+      toc_label: "📋 文章目錄"
+      toc_icon: "list-ul"
   # _pages
   - scope:
       path: "_pages"
@@ -106,10 +132,57 @@ defaults:
     values:
       layout: single
       author_profile: true
+      classes: wide
 
+# 歸檔設定（保留你原有的）
 category_archive:
   type: liquid
   path: /categories/
 tag_archive:
   type: liquid
   path: /tags/
+
+# 新增功能設定
+
+# 留言系統（推薦使用 utterances，免費且美觀）
+comments:
+  provider: "utterances"
+  utterances:
+    theme: "github-light"  # 配合我們的淺色主題
+    issue_term: "pathname"
+    repo: "milk90118/milk90118.github.io"  # 你的 repo
+
+# SEO 優化
+locale: "zh-TW"
+og_image: "/assets/images/site-logo.png"  # 如果有的話
+
+# 社交媒體資訊
+social:
+  type: "Person"
+  name: "蘇玟予"
+  links:
+    - "https://github.com/milk90118"
+
+# 搜尋功能增強
+search_full_content: true
+search_provider: lunr
+
+# 閱讀時間設定
+words_per_minute: 200  # 中文閱讀速度
+
+# 日期格式
+date_format: "%Y年%m月%d日"
+
+# 相關文章
+related_posts_count: 3
+
+# Feed 設定
+atom_feed:
+  path: # 使用預設 /feed.xml
+  hide: false
+
+# 分析工具（如果需要的話）
+# analytics:
+#   provider: "google-gtag"
+#   google:
+#     tracking_id: "G-XXXXXXXXXX"  # 你的 Google Analytics ID

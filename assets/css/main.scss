@@ -1,5 +1,70 @@
+// 載入可愛的 Google Fonts 日本字體
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;400;500;700&family=Kosugi+Maru&family=Sawarabi+Gothic&display=swap');
+
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
 @import "minimal-mistakes";
+
+/* =============================================================================
+   可愛日本字體設定
+   ============================================================================= */
+
+:root {
+  --cute-font-main: 'M PLUS Rounded 1c', 'Kosugi Maru', 'Noto Sans CJK TC', 
+                    'PingFang TC', 'Microsoft JhengHei', sans-serif;
+  --cute-font-title: 'Kosugi Maru', 'M PLUS Rounded 1c', 'Noto Sans CJK TC', 
+                     'PingFang TC', 'Microsoft JhengHei', sans-serif;
+  --cute-font-accent: 'Sawarabi Gothic', 'M PLUS Rounded 1c', sans-serif;
+}
+
+/* 主要內容字體 */
+body {
+  font-family: var(--cute-font-main);
+  font-weight: 400;
+  line-height: 1.8;
+  letter-spacing: 0.02em;
+}
+
+/* 標題字體 */
+h1, h2, h3, h4, h5, h6,
+.page__title,
+.page__hero-title,
+.site-title {
+  font-family: var(--cute-font-title) !important;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+/* 導航和選單 */
+.greedy-nav,
+.nav__title,
+.masthead {
+  font-family: var(--cute-font-title);
+  font-weight: 500;
+}
+
+/* 按鈕文字 */
+.btn {
+  font-family: var(--cute-font-accent);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+/* 側邊欄文字 */
+.sidebar {
+  font-family: var(--cute-font-main);
+}
+
+/* 文章內容 */
+.page__content {
+  font-family: var(--cute-font-main);
+  font-size: 1.1em;
+}
+
+/* 標籤文字 */
+.page__taxonomy-item {
+  font-family: var(--cute-font-accent);
+  font-weight: 500;
+}
 
 /* =============================================================================
    日本傳統色彩 - 春櫻主題
@@ -7,69 +72,105 @@
 
 /* 頂部導航列 */
 .masthead {
-  background: linear-gradient(135deg, #FFADD6 0%, #F5B2B2 100%); /* 櫻花色漸層 */
+  background: linear-gradient(135deg, #FFADD6 0%, #F5B2B2 100%);
   border-bottom: 1px solid rgba(47, 93, 98, 0.1);
 }
 
 .site-title {
-  color: #2F5D62 !important; /* 納戸色 */
-  font-weight: bold;
+  color: #2F5D62 !important;
+  font-weight: 500;
   text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.site-title:hover {
+  transform: scale(1.05);
+  text-shadow: 2px 2px 4px rgba(255, 173, 214, 0.3);
 }
 
 /* 導航選單連結 */
 .greedy-nav a {
-  color: #2F5D62 !important; /* 納戸色 */
+  color: #2F5D62 !important;
   font-weight: 500;
 }
 
 .greedy-nav a:hover {
-  color: #1E50A2 !important; /* 瑠璃色 */
+  color: #1E50A2 !important;
 }
 
 /* 頁面標題 */
 .page__title {
-  color: #2F5D62; /* 納戸色 */
-  border-bottom: 3px solid #F8B500; /* 山吹色 */
+  color: #2F5D62;
+  border-bottom: 3px solid #F8B500;
   padding-bottom: 10px;
   margin-bottom: 20px;
+  position: relative;
+}
+
+.page__title::before {
+  content: "🌸 ";
+  margin-right: 8px;
 }
 
 /* 所有連結 */
 a {
-  color: #1E50A2; /* 瑠璃色 */
+  color: #1E50A2;
   text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
 }
 
 a:hover {
-  color: #F17C67; /* 珊瑚色 */
-  text-decoration: underline;
+  color: #F17C67;
+  text-decoration: none;
+  transform: translateY(-1px);
+  text-shadow: 1px 1px 3px rgba(30, 80, 162, 0.2);
 }
 
 /* 按鈕樣式 */
 .btn {
-  background-color: #68BE8D; /* 若竹色 */
+  background-color: #68BE8D;
   color: white;
   border: none;
-  border-radius: 6px;
+  border-radius: 20px;
   padding: 8px 16px;
   font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(104, 190, 141, 0.2);
 }
 
 .btn:hover {
-  background-color: #93B881; /* 萌黄 */
+  background-color: #93B881;
   color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(104, 190, 141, 0.3);
 }
 
 /* 文章列表項目 */
 .archive__item {
   background: white;
-  border-left: 4px solid #C5C56A; /* 抹茶色 */
+  border-left: 4px solid #C5C56A;
   padding: 20px;
   margin-bottom: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(47, 93, 98, 0.08);
   transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.archive__item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(255, 173, 214, 0.1), 
+    transparent);
+  transition: left 0.5s ease;
 }
 
 .archive__item:hover {
@@ -77,9 +178,13 @@ a:hover {
   box-shadow: 0 4px 20px rgba(47, 93, 98, 0.12);
 }
 
+.archive__item:hover::before {
+  left: 100%;
+}
+
 /* 側邊欄 */
 .sidebar {
-  background-color: rgba(232, 244, 248, 0.5); /* 藍白色半透明 */
+  background-color: rgba(232, 244, 248, 0.5);
   padding: 20px;
   border-radius: 10px;
   backdrop-filter: blur(10px);
@@ -87,40 +192,51 @@ a:hover {
 
 /* 作者頭像 */
 .author__avatar img {
-  border: 3px solid #F8B500; /* 山吹色 */
+  border: 3px solid #F8B500;
   box-shadow: 0 2px 10px rgba(248, 181, 0, 0.3);
 }
 
 /* 標籤 */
 .page__taxonomy-item {
-  background-color: #B8D4E3; /* 水色 */
-  color: #2F5D62; /* 納戸色 */
+  background-color: #B8D4E3;
+  color: #2F5D62;
   border-radius: 15px;
   padding: 4px 12px;
   font-size: 0.85em;
   font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.page__taxonomy-item::before {
+  content: "#";
+  margin-right: 2px;
+  opacity: 0.7;
 }
 
 .page__taxonomy-item:hover {
-  background-color: #A6A5A0; /* 銀鼠 */
+  background-color: #A6A5A0;
   color: white;
+  transform: scale(1.05);
+  box-shadow: 0 2px 8px rgba(184, 212, 227, 0.4);
 }
 
 /* 頁腳 */
 .page__footer {
-  background-color: #566C73; /* 藍鼠 */
-  color: #E8F4F8; /* 藍白 */
+  background-color: #566C73;
+  color: #E8F4F8;
   margin-top: 40px;
 }
 
 .page__footer a {
-  color: #B8D4E3; /* 水色 */
+  color: #B8D4E3;
 }
 
 /* 程式碼區塊 */
 .highlight {
-  background-color: #E8F4F8; /* 藍白 */
-  border-left: 4px solid #1E50A2; /* 瑠璃色 */
+  background-color: #E8F4F8;
+  border-left: 4px solid #1E50A2;
   border-radius: 6px;
   padding: 15px;
   margin: 20px 0;
@@ -128,12 +244,23 @@ a:hover {
 
 /* 引用文字 */
 blockquote {
-  border-left: 4px solid #F17C67; /* 珊瑚色 */
-  background-color: rgba(255, 173, 214, 0.1); /* 櫻花色淺色 */
+  border-left: 4px solid #F17C67;
+  background-color: rgba(255, 173, 214, 0.1);
   padding: 15px 20px;
   margin: 20px 0;
   border-radius: 0 6px 6px 0;
-  font-style: italic;
+  font-family: var(--cute-font-title);
+  font-style: normal;
+  font-weight: 400;
+  position: relative;
+}
+
+blockquote::before {
+  content: "💭";
+  position: absolute;
+  left: -10px;
+  top: -5px;
+  font-size: 1.2em;
 }
 
 /* 文章內容區域 */
@@ -145,30 +272,18 @@ blockquote {
   border-radius: 10px;
 }
 
-/* 字體優化 */
-body {
-  font-family: "Noto Sans CJK TC", "PingFang TC", "Microsoft JhengHei", 
-               "Hiragino Sans GB", "Source Han Sans TC", sans-serif;
-  line-height: 1.8;
-}
-
-/* 文章標題在文章頁面 */
-.page__hero-title,
-.page__title {
-  font-family: "Noto Serif CJK TC", "PingFang TC", "Microsoft JhengHei", serif;
-}
-
-/* 輸入框樣式（搜尋等） */
+/* 輸入框樣式 */
 input[type="search"],
 input[type="text"] {
-  border: 2px solid #B8D4E3; /* 水色 */
+  border: 2px solid #B8D4E3;
   border-radius: 6px;
   padding: 8px 12px;
+  font-family: var(--cute-font-main);
 }
 
 input[type="search"]:focus,
 input[type="text"]:focus {
-  border-color: #1E50A2; /* 瑠璃色 */
+  border-color: #1E50A2;
   outline: none;
   box-shadow: 0 0 5px rgba(30, 80, 162, 0.3);
 }
