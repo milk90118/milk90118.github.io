@@ -33,7 +33,7 @@
   --interface-font: 'Zen Maru Gothic', 'Kiwi Maru', 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
   
   /* 內文閱讀字體 - 改為 Kiwi Maru 為主 */
-  --reading-font-sans: 'Kiwi Maru','Zen Maru Gothic', 'Noto Sans TC', 'Noto Sans JP', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+  --reading-font-sans: 'Kiwi Maru', 'Noto Sans TC', 'Noto Sans JP', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
   --reading-font-serif: 'Noto Serif JP', 'Shippori Mincho', 'Noto Serif CJK TC', 'PingFang TC', 'Microsoft JhengHei', serif;
   
   /* 英文字體 (保持典雅風格) */
@@ -549,7 +549,7 @@ blockquote::before {
 
 /* 首字放大效果 - 使用最典雅字體 */
 .page__content > p:first-of-type::first-letter {
-  font-size: 3.5em;
+  font-size: 2em;
   font-family: var(--en-title-font);
   font-weight: 400;
   float: left;
