@@ -23,6 +23,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Tuffy:wght@400;500;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;600;700&display=swap');
 
 /* Minimal‑Mistakes Imports (按官方順序) */
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
@@ -50,7 +51,7 @@
   --en-accent-font: 'Libre Baskerville', 'Times New Roman', serif;
   --en-quote-font: 'DM Serif Text', 'Georgia', serif;
   
-  --en-code-font: 'Overpass', 'Courier New', monospace;
+  --en-code-font: 'Fira Mono', 'Courier New', monospace;
 
   /* 日間模式色彩 (溫柔日本色票) */
   --day-primary: #FFADD6;     /* 櫻花色 */
@@ -184,21 +185,21 @@ h1 {
   font-size: 2.2em; 
   font-weight: 900 !important;
   letter-spacing: -0.03em !important;
-  font-family: var(--en-title-font), var(--interface-tc-font) !important;
+  font-family: var(--en-title-font), var(--interface-en-font), var(--interface-tc-font) !important;
 }
 
 h2 { 
   font-size: 1.8em; 
   font-weight: 700 !important;
   letter-spacing: -0.02em !important;
-  font-family: var(--en-title-font), var(--interface-tc-font) !important;
+  font-family: var(--en-title-font), var(--interface-en-font), var(--interface-tc-font) !important;
 }
 
 h3 { 
   font-size: 1.4em; 
   font-weight: 600 !important;
   letter-spacing: -0.01em !important;
-  font-family: var(--en-title-font), var(--interface-tc-font) !important;
+  font-family: var(--en-title-font), var(--interface-en-font), var(--interface-tc-font) !important;
 }
 
 /* =============================================================================
@@ -231,7 +232,7 @@ h3 {
 /* 導航連結 - 保持 Zen Maru Gothic 介面風格 */
 .greedy-nav a {
   color: var(--current-text) !important;
-  font-family: var(--interface-tc-font) !important;
+  font-family: var(--en-title-font), var(--interface-en-font), var(--interface-tc-font) !important;
   font-weight: 600 !important;
   letter-spacing: -0.01em !important;
 }
