@@ -175,7 +175,7 @@ body {
 /* 標題字體 - 粗體 + 窄間距 */
 h1, h2, h3, h4, h5, h6,
 .page__title, .page__hero-title, .site-title {
-  font-family: var(--en-title-font), var(--interface-tc-font) !important;
+  font-family: var(--en-title-font), var(--interface-en-font), var(--interface-tc-font) !important;
   color: var(--current-text) !important;
   font-weight: 700 !important; /* 粗體 */
   letter-spacing: -0.02em !important; /* 稍微窄一點的間距 */
@@ -351,7 +351,7 @@ a:hover {
 /* 文章元資訊 */
 .archive__item .page__meta {
   margin-bottom: 0 !important; /* 移除底部間距 */
-  font-size: 0.5em !important; /* 更小的元資訊文字 */
+  font-size: 0.6em !important; /* 更小的元資訊文字 */
   color: var(--current-text-light) !important;
 }
 
@@ -370,7 +370,7 @@ a:hover {
     var(--current-bg-light) 0%, 
     var(--current-border) 100%) !important;
   padding: 18px !important; /* 減少內邊距 */
-  border-radius: 10px !important; /* 更小圓角 */
+  border-radius: 16px !important; /* 更小圓角 */
   border: 1px solid var(--current-border);
   backdrop-filter: blur(10px);
   position: sticky !important; /* 讓側邊欄固定 */
@@ -436,7 +436,7 @@ a:hover {
   color: var(--current-bg) !important;
   border-radius: 20px !important;
   padding: 6px 15px !important;
-  font-family: var(--en-accent-font), var(--interface-tc-font) !important;
+  font-family: var(--en-accent-font), var(--interface-en-font) !important;
   font-size: 0.85em !important;
   font-weight: 600 !important; /* 標籤粗體 */
   text-transform: uppercase;
@@ -475,7 +475,7 @@ blockquote::before {
   position: absolute;
   left: -15px;
   top: -10px;
-  font-size: 1.5em;
+  font-size: 1.05em;
   background: var(--current-bg);
   padding: 5px;
   border-radius: 50%;
