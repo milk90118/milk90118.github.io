@@ -33,7 +33,7 @@
   --interface-font: 'Zen Maru Gothic', 'Kiwi Maru', 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
   
   /* 內文閱讀字體 - 改為 Kiwi Maru 為主 */
-  --reading-font-sans: 'Kiwi Maru', 'Noto Sans TC', 'Noto Sans JP', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+  --reading-font-sans: 'Kiwi Maru','Zen Maru Gothic', 'Noto Sans TC', 'Noto Sans JP', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
   --reading-font-serif: 'Noto Serif JP', 'Shippori Mincho', 'Noto Serif CJK TC', 'PingFang TC', 'Microsoft JhengHei', serif;
   
   /* 英文字體 (保持典雅風格) */
@@ -238,7 +238,7 @@ h3 {
   position: relative;
   padding-bottom: 15px !important;
   margin-bottom: 25px !important;
-  font-weight: 1000 !important; /* 粗體 */
+  font-weight: 900 !important; /* 粗體 */
   letter-spacing: -0.02em !important; /* 窄間距 */
   line-height: 1.1 !important; /* 緊密行距 */
 }
@@ -453,7 +453,7 @@ blockquote {
   font-family: var(--en-quote-font), var(--reading-font-serif) !important;
   font-style: italic;
   font-size: 1.05em;
-  line-height: 1.7;
+  line-height: 1.3;
   position: relative;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
