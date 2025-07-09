@@ -525,8 +525,8 @@ blockquote::before {
   padding: 25px 30px !important; /* 減少內邊距 */
   border-radius: 10px !important; /* 更小圓角 */
   font-family: var(--en-body-font), var(--reading-font-sans) !important;
-  font-size: 0.8em !important;
-  line-height: 1.75;
+  font-size: 1.0em !important;
+  line-height: 1.5;
   margin-right: 320px !important; /* 為右側目錄留出空間 */
 }
 
@@ -596,7 +596,7 @@ input[type="search"]:focus, input[type="text"]:focus {
   position: fixed !important;
   right: 20px !important;
   top: 120px !important;
-  width: 280px !important;
+  width: 200px !important;
   max-height: calc(100vh - 150px) !important;
   overflow-y: auto !important;
   z-index: 999 !important;
@@ -635,7 +635,7 @@ input[type="search"]:focus, input[type="text"]:focus {
 
 .toc nav li {
   margin-bottom: 8px !important;
-  line-height: 1.4 !important;
+  line-height: 1.1 !important;
 }
 
 .toc nav a {
@@ -660,7 +660,7 @@ input[type="search"]:focus, input[type="text"]:focus {
 
 /* 目錄層級縮排 */
 .toc nav ul ul {
-  padding-left: 15px !important;
+  padding-left: 20px !important;
 }
 
 .toc nav ul ul a {
@@ -669,11 +669,11 @@ input[type="search"]:focus, input[type="text"]:focus {
 }
 
 .toc nav ul ul ul {
-  padding-left: 25px !important;
+  padding-left: 40px !important;
 }
 
 .toc nav ul ul ul a {
-  font-size: 0.75em !important;
+  font-size: 0.6em !important;
   opacity: 0.8;
 }
 
@@ -682,7 +682,7 @@ input[type="search"]:focus, input[type="text"]:focus {
   background: var(--current-accent) !important;
   color: var(--current-bg) !important;
   border-left: 3px solid var(--current-link) !important;
-  font-weight: 500 !important;
+  font-weight: 700 !important;
 }
 
 /* 移除側邊欄中的目錄 */
