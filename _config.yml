@@ -165,7 +165,7 @@ defaults:
       toc_icon: "list-ul"          # 目錄圖示 ⭐
       toc_sticky: true             # 目錄黏性定位 ⭐
       sidebar:
-        - title: "🌸 快速導航"
+        - title: "🌸 Navigator"
           text: |
             - [首頁](/)
             - [文章列表](/posts/)
@@ -184,7 +184,7 @@ defaults:
       toc: true                    # 頁面也啟用目錄 ⭐
       toc_label: "📖 頁面目錄"      # 頁面目錄標題 ⭐
       sidebar:
-        - title: "🌸 快速導航"
+        - title: "🌸 Navigator"
           text: |
             - [首頁](/)
             - [文章列表](/posts/)

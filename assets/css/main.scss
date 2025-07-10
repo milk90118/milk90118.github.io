@@ -238,6 +238,7 @@ h3 {
 /* 導航連結 - 保持 Zen Maru Gothic 介面風格 */
 .greedy-nav a {
   color: var(--current-text) !important;
+  font-size: 1em;
   font-family: var(--en-title-font), var(--interface-en-font), var(--interface-tc-font) !important;
   font-weight: 600 !important;
   letter-spacing: -0.01em !important;
@@ -562,12 +563,12 @@ blockquote::before {
 }
 
 .page__content li {
-  margin-bottom: 0.3em !important; /* 減少列表項間距 */
+  margin-bottom: 0.15em !important; /* 減少列表項間距 */
 }
 
 /* 首字放大效果 - 使用最典雅字體 */
 .page__content > p:first-of-type::first-letter {
-  font-size: 2em;
+  font-size: 1.8em;
   font-family: var(--en-title-font);
   font-weight: 400;
   float: left;
@@ -626,11 +627,12 @@ input[type="search"]:focus, input[type="text"]:focus {
   text-align: center;
   letter-spacing: 0.02em;
 }
-
+/*
 .toc .nav__title::before {
   content: "📖 ";
   margin-right: 5px;
 }
+  */
 
 /* 目錄列表樣式 */
 .toc nav ul {
@@ -641,14 +643,14 @@ input[type="search"]:focus, input[type="text"]:focus {
 
 .toc nav li {
   margin-bottom: 8px !important;
-  line-height: 1.1 !important;
+  line-height: 1.0 !important;
 }
 
 .toc nav a {
   color: var(--current-text) !important;
   text-decoration: none !important;
-  font-size: 0.6em !important;
-  font-family: var(--en-body-font), var(--reading-font-sans) !important;
+  font-size: 0.45em !important;
+  font-family: var(--en-title-font), var(--reading-font-sans) !important;
   font-weight: 400 !important;
   padding: 4px 8px !important;
   border-radius: 4px !important;
