@@ -193,7 +193,7 @@ h1 {
 }
 
 h2 { 
-  font-size: 1.8em; 
+  font-size: 1.8em;
   font-weight: 700 !important;
   letter-spacing: -0.02em !important;
   font-family: var(--en-title-font), var(--interface-en-font), var(--interface-tc-font) !important;
@@ -226,6 +226,7 @@ h3 {
   text-decoration: none !important;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   letter-spacing: -0.01em !important; /* 窄間距 */
+  font-family: var(--bold-title-font) !important;
 }
 
 .site-title:hover {
@@ -256,6 +257,7 @@ h3 {
   font-weight: 900 !important; /* 粗體 */
   letter-spacing: -0.02em !important; /* 窄間距 */
   line-height: 1.1 !important; /* 緊密行距 */
+  font-family: var(--bold-title-font) !important;
 }
 
 // .page__title::before {
