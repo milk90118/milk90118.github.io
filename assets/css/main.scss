@@ -10,6 +10,92 @@
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
 @import "minimal-mistakes";
 
+/* _fonts.scss */
+/* 字體引入 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Marcellus:wght@100;300;400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@100;300;400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tenor+Sans:wght@400;500;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tuffy:wght@400;500;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Andika:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Hong+Kong:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:wght@400;500;600;700&display=swap');
+
+/* _variables.scss */
+
+/* 字體變數 + 色票 */
+:root {
+  --interface-tc-font: 'Zen Maru Gothic', 'Kiwi Maru', 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+  --interface-en-font: 'Tenor Sans', 'Helvetica Neue', 'Arial', sans-serif;
+  --reading-font-sans: 'Noto Sans TC', 'Kiwi Maru', 'Noto Sans JP', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+  --reading-font-serif: 'Noto Serif Hong Kong', 'Shippori Mincho', 'Noto Serif CJK TC', 'PingFang TC', 'Microsoft JhengHei', serif;
+  --bold-title-font: 'Passion one', 'Noto Serif JP', 'Shippori Mincho', 'Noto Serif CJK TC', sans-serif;
+  --en-title-font: 'Marcellus', 'Times New Roman', serif;
+  --en-body-font: 'Andika', 'Helvetica Neue', 'Arial', sans-serif;
+  --en-accent-font: 'Hedvig Letters Serif', 'Times New Roman', serif;
+  --en-quote-font: 'DM Serif Text', 'Georgia', serif;
+  --en-code-font: 'Fira Mono', 'Courier New', monospace;
+
+  /* 日間色票 */
+  --day-primary: #FFADD6;
+  --day-secondary: #F5B2B2;
+  --day-accent: #F8B500;
+  --day-text: #2F5D62;
+  --day-text-light: #566C73;
+  --day-link: #1E50A2;
+  --day-link-hover: #F17C67;
+  --day-bg: #FFFFFF;
+  --day-bg-light: #E8F4F8;
+  --day-border: #B8D4E3;
+  --day-button: #68BE8D;
+  --day-button-hover: #93B881;
+  --day-tag: #C5C56A;
+
+  /* 預設使用日間 */
+  --current-primary: var(--day-primary);
+  --current-secondary: var(--day-secondary);
+  --current-accent: var(--day-accent);
+  --current-text: var(--day-text);
+  --current-text-light: var(--day-text-light);
+  --current-link: var(--day-link);
+  --current-link-hover: var(--day-link-hover);
+  --current-bg: var(--day-bg);
+  --current-bg-light: var(--day-bg-light);
+  --current-border: var(--day-border);
+  --current-button: var(--day-button);
+  --current-button-hover: var(--day-button-hover);
+  --current-tag: var(--day-tag);
+}
+
+/* 夜間模式切換 */
+[data-theme="dark"] {
+  --current-primary: var(--night-primary);
+  --current-secondary: var(--night-secondary);
+  --current-accent: var(--night-accent);
+  --current-text: var(--night-text);
+  --current-text-light: var(--night-text-light);
+  --current-link: var(--night-link);
+  --current-link-hover: var(--night-link-hover);
+  --current-bg: var(--night-bg);
+  --current-bg-light: var(--night-bg-light);
+  --current-border: var(--night-border);
+  --current-button: var(--night-button);
+  --current-button-hover: var(--night-button-hover);
+  --current-tag: var(--night-tag);
+}
+
+
+
 /* 平滑過渡效果 */
 * {
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
