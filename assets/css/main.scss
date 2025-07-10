@@ -4,100 +4,13 @@
 /* stylelint-disable */
 
 /* 字體 */
-@import "fonts";
+@import "_fonts";
 
 /* Minimal‑Mistakes Imports (按官方順序) */
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
 @import "minimal-mistakes";
 
-/* =============================================================================
-   日本色票變數定義 - 日夜模式
-   ============================================================================= */
-
-:root {
-  /* 字體變數 - 分離內文與介面字體 */
-  
-  /* 介面字體 - Zen Maru Gothic (保持原有可愛風格) */
-  --interface-tc-font: 'Zen Maru Gothic', 'Kiwi Maru', 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
-  
-  --interface-en-font: 'Tenor Sans', 'Helvetica Neue', 'Arial', sans-serif;
-
-  /* 內文閱讀字體 - 改為 Kiwi Maru 為主 */
-  --reading-font-sans: 'Noto Sans TC', 'Kiwi Maru', 'Noto Sans JP', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
-  --reading-font-serif: 'Noto Serif Hong Kong', 'Shippori Mincho', 'Noto Serif CJK TC', 'PingFang TC', 'Microsoft JhengHei', serif;
-  
-  --bold-title-font: 'Passion one', 'Noto Serif JP', 'Shippori Mincho', 'Noto Serif CJK TC', sans-serif;
-
-  /* 英文字體 (保持典雅風格) */
-  --en-title-font: 'Marcellus', 'Times New Roman', serif;
-  --en-body-font: 'Andika', 'Helvetica Neue', 'Arial', sans-serif;
-  --en-accent-font: 'Hedvig Letters Serif', 'Times New Roman', serif;
-  --en-quote-font: 'DM Serif Text', 'Georgia', serif;
-  
-  --en-code-font: 'Fira Mono', 'Courier New', monospace;
-
-  /* 日間模式色彩 (溫柔日本色票) */
-  --day-primary: #FFADD6;     /* 櫻花色 */
-  --day-secondary: #F5B2B2;   /* 鴇色 */
-  --day-accent: #F8B500;      /* 山吹色 */
-  --day-text: #2F5D62;        /* 納戸色 */
-  --day-text-light: #566C73;  /* 藍鼠 */
-  --day-link: #1E50A2;        /* 瑠璃色 */
-  --day-link-hover: #F17C67;  /* 珊瑚色 */
-  --day-bg: #FFFFFF;          /* 白色 */
-  --day-bg-light: #E8F4F8;    /* 藍白 */
-  --day-border: #B8D4E3;      /* 水色 */
-  --day-button: #68BE8D;      /* 若竹色 */
-  --day-button-hover: #93B881; /* 萌黄 */
-  --day-tag: #C5C56A;         /* 抹茶色 */
-  
-  /* 夜間模式色彩 (溫柔夜色日本色票) */
-  --night-primary: #4A4458;    /* 紫鼠色 */
-  --night-secondary: #5C4A72;  /* 深紫苑色 */
-  --night-accent: #D4AF37;     /* 山吹色 (稍暗) */
-  --night-text: #E8E3D3;      /* 象牙色 */
-  --night-text-light: #C8C3B8; /* 灰白色 */
-  --night-link: #9BB8D3;      /* 淡瑠璃色 */
-  --night-link-hover: #E8A87C; /* 淡珊瑚色 */
-  --night-bg: #2C2C2C;        /* 深灰 */
-  --night-bg-light: #383838;   /* 中灰 */
-  --night-border: #4F4F4F;     /* 邊框灰 */
-  --night-button: #6B8E7F;     /* 暗若竹色 */
-  --night-button-hover: #7BA05B; /* 暗萌黄 */
-  --night-tag: #8B956D;        /* 暗抹茶色 */
-  
-  /* 預設使用日間模式 */
-  --current-primary: var(--day-primary);
-  --current-secondary: var(--day-secondary);
-  --current-accent: var(--day-accent);
-  --current-text: var(--day-text);
-  --current-text-light: var(--day-text-light);
-  --current-link: var(--day-link);
-  --current-link-hover: var(--day-link-hover);
-  --current-bg: var(--day-bg);
-  --current-bg-light: var(--day-bg-light);
-  --current-border: var(--day-border);
-  --current-button: var(--day-button);
-  --current-button-hover: var(--day-button-hover);
-  --current-tag: var(--day-tag);
-}
-
-/* 夜間模式變數切換 */
-[data-theme="dark"] {
-  --current-primary: var(--night-primary);
-  --current-secondary: var(--night-secondary);
-  --current-accent: var(--night-accent);
-  --current-text: var(--night-text);
-  --current-text-light: var(--night-text-light);
-  --current-link: var(--night-link);
-  --current-link-hover: var(--night-link-hover);
-  --current-bg: var(--night-bg);
-  --current-bg-light: var(--night-bg-light);
-  --current-border: var(--night-border);
-  --current-button: var(--night-button);
-  --current-button-hover: var(--night-button-hover);
-  --current-tag: var(--night-tag);
-}
+@import "_variables";
 
 /* 平滑過渡效果 */
 * {
