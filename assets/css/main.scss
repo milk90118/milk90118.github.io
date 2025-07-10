@@ -25,6 +25,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Tuffy:wght@400;500;600;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Andika:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;500;600;700;800;900&display=swap');
 
 /* Minimal‑Mistakes Imports (按官方順序) */
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
@@ -46,6 +47,8 @@
   --reading-font-sans: 'Noto Sans TC', 'Kiwi Maru', 'Noto Sans JP', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
   --reading-font-serif: 'Noto Serif JP', 'Shippori Mincho', 'Noto Serif CJK TC', 'PingFang TC', 'Microsoft JhengHei', serif;
   
+  --bold-title-font: 'Passion one', 'Noto Serif JP', 'Shippori Mincho', 'Noto Serif CJK TC', sans-serif;
+
   /* 英文字體 (保持典雅風格) */
   --en-title-font: 'Marcellus', 'Times New Roman', serif;
   --en-body-font: 'Andika', 'Helvetica Neue', 'Arial', sans-serif;
@@ -175,7 +178,7 @@ body {
 /* 標題字體 - 粗體 + 窄間距 */
 h1, h2, h3, h4, h5, h6,
 .page__title, .page__hero-title, .site-title {
-  font-family: var(--en-title-font), var(--interface-en-font), var(--interface-tc-font) !important;
+  font-family: var(--bold-title-font), var(--interface-en-font), var(--interface-tc-font) !important;
   color: var(--current-text) !important;
   font-weight: 700 !important; /* 粗體 */
   letter-spacing: -0.02em !important; /* 稍微窄一點的間距 */
