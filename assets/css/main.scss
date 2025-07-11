@@ -44,7 +44,7 @@
   --reading-font-main: var(--reading-font-serif); // 切換用
   
   /* 介面字體 - Zen Maru Gothic (保持原有可愛風格) */
-  --interface-tc-font: 'Zen Maru Gothic', 'Kiwi Maru', 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+  --interface-tc-font:  'Kiwi Maru','Zen Maru Gothic', 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
   
   --interface-en-font: 'Tenor Sans', 'Helvetica Neue', 'Arial', sans-serif;
 
@@ -510,7 +510,7 @@ blockquote::before {
   background: linear-gradient(135deg, 
     var(--current-bg-light) 0%, 
     var(--current-border) 100%) !important;
-  border-left: 4px solid var(--current-link) !important; /* 更細邊框 */
+  border-left: 8px solid var(--current-link) !important; /* 更細邊框 */
   border-radius: 6px !important; /* 更小圓角 */
   padding: 12px 15px !important; /* 減少內邊距 */
   margin: 15px 0 !important; /* 減少外邊距 */

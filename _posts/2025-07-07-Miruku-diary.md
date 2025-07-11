@@ -40,10 +40,10 @@ tags:
     - `50%` from lung, breast `15%` in women
 - 🛡️ BBB 破壞 → ==**Contrast Enhancement**==
     - Pilocytic astrocytoma: grade 2 沿著白質浸潤不會破壞BBB
-### Intra-axial Tumor
+### 🎯 Intra-axial Tumor
 - 常見：轉移、星狀細胞瘤（含水量多 → T1低 + T2高訊號）
     - DDx from meningioma
-### Extra-axial Tumor
+### 🎯 Extra-axial Tumor
 - 最常見：Meningioma
 - 六種特徵
     - Wideining of the ipsilateral subarachnoid space 蜘蛛膜下腔變大變寬
