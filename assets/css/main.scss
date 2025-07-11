@@ -531,7 +531,7 @@ blockquote::before {
   color: var(--current-text) !important;
   padding: 25px 30px !important; /* 減少內邊距 */
   border-radius: 10px !important; /* 更小圓角 */
-  font-family: var(--en-body-font), var(--reading-font-sans) !important;
+  font-family: var(--en-body-font), var(--reading-font-serif) !important;
   font-size: 1.0em !important;
   line-height: 1.5;
   margin-right: 320px !important; /* 為右側目錄留出空間 */
