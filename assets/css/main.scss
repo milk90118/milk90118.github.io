@@ -41,6 +41,7 @@
 
 :root {
   /* 字體變數 - 分離內文與介面字體 */
+  --reading-font-main: var(--reading-font-serif); // 切換用
   
   /* 介面字體 - Zen Maru Gothic (保持原有可愛風格) */
   --interface-tc-font: 'Zen Maru Gothic', 'Kiwi Maru', 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
@@ -171,7 +172,7 @@
    ============================================================================= */
 
 body {
-  font-family: var(--en-body-font), var(--reading-font-serif) !important;
+  font-family: var(--en-body-font), var(--reading-font-main) !important;
   font-weight: 400;
   line-height: 1.8;
   letter-spacing: 0.02em;
@@ -472,8 +473,7 @@ blockquote {
   padding: 20px 25px !important;
   margin: 25px 0 !important;
   border-radius: 0 15px 15px 0 !important;
-  font-family: var(--en-quote-font), var(--reading-font-serif) !important;
-  font-style: bold;
+  font-family: var(--en-quote-font), var(--reading-font-main) !important;
   font-size: 0.8em;
   line-height: 1.0;
   position: relative;
@@ -534,7 +534,7 @@ blockquote::before {
   color: var(--current-text) !important;
   padding: 25px 30px !important; /* 減少內邊距 */
   border-radius: 10px !important; /* 更小圓角 */
-  font-family: var(--en-body-font), var(--reading-font-serif) !important;
+  font-family: var(--en-body-font), var(--reading-font-main) !important;
   font-size: 1.0em !important;
   line-height: 1.5;
   margin-right: 320px !important; /* 為右側目錄留出空間 */
