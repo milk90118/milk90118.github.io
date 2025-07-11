@@ -27,6 +27,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Hong+Kong:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cactus+Classical+Serif:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chiron+Sung+HK:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Hong+Kong:wght@400;500;600;700&display=swap');
 
 /* Minimal‑Mistakes Imports (按官方順序) */
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
@@ -46,7 +49,7 @@
 
   /* 內文閱讀字體 - 改為 Kiwi Maru 為主 */
   --reading-font-sans: 'Noto Sans TC', 'Kiwi Maru', 'Noto Sans JP', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
-  --reading-font-serif: 'Noto Serif Hong Kong', 'Shippori Mincho', 'Noto Serif CJK TC', 'PingFang TC', 'Microsoft JhengHei', serif;
+  --reading-font-serif: 'Chiron Sung HK', 'Cactus Classical Serif', 'Noto Serif Hong Kong', 'PingFang TC', 'Microsoft JhengHei', serif;
   
   --bold-title-font: 'Passion one', 'Noto Serif JP', 'Shippori Mincho', 'Noto Serif CJK TC', sans-serif;
 
