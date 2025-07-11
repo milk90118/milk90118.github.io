@@ -6,7 +6,9 @@
    Font Imports
    ======================================================================== */
 /* 1. Noto Sans TC – 完整字重系列 */
+
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Potta+One:wght@100;200;300;400;500;600;700;800;900&display=swap');
 /* 2. Cormorant Garamond – 完整字重與斜體 */
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
 /* 3. Zen Maru Gothic – 介面主字體 */
@@ -44,7 +46,7 @@
   --reading-font-main: var(--reading-font-serif); // 切換用
   
   /* 介面字體 - Zen Maru Gothic (保持原有可愛風格) */
-  --interface-tc-font:  'Kiwi Maru','Zen Maru Gothic', 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+  --interface-tc-font:  'potta One','Zen Maru Gothic', 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
   
   --interface-en-font: 'Tenor Sans', 'Helvetica Neue', 'Arial', sans-serif;
 
