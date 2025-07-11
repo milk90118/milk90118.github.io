@@ -465,19 +465,27 @@ a:hover {
 
 /* 引用文字 - 使用詩意字體 */
 blockquote {
-  border-left: 5px solid var(--current-link-hover) !important;
-  background: linear-gradient(135deg, 
-    var(--current-bg-light) 0%, 
-    var(--current-border) 100%) !important;
+  border-left: 4px solid var(--current-link-hover) !important;
+  background: linear-gradient(135deg, var(--current-bg-light), var(--current-border)) !important;
   color: var(--current-text) !important;
-  padding: 20px 25px !important;
-  margin: 25px 0 !important;
-  border-radius: 0 15px 15px 0 !important;
+
+  /* 🔽 原本 padding: 20px 25px → 改成更窄的 */
+  padding: 12px 16px !important;
+
+  /* 🔽 原本 margin: 25px 0 → 縮小整體佔位感 */
+  margin: 16px 0 !important;
+
+  border-radius: 0 12px 12px 0 !important;
   font-family: var(--en-quote-font), var(--reading-font-main) !important;
-  font-size: 0.8em;
-  line-height: 1.0;
+
+  /* 建議調整 */
+  font-size: 0.9em;
+  line-height: 1.5;
+  font-style: italic;
+  font-weight: 500;
+
   position: relative;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
 blockquote::before {
@@ -494,6 +502,7 @@ blockquote::before {
 
 [data-theme="dark"] blockquote::before {
   content: "🌌";
+  background: var(--current-bg);
 }
 
 /* 程式碼區塊 - 緊湊版 */
