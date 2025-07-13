@@ -148,8 +148,8 @@ ICH 為主**
 - Pandemic
 - Ebola
 - Convolutional
-```
-the first 6 words are affected by LLMs
+
+```the first 6 words are affected by LLMs
 the last 3 related to major events 
 that influenced scientific writing and are shown for comparison
 ```
