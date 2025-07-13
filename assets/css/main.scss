@@ -523,6 +523,7 @@ blockquote::before {
 .highlight code {
   font-size: 0.9em !important; /* 稍微小一點 */
   line-height: 1.4 !important; /* 緊密行距 */
+  color: var(--day-text) !important;
 }
 
 /* 頁腳 */
