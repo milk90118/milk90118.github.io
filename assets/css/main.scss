@@ -510,7 +510,7 @@ blockquote::before {
 /* 程式碼區塊 - 緊湊版 */
 .highlight {
   background: linear-gradient(135deg, 
-    var(--current-bg-light) 0%, 
+    var(--current-bg) 0%, 
     var(--current-border) 100%) !important;
   border-left: 8px solid var(--current-link) !important; /* 更細邊框 */
   border-radius: 6px !important; /* 更小圓角 */
@@ -631,7 +631,7 @@ input[type="search"]:focus, input[type="text"]:focus {
 /* 目錄標題 */
 .toc .nav__title {
   background: var(--current-tag) !important;
-  color: var(--current-bg) !important;
+  color: var(--current-text) !important;
   font-family: var(--en-accent-font), var(--interface-tc-font) !important;
   font-weight: 600 !important;
   font-size: 0.9em !important;
