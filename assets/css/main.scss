@@ -273,6 +273,7 @@ h3 {
   font-family: var(--en-title-font), var(--interface-en-font), var(--interface-tc-font) !important;
   font-weight: 600 !important;
   letter-spacing: -0.01em !important;
+  background: var(--current-border) !important;
 }
 
 .greedy-nav a:hover {
