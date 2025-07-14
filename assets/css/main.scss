@@ -282,6 +282,7 @@ h3 {
 /* 頁面標題 - 粗體緊密 */
 .page__title {
   color: var(--current-text) !important;
+  background: var(--current-border) !important;
   border-bottom: 3px solid var(--current-accent) !important;
   text-align: center;
   position: relative;
