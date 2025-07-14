@@ -81,6 +81,11 @@
   --day-button: #68BE8D;      /* 若竹色 */
   --day-button-hover: #93B881; /* 萌黄 */
   --day-tag: #C5C56A;         /* 抹茶色 */
+
+  --day-code-bg: #F8F9FA;
+  --day-code-text: #2D3748;
+  --day-inline-code-bg: #EDF2F7;
+  --day-inline-code-text: #C53030;
   
   /* 夜間模式色彩 (溫柔夜色日本色票) */
   --night-primary: #4A4458;    /* 紫鼠色 */
@@ -96,6 +101,11 @@
   --night-button: #6B8E7F;     /* 暗若竹色 */
   --night-button-hover: #7BA05B; /* 暗萌黄 */
   --night-tag: #8B956D;        /* 暗抹茶色 */
+
+  --night-code-bg: #1E1E1E;
+  --night-code-text: #E2E8F0;
+  --night-inline-code-bg: #2D3748;
+  --night-inline-code-text: #FC8181;
   
   /* 預設使用日間模式 */
   --current-primary: var(--day-primary);
@@ -111,6 +121,11 @@
   --current-button: var(--day-button);
   --current-button-hover: var(--day-button-hover);
   --current-tag: var(--day-tag);
+
+  --current-code-bg: var(--day-code-bg);
+  --current-code-text: var(--day-code-text);
+  --current-inline-code-bg: var(--day-inline-code-bg);
+  --current-inline-code-text: var(--day-inline-code-text);
 }
 
 /* 夜間模式變數切換 */
@@ -128,6 +143,11 @@
   --current-button: var(--night-button);
   --current-button-hover: var(--night-button-hover);
   --current-tag: var(--night-tag);
+
+  --current-code-bg: var(--night-code-bg);
+  --current-code-text: var(--night-code-text);
+  --current-inline-code-bg: var(--night-inline-code-bg);
+  --current-inline-code-text: var(--night-inline-code-text);
 }
 
 /* 平滑過渡效果 */
@@ -526,6 +546,8 @@ blockquote::before {
 .highlight code {
   font-size: 0.9em !important; /* 稍微小一點 */
   line-height: 1.4 !important; /* 緊密行距 */
+  background: var(--current-inline-code-bg) !important; /* 🔥 新增：主題感知背景 */
+  color: var(--current-inline-code-text) !important; /* 🔥 新增：主題感知文字顏色 */
 }
 
 /* 頁腳 */
