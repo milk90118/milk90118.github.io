@@ -240,47 +240,167 @@ h3 {
    主要組件樣式 - 響應式主題
    ============================================================================= */
 
-/* 頂部導航列 */
+/* =============================================================================
+   🔥 修復導航列主題切換問題
+   ============================================================================= */
+
+/* 1. 強制覆蓋 Minimal Mistakes 的導航列樣式 */
 .masthead {
-  background: var(--current-bg) !important; /* 🔥 修正：統一使用主背景色 */
-  border-bottom: none !important;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background: var(--current-bg) !important;
+  background-color: var(--current-bg) !important; /* 額外保險 */
+  border-bottom: 1px solid var(--current-border) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
+  transition: all 0.3s ease !important;
 }
 
+/* 2. 確保夜間模式時導航列變暗 */
+[data-theme="dark"] .masthead {
+  background: var(--night-bg) !important;
+  background-color: var(--night-bg) !important;
+  border-bottom: 1px solid var(--night-border) !important;
+  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.05) !important;
+}
+
+/* 3. 修復導航容器 */
+.masthead__inner-wrap {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* 4. 修復網站標題 */
 .site-title {
   color: var(--current-text) !important;
-  font-weight: 700 !important; /* 網站標題粗體 */
+  background: transparent !important;
+  font-weight: 700 !important;
   text-decoration: none !important;
   text-shadow: none !important;
-  letter-spacing: -0.01em !important; /* 窄間距 */
+  letter-spacing: -0.01em !important;
   font-family: var(--en-title-font) !important;
 }
 
+.site-title:visited {
+  color: var(--current-text) !important;
+}
+
 .site-title:hover {
-  transform: scale(1.02);
   color: var(--current-link) !important;
+  transform: scale(1.02);
 }
 
-/* 夜間模式導覽列陰影調整 */
-[data-theme="dark"] .masthead {
-  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.05);
+/* 5. 修復導航連結 */
+.greedy-nav {
+  background: transparent !important;
+  background-color: transparent !important;
 }
 
-/* 導航連結 - 保持 Zen Maru Gothic 介面風格 */
 .greedy-nav a {
   color: var(--current-text) !important;
+  background: transparent !important;
+  background-color: transparent !important;
   font-size: 1em;
   font-family: var(--en-title-font), var(--interface-en-font), var(--interface-tc-font) !important;
   font-weight: 600 !important;
   letter-spacing: -0.01em !important;
-  /* 🔥 修正：移除背景色，與導覽列統一 */
+  text-decoration: none !important;
+  padding: 8px 12px !important;
+  border-radius: 6px !important;
+  transition: all 0.2s ease !important;
+}
+
+.greedy-nav a:visited {
+  color: var(--current-text) !important;
 }
 
 .greedy-nav a:hover {
   color: var(--current-link) !important;
-  background: var(--current-bg) !important; /* 🔥 新增：懸停時淡背景 */
-  border-radius: 4px !important; /* 🔥 新增：小圓角 */
-  padding: 4px 8px !important; /* 🔥 新增：內邊距 */
+  background: var(--current-bg-light) !important;
+  background-color: var(--current-bg-light) !important;
+  transform: translateY(-1px);
+}
+
+/* 6. 修復導航列表 */
+.greedy-nav__list {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+.greedy-nav__list li {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* 7. 修復搜尋按鈕（如果有的話） */
+.search__toggle {
+  color: var(--current-text) !important;
+  background: transparent !important;
+}
+
+.search__toggle:hover {
+  color: var(--current-link) !important;
+}
+
+/* 8. 修復手機版選單按鈕 */
+.greedy-nav__toggle {
+  color: var(--current-text) !important;
+  background: transparent !important;
+  border: 2px solid var(--current-border) !important;
+  border-radius: 6px !important;
+}
+
+.greedy-nav__toggle:hover {
+  color: var(--current-link) !important;
+  border-color: var(--current-link) !important;
+}
+
+/* 9. 手機版展開選單 */
+.greedy-nav__list--overlay {
+  background: var(--current-bg) !important;
+  border: 1px solid var(--current-border) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15) !important;
+}
+
+.greedy-nav__list--overlay a {
+  color: var(--current-text) !important;
+  border-bottom: 1px solid var(--current-border) !important;
+}
+
+.greedy-nav__list--overlay a:hover {
+  background: var(--current-bg-light) !important;
+  color: var(--current-link) !important;
+}
+
+/* 10. 確保所有子元素都跟隨主題 */
+.masthead * {
+  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease !important;
+}
+
+/* 11. 修復可能的白色背景強制覆蓋 */
+.masthead,
+.masthead__inner-wrap,
+.greedy-nav,
+.greedy-nav__list {
+  background-image: none !important; /* 移除可能的背景圖片 */
+}
+
+/* 12. 額外的夜間模式確保 */
+[data-theme="dark"] .masthead,
+[data-theme="dark"] .masthead__inner-wrap,
+[data-theme="dark"] .greedy-nav,
+[data-theme="dark"] .greedy-nav__list {
+  background: var(--night-bg) !important;
+  background-color: var(--night-bg) !important;
+  color: var(--night-text) !important;
+}
+
+[data-theme="dark"] .site-title,
+[data-theme="dark"] .greedy-nav a {
+  color: var(--night-text) !important;
+}
+
+[data-theme="dark"] .greedy-nav a:hover {
+  color: var(--night-link) !important;
+  background: var(--night-bg-light) !important;
 }
 
 /* 頁面標題 - 粗體緊密 */
