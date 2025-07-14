@@ -545,37 +545,42 @@ blockquote::before {
 
 /* Primary Notice */
 .notice--primary {
-  background: var(--current-primary) !important;
-  border-left-color: var(--current-accent) !important;
-  color: var(--current-text) !important;
+  background: var(--current-bg-light) !important; /* 🔥 修復：使用淡背景 */
+  border: 2px solid var(--current-primary) !important; /* 🔥 修復：用邊框顯示顏色 */
+  border-left: 4px solid var(--current-primary) !important;
+  color: var(--current-text) !important; /* 🔥 修復：確保文字可見 */
 }
 
-/* Info Notice */
+* Info Notice - 確保文字可見 */
 .notice--info {
   background: var(--current-bg-light) !important;
-  border-left-color: var(--current-link) !important;
-  color: var(--current-text) !important;
+  border: 2px solid var(--current-link) !important; /* 🔥 修復：用邊框顯示顏色 */
+  border-left: 4px solid var(--current-link) !important;
+  color: var(--current-text) !important; /* 🔥 修復：確保文字可見 */
 }
 
-/* Warning Notice */
+/* Warning Notice - 確保文字可見 */
 .notice--warning {
-  background: var(--current-accent) !important;
-  border-left-color: var(--current-link-hover) !important;
-  color: var(--current-text) !important;
+  background: var(--current-bg-light) !important; /* 🔥 修復：使用淡背景 */
+  border: 2px solid var(--current-accent) !important; /* 🔥 修復：用邊框顯示顏色 */
+  border-left: 4px solid var(--current-accent) !important;
+  color: var(--current-text) !important; /* 🔥 修復：確保文字可見 */
 }
 
-/* Danger Notice */
+/* Danger Notice - 確保文字可見 */
 .notice--danger {
-  background: var(--current-link-hover) !important;
-  border-left-color: var(--current-text) !important;
-  color: var(--current-bg) !important;
+  background: var(--current-bg-light) !important; /* 🔥 修復：使用淡背景 */
+  border: 2px solid var(--current-link-hover) !important; /* 🔥 修復：用邊框顯示顏色 */
+  border-left: 4px solid var(--current-link-hover) !important;
+  color: var(--current-text) !important; /* 🔥 修復：確保文字可見 */
 }
 
-/* Success Notice */
+/* Success Notice - 確保文字可見 */
 .notice--success {
-  background: var(--current-button) !important;
-  border-left-color: var(--current-button-hover) !important;
-  color: var(--current-bg) !important;
+  background: var(--current-bg-light) !important; /* 🔥 修復：使用淡背景 */
+  border: 2px solid var(--current-button) !important; /* 🔥 修復：用邊框顯示顏色 */
+  border-left: 4px solid var(--current-button) !important;
+  color: var(--current-text) !important; /* 🔥 修復：確保文字可見 */
 }
 
 /* Notice 內的標題 */
