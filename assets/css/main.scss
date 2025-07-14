@@ -357,46 +357,6 @@ h3 {
   background: var(--current-bg-light) !important;
 }
 
-/* 9. 手機版選單按鈕 */
-.greedy-nav__toggle,
-.greedy-nav__toggle:visited {
-  color: var(--current-text) !important;
-  background: transparent !important;
-  background-color: transparent !important;
-  border: 2px solid var(--current-border) !important;
-  border-radius: 6px !important;
-  text-shadow: none !important;
-}
-
-.greedy-nav__toggle:hover {
-  color: var(--current-link) !important;
-  border-color: var(--current-link) !important;
-  background: var(--current-bg-light) !important;
-}
-
-/* 10. 手機版展開選單 */
-.greedy-nav__list--overlay,
-.hidden-links {
-  background: var(--current-bg) !important;
-  background-color: var(--current-bg) !important;
-  border: 1px solid var(--current-border) !important;
-  border-radius: 8px !important;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15) !important;
-}
-
-.greedy-nav__list--overlay a,
-.hidden-links a {
-  color: var(--current-text) !important;
-  background: transparent !important;
-  border-bottom: 1px solid var(--current-border) !important;
-  padding: 12px 16px !important;
-}
-
-.greedy-nav__list--overlay a:hover,
-.hidden-links a:hover {
-  background: var(--current-bg-light) !important;
-  color: var(--current-link) !important;
-}
 
 /* 11. 強制移除所有可能的背景圖片和樣式 */
 .masthead *,
