@@ -37,8 +37,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Traditional+Chinese:wght@400;500;600;700;800;900&display=swap');
 
 /* Minimal‑Mistakes Imports (按官方順序) */
-/* @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";*/
-/* @import "minimal-mistakes";*/
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
+@import "minimal-mistakes";
 
 /* =============================================================================
    日本色票變數定義 - 日夜模式
