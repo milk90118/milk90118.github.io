@@ -242,35 +242,23 @@ h3 {
 
 /* 頂部導航列 */
 .masthead {
-  background: linear-gradient(135deg, 
-    var(--current-primary) 0%, 
-    var(--current-secondary) 50%, 
-    var(--current-bg) 100%) !important;
+  background: var(--current-bg) !important; /* 🔥 修改：與網頁頂部相同底色 */
   border-bottom: 1px solid var(--current-border) !important;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .site-title {
-  color: var(--current-text) !important;
+  color: var(--current-text) !important; /* 🔥 確保文字清楚顯示 */
   font-weight: 700 !important; /* 網站標題粗體 */
   text-decoration: none !important;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* 🔥 日間模式文字陰影 */
+  text-shadow: none !important; /* 🔥 移除陰影確保清晰 */
   letter-spacing: -0.01em !important; /* 窄間距 */
   font-family: var(--en-title-font) !important;
 }
 
 .site-title:hover {
   transform: scale(1.02);
-  text-shadow: 2px 2px 8px var(--current-primary);
-}
-
-/* 🔥 新增：夜間模式文字陰影調整 */
-[data-theme="dark"] .site-title {
-  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.1) !important; /* 夜間模式淡白色陰影 */
-}
-
-[data-theme="dark"] .site-title:hover {
-  text-shadow: 2px 2px 8px var(--current-primary); /* 保持懸停效果 */
+  color: var(--current-link) !important; /* 🔥 懸停時改變顏色而非陰影 */
 }
 
 /* 🔥 新增：夜間模式導覽列陰影調整 */
