@@ -530,6 +530,99 @@ blockquote::before {
   background: var(--current-bg);
 }
 
+/* 基本 Notice 樣式 */
+.notice {
+  background: var(--current-bg-light) !important;
+  border: 1px solid var(--current-border) !important;
+  border-left: 4px solid var(--current-link) !important;
+  border-radius: 6px !important;
+  padding: 12px 16px !important;
+  margin: 16px 0 !important;
+  color: var(--current-text) !important;
+  font-size: 0.9em !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Primary Notice */
+.notice--primary {
+  background: var(--current-primary) !important;
+  border-left-color: var(--current-accent) !important;
+  color: var(--current-text) !important;
+}
+
+/* Info Notice */
+.notice--info {
+  background: var(--current-bg-light) !important;
+  border-left-color: var(--current-link) !important;
+  color: var(--current-text) !important;
+}
+
+/* Warning Notice */
+.notice--warning {
+  background: var(--current-accent) !important;
+  border-left-color: var(--current-link-hover) !important;
+  color: var(--current-text) !important;
+}
+
+/* Danger Notice */
+.notice--danger {
+  background: var(--current-link-hover) !important;
+  border-left-color: var(--current-text) !important;
+  color: var(--current-bg) !important;
+}
+
+/* Success Notice */
+.notice--success {
+  background: var(--current-button) !important;
+  border-left-color: var(--current-button-hover) !important;
+  color: var(--current-bg) !important;
+}
+
+/* Notice 內的標題 */
+.notice h1,
+.notice h2,
+.notice h3,
+.notice h4,
+.notice h5,
+.notice h6 {
+  margin-top: 0 !important;
+  margin-bottom: 8px !important;
+  color: inherit !important;
+}
+
+/* Notice 內的段落 */
+.notice p {
+  margin-bottom: 8px !important;
+  color: inherit !important;
+}
+
+.notice p:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* Notice 內的連結 */
+.notice a {
+  color: inherit !important;
+  text-decoration: underline !important;
+  font-weight: 600 !important;
+}
+
+.notice a:hover {
+  opacity: 0.8 !important;
+}
+
+/* Notice 內的列表 */
+.notice ul,
+.notice ol {
+  margin: 8px 0 !important;
+  padding-left: 20px !important;
+}
+
+.notice li {
+  margin-bottom: 4px !important;
+  color: inherit !important;
+}
+
 /* =============================================================================
    🔥 修復程式碼區塊 - 保留你的設計 + 確保可見性
    ============================================================================= */
