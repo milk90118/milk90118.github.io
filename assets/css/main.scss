@@ -775,11 +775,16 @@ input[type="search"]:focus, input[type="text"]:focus {
   max-height: calc(100vh - 150px) !important;
   overflow-y: auto !important;
   z-index: 999 !important;
-  background: rgba(from var(--current-bg) r g b / 0.8) !important; /* 🔥 修改：80% 透明度 */
+  background: rgba(255, 255, 255, 0.9) !important; /* 🔥 修改：日間白色 90% 透明度 */
   backdrop-filter: blur(10px) !important;
   border: 1px solid var(--current-border) !important;
   border-radius: 12px !important;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* 夜間模式專用背景 */
+[data-theme="dark"] .toc {
+  background: rgba(44, 44, 44, 0.9) !important; /* 🔥 修改：夜間深灰 90% 透明度 */
 }
 
 /* 目錄標題 */
