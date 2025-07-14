@@ -266,6 +266,10 @@ h3 {
   box-shadow: 0 2px 10px rgba(255, 255, 255, 0.05); /* 夜間模式淡白色陰影 */
 }
 
+[data-theme="dark"] .site-title {
+  color: var(--current-text) !important; /* 🔥 確保文字清楚顯示 */
+}
+
 /* 導航連結 - 保持 Zen Maru Gothic 介面風格 */
 .greedy-nav a {
   color: var(--current-text) !important;
