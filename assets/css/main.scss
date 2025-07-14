@@ -530,24 +530,55 @@ blockquote::before {
   background: var(--current-bg);
 }
 
-/* 程式碼區塊 - 緊湊版 */
+/* =============================================================================
+   🔥 修復程式碼區塊 - 保留你的設計 + 確保可見性
+   ============================================================================= */
+
+/* 程式碼區塊 - 保留你的緊湊版設計 */
 .highlight {
-  background: linear-gradient(135deg, 
-    var(--current-bg) 0%, 
-    var(--current-border) 100%) !important;
-  border-left: 8px solid var(--current-link) !important; /* 更細邊框 */
-  border-radius: 6px !important; /* 更小圓角 */
-  padding: 12px 15px !important; /* 減少內邊距 */
-  margin: 15px 0 !important; /* 減少外邊距 */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); /* 更淺陰影 */
+  background: var(--current-code-bg) !important; /* 🔥 修復：使用程式碼專用背景 */
+  border-left: 8px solid var(--current-link) !important; /* 保留你的邊框 */
+  border-radius: 6px !important; /* 保留你的小圓角 */
+  padding: 12px 15px !important; /* 保留你的緊湊內邊距 */
+  margin: 15px 0 !important; /* 保留你的緊湊外邊距 */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); /* 保留你的淺陰影 */
+  overflow-x: auto;
 }
 
-/* 程式碼文字 */
-.highlight code {
-  font-size: 0.9em !important; /* 稍微小一點 */
-  line-height: 1.4 !important; /* 緊密行距 */
+/* 🔥 修復：程式碼文字 - 確保在兩種主題下都可見 */
+.highlight code,
+pre code {
+  font-family: var(--en-code-font) !important;
+  font-size: 0.9em !important; /* 保留你的小字體 */
+  line-height: 1.4 !important; /* 保留你的緊密行距 */
+  color: var(--current-code-text) !important; /* 🔥 修復：使用程式碼專用文字顏色 */
+  background: transparent !important; /* 🔥 修復：程式碼區塊內背景透明 */
+  padding: 0 !important;
+  border: none !important;
+  display: block;
+  white-space: pre;
+  word-wrap: normal;
+}
+
+/* 🔥 修復：行內程式碼 - 確保在兩種主題下都可見 */
+code {
+  font-family: var(--en-code-font) !important;
+  font-size: 0.875em !important;
   background: var(--current-inline-code-bg) !important; /* 🔥 新增：主題感知背景 */
   color: var(--current-inline-code-text) !important; /* 🔥 新增：主題感知文字顏色 */
+  padding: 2px 4px !important;
+  border-radius: 3px !important;
+  border: 1px solid var(--current-border) !important;
+  font-weight: 500;
+}
+
+/* 確保程式碼區塊內的行內程式碼不被干擾 */
+.highlight code,
+pre code {
+  background: transparent !important;
+  border: none !important;
+  color: var(--current-code-text) !important;
+  padding: 0 !important;
 }
 
 /* 頁腳 */
