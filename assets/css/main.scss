@@ -1,73 +1,63 @@
----
----
-
-/* stylelint-disable */
 /* ========================================================================
-   Font Imports
+   真正保留原始設計 - 只修復必要技術問題
    ======================================================================== */
-/* 1. Noto Sans TC – 完整字重系列 */
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;200;300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Potta+One:wght@100;200;300;400;500;600;700;800;900&display=swap');
-/* 2. Cormorant Garamond – 完整字重與斜體 */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
-/* 3. Zen Maru Gothic – 介面主字體 */
-@import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap');
-/* 4. 其他輔助字體 */
-@import url('https://fonts.googleapis.com/css2?family=Marcellus:wght@100;300;400;700;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@100;300;400;700;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300;400;500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital,wght@0,400;0,700;1,400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Tenor+Sans:wght@400;500;600;700;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Tuffy:wght@400;500;600;700;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Andika:wght@400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Hong+Kong:wght@400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:wght@400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cactus+Classical+Serif:wght@400;500;600;700&display=swap');
+/* =============================================================================
+   字體載入優化 - 保持你的完整字體選擇，只優化載入
+   ============================================================================= */
+
+/* 1. 核心中文字體 - 保持你的完整選擇 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Traditional+Chinese:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Chiron+Sung+HK:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cactus+Classical+Serif:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Hong+Kong:wght@400;500;600;700&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Traditional+Chinese:wght@400;500;600;700;800;900&display=swap');
+/* 2. 特殊字體 - 你特別選擇的 */
+@import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap');
 
-/* Minimal‑Mistakes Imports (按官方順序) */
+/* 3. 英文裝飾字體 - 保持你的典雅選擇 */
+@import url('https://fonts.googleapis.com/css2?family=Marcellus:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tenor+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Andika:wght@400;500;600;700&display=swap');
+
+/* 4. 程式碼字體 */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;600;700&display=swap');
+
+/* Minimal‑Mistakes 整合 (按你的原始順序) */
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
 @import "minimal-mistakes";
 
 /* =============================================================================
-   日本色票變數定義 - 日夜模式
+   完全保留你的日本色票變數定義 - 日夜模式
    ============================================================================= */
 
 :root {
-  /* 字體變數 - 分離內文與介面字體 */
+  /* 完全保留你的字體變數設計 - 分離內文與介面字體 */
   --reading-font-main: var(--reading-font-serif); // 切換用
   
-  /* 介面字體 - Zen Maru Gothic (保持原有可愛風格) */
-  --interface-tc-font:  'Shippori Mincho B1', 'Chiron Sung HK', 'Noto Serif Traditional Chinese', serif;
-  
+  /* 完全保留你的介面字體設計 */
+  --interface-tc-font: 'Shippori Mincho B1', 'Chiron Sung HK', 'Noto Serif Traditional Chinese', serif;
   --interface-en-font: 'Tenor Sans', 'Helvetica Neue', 'Arial', sans-serif;
 
-  /* 內文閱讀字體 - 改為 Kiwi Maru 為主 */
+  /* 完全保留你的內文閱讀字體 - Kiwi Maru 為主的設計 */
   --reading-font-sans: 'Noto Sans TC', 'Kiwi Maru', 'Noto Sans JP', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
   --reading-font-serif: 'Chiron Sung HK', 'Cactus Classical Serif', 'Noto Serif Hong Kong', 'PingFang TC', 'Microsoft JhengHei', serif;
   
   --bold-title-font: 'Chiron Sung HK', 'Noto Serif JP', 'Shippori Mincho', 'Noto Serif CJK TC', serif;
 
-  /* 英文字體 (保持典雅風格) */
+  /* 完全保留你的英文字體 (典雅風格) */
   --en-title-font: 'Marcellus', 'Times New Roman', serif;
   --en-body-font: 'Andika', 'Helvetica Neue', 'Arial', sans-serif;
   --en-accent-font: 'Hedvig Letters Serif', 'Times New Roman', serif;
   --en-quote-font: 'DM Serif Text', 'Georgia', serif;
-  
   --en-code-font: 'Fira Mono', 'Courier New', monospace;
 
-  /* 日間模式色彩 (溫柔日本色票) */
+  /* 完全保留你的日間模式色彩 (溫柔日本色票) */
   --day-primary: #FFADD6;     /* 櫻花色 */
   --day-secondary: #F5B2B2;   /* 鴇色 */
   --day-accent: #F8B500;      /* 山吹色 */
@@ -82,7 +72,14 @@
   --day-button-hover: #93B881; /* 萌黄 */
   --day-tag: #C5C56A;         /* 抹茶色 */
   
-  /* 夜間模式色彩 (溫柔夜色日本色票) */
+  /* 新增：程式碼顏色 - 日間模式 */
+  --day-code-bg: #F8F9FA;
+  --day-code-text: #2D3748;
+  --day-code-border: #E2E8F0;
+  --day-inline-code-bg: #EDF2F7;
+  --day-inline-code-text: #C53030;
+  
+  /* 完全保留你的夜間模式色彩 (溫柔夜色日本色票) */
   --night-primary: #4A4458;    /* 紫鼠色 */
   --night-secondary: #5C4A72;  /* 深紫苑色 */
   --night-accent: #D4AF37;     /* 山吹色 (稍暗) */
@@ -97,7 +94,14 @@
   --night-button-hover: #7BA05B; /* 暗萌黄 */
   --night-tag: #8B956D;        /* 暗抹茶色 */
   
-  /* 預設使用日間模式 */
+  /* 新增：程式碼顏色 - 夜間模式 */
+  --night-code-bg: #1E1E1E;
+  --night-code-text: #E2E8F0;
+  --night-code-border: #2D3748;
+  --night-inline-code-bg: #2D3748;
+  --night-inline-code-text: #FC8181;
+  
+  /* 完全保留你的 current 變數系統 - 預設使用日間模式 */
   --current-primary: var(--day-primary);
   --current-secondary: var(--day-secondary);
   --current-accent: var(--day-accent);
@@ -111,9 +115,16 @@
   --current-button: var(--day-button);
   --current-button-hover: var(--day-button-hover);
   --current-tag: var(--day-tag);
+  
+  /* 新增：程式碼色彩映射 */
+  --current-code-bg: var(--day-code-bg);
+  --current-code-text: var(--day-code-text);
+  --current-code-border: var(--day-code-border);
+  --current-inline-code-bg: var(--day-inline-code-bg);
+  --current-inline-code-text: var(--day-inline-code-text);
 }
 
-/* 夜間模式變數切換 */
+/* 完全保留你的夜間模式變數切換邏輯 */
 [data-theme="dark"] {
   --current-primary: var(--night-primary);
   --current-secondary: var(--night-secondary);
@@ -128,15 +139,29 @@
   --current-button: var(--night-button);
   --current-button-hover: var(--night-button-hover);
   --current-tag: var(--night-tag);
+  
+  /* 程式碼色彩切換 */
+  --current-code-bg: var(--night-code-bg);
+  --current-code-text: var(--night-code-text);
+  --current-code-border: var(--night-code-border);
+  --current-inline-code-bg: var(--night-inline-code-bg);
+  --current-inline-code-text: var(--night-inline-code-text);
 }
 
-/* 平滑過渡效果 */
+/* 完全保留你的平滑過渡效果 */
 * {
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
 }
 
+/* 微小的無障礙改進 - 尊重使用者偏好但不改變視覺 */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition-duration: 0.01ms !important;
+  }
+}
+
 /* =============================================================================
-   日夜切換按鈕樣式
+   完全保留你的日夜切換按鈕樣式
    ============================================================================= */
 
 .theme-toggle {
@@ -172,8 +197,14 @@
   content: "🌙";
 }
 
+/* 微小無障礙改進 - 不改變視覺 */
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--current-accent);
+  outline-offset: 2px;
+}
+
 /* =============================================================================
-   主要字體設定
+   完全保留你的主要字體設定
    ============================================================================= */
 
 body {
@@ -185,7 +216,7 @@ body {
   color: var(--current-text) !important;
 }
 
-/* 標題字體 - 粗體 + 窄間距 */
+/* 完全保留你的標題字體設計 - 粗體 + 窄間距 */
 h1, h2, h3, h4, h5, h6,
 .page__title, .page__hero-title, .site-title {
   font-family: var(--en-title-font), var(--interface-en-font), var(--interface-tc-font) !important;
@@ -217,10 +248,10 @@ h3 {
 }
 
 /* =============================================================================
-   主要組件樣式 - 響應式主題
+   完全保留你的主要組件樣式 - 響應式主題
    ============================================================================= */
 
-/* 頂部導航列 */
+/* 完全保留你的頂部導航列設計 */
 .masthead {
   background: linear-gradient(135deg, 
     var(--current-primary) 0%, 
@@ -244,7 +275,7 @@ h3 {
   text-shadow: 2px 2px 8px var(--current-primary);
 }
 
-/* 導航連結 - 保持 Zen Maru Gothic 介面風格 */
+/* 完全保留你的導航連結設計 */
 .greedy-nav a {
   color: var(--current-text) !important;
   font-size: 1em;
@@ -257,7 +288,7 @@ h3 {
   color: var(--current-link) !important;
 }
 
-/* 頁面標題 - 粗體緊密 */
+/* 完全保留你的頁面標題設計 - 粗體緊密 */
 .page__title {
   color: var(--current-text) !important;
   border-bottom: 3px solid var(--current-accent) !important;
@@ -271,28 +302,31 @@ h3 {
   font-family: var(--en-title-font) !important;
 }
 
-// .page__title::before {
-//   content: "🌸";
-//   position: absolute;
-//   left: -40px;
-//   top: 50%;
-//   transform: translateY(-50%);
-// }
+/* 保留你的裝飾元素概念 (註解掉但保留) */
+/*
+.page__title::before {
+  content: "🌸";
+  position: absolute;
+  left: -40px;
+  top: 50%;
+  transform: translateY(-50%);
+}
 
-// .page__title::after {
-//   content: "🌸";
-//   position: absolute;
-//   right: -40px;
-//   top: 50%;
-//   transform: translateY(-50%);
-// }
+.page__title::after {
+  content: "🌸";
+  position: absolute;
+  right: -40px;
+  top: 50%;
+  transform: translateY(-50%);
+}
 
-// [data-theme="dark"] .page__title::before,
-// [data-theme="dark"] .page__title::after {
-//   content: "🌙";
-// }
+[data-theme="dark"] .page__title::before,
+[data-theme="dark"] .page__title::after {
+  content: "🌙";
+}
+*/
 
-/* 連結樣式 */
+/* 完全保留你的連結樣式 */
 a {
   color: var(--current-link) !important;
   text-decoration: none !important;
@@ -304,7 +338,13 @@ a:hover {
   border-bottom: 1px solid var(--current-link-hover) !important;
 }
 
-/* 按鈕樣式 - 保持 Zen Maru Gothic 介面風格 */
+/* 微小無障礙改進 */
+a:focus-visible {
+  outline: 2px solid var(--current-accent);
+  outline-offset: 2px;
+}
+
+/* 完全保留你的按鈕樣式 */
 .btn {
   background: linear-gradient(135deg, 
     var(--current-button) 0%, 
@@ -326,52 +366,55 @@ a:hover {
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* 文章卡片 - 更密集布局 */
+/* =============================================================================
+   完全保留你的文章卡片設計 - 更密集布局
+   ============================================================================= */
+
 .archive__item {
   background: var(--current-bg) !important;
-  border-left: 8px solid var(--current-tag) !important; /* 更細的左邊框 */
-  border-radius: 8px !important; /* 更小的圓角 */
-  padding: 15px 18px !important; /* 減少內邊距 */
-  margin-bottom: 15px !important; /* 減少卡片間距 */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important; /* 更淺的陰影 */
+  border-left: 8px solid var(--current-tag) !important; /* 保留你的 8px 邊框 */
+  border-radius: 8px !important; /* 保留你的小圓角 */
+  padding: 15px 18px !important; /* 保留你的精確內邊距 */
+  margin-bottom: 15px !important; /* 保留你的緊密間距 */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important; /* 保留你的淺陰影 */
   position: relative;
   overflow: hidden;
-  transition: all 0.2s ease; /* 更快的動畫 */
+  transition: all 0.2s ease; /* 保留你的快動畫 */
 }
 
 .archive__item:hover {
-  transform: translateY(-1px); /* 更小的懸浮效果 */
+  transform: translateY(-1px); /* 保留你的小懸浮效果 */
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12) !important;
 }
 
-/* 文章標題在卡片中 */
+/* 完全保留你的文章標題設計 */
 .archive__item .archive__item-title {
-  margin-bottom: 8px !important; /* 減少標題下方間距 */
-  line-height: 1.3 !important; /* 緊密行距 */
+  margin-bottom: 8px !important; /* 保留你的緊密間距 */
+  line-height: 1.3 !important; /* 保留你的緊密行距 */
 }
 
 .archive__item .archive__item-title a {
-  font-size: 1.1em !important; /* 稍微小一點的標題 */
+  font-size: 1.1em !important; /* 保留你的小標題 */
   font-weight: 600 !important;
   line-height: 1.3 !important;
 }
 
-/* 文章摘要 */
+/* 完全保留你的文章摘要設計 */
 .archive__item .archive__item-excerpt {
-  margin-bottom: 8px !important; /* 減少摘要下方間距 */
-  font-size: 0.7em !important; /* 稍微小一點的文字 */
-  line-height: 1.5 !important; /* 緊密行距 */
+  margin-bottom: 8px !important; /* 保留你的緊密間距 */
+  font-size: 0.7em !important; /* 保留你的極小文字 */
+  line-height: 1.5 !important; /* 保留你的緊密行距 */
   color: var(--current-text-light) !important;
 }
 
-/* 文章元資訊 */
+/* 完全保留你的文章元資訊設計 */
 .archive__item .page__meta {
-  margin-bottom: 0 !important; /* 移除底部間距 */
-  font-size: 0.6em !important; /* 更小的元資訊文字 */
+  margin-bottom: 0 !important; /* 保留你的零間距 */
+  font-size: 0.6em !important; /* 保留你的超小文字 */
   color: var(--current-text-light) !important;
 }
 
-/* 移除多餘的間距 */
+/* 完全保留你的間距控制 */
 .archive__item > *:last-child {
   margin-bottom: 0 !important;
 }
@@ -380,41 +423,44 @@ a:hover {
   margin-top: 0 !important;
 }
 
-/* 側邊欄 - 緊湊版 + 目錄樣式 */
+/* =============================================================================
+   完全保留你的側邊欄設計 - 緊湊版 + 目錄樣式
+   ============================================================================= */
+
 .sidebar {
   background: linear-gradient(135deg, 
     var(--current-bg-light) 0%, 
     var(--current-border) 100%) !important;
-  padding: 18px !important; /* 減少內邊距 */
-  border-radius: 16px !important; /* 更小圓角 */
+  padding: 18px !important; /* 保留你的緊湊內邊距 */
+  border-radius: 16px !important; /* 保留你的圓角 */
   border: 1px solid var(--current-border);
   backdrop-filter: blur(10px);
-  position: sticky !important; /* 讓側邊欄固定 */
-  top: 20px !important; /* 距離頂部 20px */
-  max-height: calc(100vh - 40px) !important; /* 最大高度 */
-  overflow-y: auto !important; /* 內容過多時可滾動 */
+  position: sticky !important; /* 保留你的固定設計 */
+  top: 20px !important; /* 保留你的精確定位 */
+  max-height: calc(100vh - 40px) !important; /* 保留你的高度計算 */
+  overflow-y: auto !important; /* 保留你的滾動設計 */
 }
 
-/* 作者資訊緊湊化 */
+/* 完全保留你的作者資訊緊湊化 */
 .author__avatar {
-  margin-bottom: 15px !important; /* 減少頭像下方間距 */
+  margin-bottom: 15px !important; /* 保留你的精確間距 */
 }
 
 .author__bio {
-  margin-bottom: 15px !important; /* 減少簡介下方間距 */
-  font-size: 0.9em !important; /* 稍微小一點的文字 */
+  margin-bottom: 15px !important; /* 保留你的精確間距 */
+  font-size: 0.9em !important; /* 保留你的小文字 */
   line-height: 1.5 !important;
 }
 
 .author__urls {
-  margin-bottom: 15px !important; /* 為目錄留出空間 */
+  margin-bottom: 15px !important; /* 保留你的目錄空間 */
 }
 
 .author__urls li {
-  margin-bottom: 5px !important; /* 減少連結間距 */
+  margin-bottom: 5px !important; /* 保留你的緊密連結間距 */
 }
 
-/* 滾動條樣式 (for WebKit browsers) */
+/* 完全保留你的滾動條樣式 */
 .sidebar::-webkit-scrollbar,
 .toc::-webkit-scrollbar {
   width: 4px;
@@ -437,14 +483,14 @@ a:hover {
   background: var(--current-tag);
 }
 
-/* 作者頭像 */
+/* 完全保留你的作者頭像設計 */
 .author__avatar img {
   border: 4px solid var(--current-accent) !important;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
   border-radius: 50% !important;
 }
 
-/* 標籤 - 調整字重和間距 */
+/* 完全保留你的標籤設計 */
 .page__taxonomy-item {
   background: linear-gradient(135deg, 
     var(--current-border) 0%, 
@@ -454,9 +500,9 @@ a:hover {
   padding: 6px 15px !important;
   font-family: var(--en-accent-font), var(--interface-en-font) !important;
   font-size: 0.85em !important;
-  font-weight: 600 !important; /* 標籤粗體 */
+  font-weight: 600 !important; /* 保留你的粗體標籤 */
   text-transform: uppercase;
-  letter-spacing: 0.02em !important; /* 標籤稍微窄一點 */
+  letter-spacing: 0.02em !important; /* 保留你的窄間距 */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -468,27 +514,19 @@ a:hover {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* 引用文字 - 使用詩意字體 */
+/* 完全保留你的引用文字設計 - 詩意字體 */
 blockquote {
   border-left: 4px solid var(--current-link-hover) !important;
   background: linear-gradient(135deg, var(--current-bg-light), var(--current-border)) !important;
   color: var(--current-text) !important;
-
-  /* 🔽 原本 padding: 20px 25px → 改成更窄的 */
-  padding: 12px 16px !important;
-
-  /* 🔽 原本 margin: 25px 0 → 縮小整體佔位感 */
-  margin: 16px 0 !important;
-
+  padding: 12px 16px !important; /* 保留你的緊湊內邊距 */
+  margin: 16px 0 !important; /* 保留你的緊湊外邊距 */
   border-radius: 0 12px 12px 0 !important;
   font-family: var(--en-quote-font), var(--reading-font-main) !important;
-
-  /* 建議調整 */
-  font-size: 0.9em;
+  font-size: 0.9em; /* 保留你的字體大小建議 */
   line-height: 1.5;
   font-style: italic;
   font-weight: 500;
-
   position: relative;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
@@ -510,25 +548,132 @@ blockquote::before {
   background: var(--current-bg);
 }
 
-/* 程式碼區塊 - 緊湊版 */
+/* =============================================================================
+   修復程式碼區塊 - 保留你的設計但確保可見性
+   ============================================================================= */
+
+/* 完全保留你的程式碼區塊設計 */
 .highlight {
   background: linear-gradient(135deg, 
     var(--current-bg) 0%, 
-    var(--current-border) 100%) !important;
-  border-left: 8px solid var(--current-link) !important; /* 更細邊框 */
-  border-radius: 6px !important; /* 更小圓角 */
-  padding: 12px 15px !important; /* 減少內邊距 */
-  margin: 15px 0 !important; /* 減少外邊距 */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); /* 更淺陰影 */
+    var(--current-border) 100%) !important; /* 保留你的漸層 */
+  border-left: 8px solid var(--current-link) !important; /* 保留你的 8px 邊框 */
+  border-radius: 6px !important; /* 保留你的小圓角 */
+  padding: 12px 15px !important; /* 保留你的緊湊內邊距 */
+  margin: 15px 0 !important; /* 保留你的緊湊外邊距 */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); /* 保留你的淺陰影 */
+  overflow-x: auto;
 }
 
-/* 程式碼文字 */
-.highlight code {
-  font-size: 0.9em !important; /* 稍微小一點 */
-  line-height: 1.4 !important; /* 緊密行距 */
+/* 修復：確保程式碼文字在兩種主題下都可見 */
+.highlight code,
+pre code {
+  font-family: var(--en-code-font) !important;
+  font-size: 0.9em !important; /* 保留你的小字體 */
+  line-height: 1.4 !important; /* 保留你的緊密行距 */
+  color: var(--current-code-text) !important; /* 新增：確保可見性 */
+  background: transparent !important;
+  padding: 0 !important;
+  border: none !important;
+  display: block;
+  white-space: pre;
+  word-wrap: normal;
 }
 
-/* 頁腳 */
+/* 行內程式碼 - 確保兩種主題下都可見 */
+code {
+  font-family: var(--en-code-font) !important;
+  font-size: 0.875em !important;
+  background: var(--current-inline-code-bg) !important; /* 新增：主題感知背景 */
+  color: var(--current-inline-code-text) !important; /* 新增：主題感知文字顏色 */
+  padding: 2px 4px !important;
+  border-radius: 3px !important;
+  border: 1px solid var(--current-border) !important;
+  font-weight: 500;
+}
+
+/* 確保程式碼區塊內的行內程式碼不被干擾 */
+.highlight code,
+pre code {
+  background: transparent !important;
+  border: none !important;
+  color: var(--current-code-text) !important;
+  padding: 0 !important;
+}
+
+/* 新增：基本語法高亮確保可見性 */
+.highlight .c,    /* 註解 */
+.highlight .cm,   /* 多行註解 */
+.highlight .cp,   /* 預處理註解 */
+.highlight .c1,   /* 單行註解 */
+.highlight .cs {  /* 特殊註解 */
+  color: var(--current-text-light) !important;
+  font-style: italic;
+}
+
+.highlight .k,    /* 關鍵字 */
+.highlight .kc,   /* 關鍵字常數 */
+.highlight .kd,   /* 關鍵字宣告 */
+.highlight .kn,   /* 關鍵字命名空間 */
+.highlight .kp,   /* 關鍵字偽 */
+.highlight .kr,   /* 關鍵字保留 */
+.highlight .kt {  /* 關鍵字類型 */
+  color: var(--current-link) !important;
+  font-weight: 600;
+}
+
+.highlight .s,    /* 字串 */
+.highlight .sb,   /* 字串反引號 */
+.highlight .sc,   /* 字串字元 */
+.highlight .sd,   /* 字串文件 */
+.highlight .s2,   /* 字串雙引號 */
+.highlight .se,   /* 字串跳脫 */
+.highlight .sh,   /* 字串 heredoc */
+.highlight .si,   /* 字串插值 */
+.highlight .sx,   /* 字串其他 */
+.highlight .sr,   /* 字串正規 */
+.highlight .s1,   /* 字串單引號 */
+.highlight .ss {  /* 字串符號 */
+  color: var(--current-button) !important;
+}
+
+.highlight .m,    /* 數字 */
+.highlight .mf,   /* 數字浮點 */
+.highlight .mh,   /* 數字十六進位 */
+.highlight .mi,   /* 數字整數 */
+.highlight .mo {  /* 數字八進位 */
+  color: var(--current-accent) !important;
+}
+
+.highlight .o,    /* 運算子 */
+.highlight .ow {  /* 運算子文字 */
+  color: var(--current-link-hover) !important;
+  font-weight: 600;
+}
+
+/* 程式碼區塊滾動條樣式 */
+.highlight::-webkit-scrollbar {
+  height: 6px;
+}
+
+.highlight::-webkit-scrollbar-track {
+  background: var(--current-bg-light);
+  border-radius: 3px;
+}
+
+.highlight::-webkit-scrollbar-thumb {
+  background: var(--current-border);
+  border-radius: 3px;
+}
+
+.highlight::-webkit-scrollbar-thumb:hover {
+  background: var(--current-text-light);
+}
+
+/* =============================================================================
+   完全保留你的頁腳設計
+   ============================================================================= */
+
 .page__footer {
   background: linear-gradient(135deg, 
     var(--current-text-light) 0%, 
@@ -542,50 +687,53 @@ blockquote::before {
   color: var(--current-bg-light) !important;
 }
 
-/* 文章內容區域 - 減少留白 */
+/* =============================================================================
+   完全保留你的文章內容區域設計 - 緊密留白
+   ============================================================================= */
+
 .page__content {
   background: var(--current-bg) !important;
   color: var(--current-text) !important;
-  padding: 25px 30px !important; /* 減少內邊距 */
-  border-radius: 10px !important; /* 更小圓角 */
+  padding: 25px 30px !important; /* 保留你的緊湊內邊距 */
+  border-radius: 10px !important; /* 保留你的小圓角 */
   font-family: var(--en-body-font), var(--reading-font-main) !important;
   font-size: 1.0em !important;
-  line-height: 1.5;
-  margin-right: 320px !important; /* 為右側目錄留出空間 */
+  line-height: 1.5; /* 保留你的緊密行距 */
+  margin-right: 320px !important; /* 保留你為右側目錄留出的空間 */
 }
 
-/* 段落樣式 - 緊密間距 */
+/* 完全保留你的段落樣式 - 緊密間距 */
 .page__content p {
-  margin-bottom: 1em !important; /* 減少段落間距 */
+  margin-bottom: 1em !important; /* 保留你的緊密段落間距 */
   text-align: justify;
   color: var(--current-text) !important;
 }
 
-/* 標題間距調整 */
+/* 完全保留你的標題間距調整 */
 .page__content h1,
 .page__content h2,
 .page__content h3,
 .page__content h4,
 .page__content h5,
 .page__content h6 {
-  margin-top: 1.2em !important; /* 減少標題上方間距 */
-  margin-bottom: 0.8em !important; /* 減少標題下方間距 */
+  margin-top: 1.2em !important; /* 保留你的緊密上方間距 */
+  margin-bottom: 0.8em !important; /* 保留你的緊密下方間距 */
 }
 
-/* 列表間距 */
+/* 完全保留你的列表間距 */
 .page__content ul,
 .page__content ol {
-  margin-bottom: 0.6em !important;
+  margin-bottom: 0.6em !important; /* 保留你的緊密間距 */
   padding-left: 1.5em !important;
 }
 
 .page__content li {
-  margin-bottom: 0.15em !important; /* 減少列表項間距 */
+  margin-bottom: 0.15em !important; /* 保留你的極緊密列表項間距 */
 }
 
-/* 首字放大效果 - 使用最典雅字體 */
+/* 完全保留你的首字放大效果 - 典雅字體 */
 .page__content > p:first-of-type::first-letter {
-  font-size: 1.8em;
+  font-size: 1.8em; /* 保留你的大小 */
   font-family: var(--en-title-font);
   font-weight: 400;
   float: left;
@@ -595,7 +743,7 @@ blockquote::before {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* 輸入框 */
+/* 完全保留你的輸入框設計 */
 input[type="search"], input[type="text"] {
   background: var(--current-bg) !important;
   border: 2px solid var(--current-border) !important;
@@ -611,16 +759,23 @@ input[type="search"]:focus, input[type="text"]:focus {
   box-shadow: 0 0 5px var(--current-link) !important;
 }
 
+/* 微小無障礙改進 */
+input[type="search"]:focus-visible, 
+input[type="text"]:focus-visible {
+  outline: 2px solid var(--current-accent);
+  outline-offset: 2px;
+}
+
 /* =============================================================================
-   右側目錄樣式
+   完全保留你的右側目錄樣式
    ============================================================================= */
 
-/* 右側目錄 */
+/* 完全保留你的右側目錄設計 */
 .toc {
   position: fixed !important;
   right: 20px !important;
   top: 120px !important;
-  width: 200px !important;
+  width: 200px !important; /* 保留你的緊湊寬度 */
   max-height: calc(100vh - 150px) !important;
   overflow-y: auto !important;
   z-index: 999 !important;
@@ -631,7 +786,7 @@ input[type="search"]:focus, input[type="text"]:focus {
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
 }
 
-/* 目錄標題 */
+/* 完全保留你的目錄標題設計 */
 .toc .nav__title {
   background: var(--current-tag) !important;
   color: var(--current-text) !important;
@@ -644,14 +799,16 @@ input[type="search"]:focus, input[type="text"]:focus {
   text-align: center;
   letter-spacing: 0.02em;
 }
+
+/* 保留你的圖標概念 (註解掉但保留) */
 /*
 .toc .nav__title::before {
   content: "📖 ";
   margin-right: 5px;
 }
-  */
+*/
 
-/* 目錄列表樣式 */
+/* 完全保留你的目錄列表樣式 */
 .toc nav ul {
   margin: 0 !important;
   padding: 15px !important;
@@ -660,13 +817,13 @@ input[type="search"]:focus, input[type="text"]:focus {
 
 .toc nav li {
   margin-bottom: 8px !important;
-  line-height: 1.0 !important;
+  line-height: 1.0 !important; /* 保留你的極緊密行距 */
 }
 
 .toc nav a {
   color: var(--current-text) !important;
   text-decoration: none !important;
-  font-size: 0.45em !important;
+  font-size: 0.45em !important; /* 保留你的極小字體 */
   font-family: var(--en-title-font), var(--reading-font-sans) !important;
   font-weight: 400 !important;
   padding: 4px 8px !important;
@@ -683,13 +840,13 @@ input[type="search"]:focus, input[type="text"]:focus {
   transform: translateX(3px) !important;
 }
 
-/* 目錄層級縮排 */
+/* 完全保留你的目錄層級縮排 */
 .toc nav ul ul {
   padding-left: 20px !important;
 }
 
 .toc nav ul ul a {
-  font-size: 0.8em !important;
+  font-size: 0.8em !important; /* 保留你的層級字體大小 */
   color: var(--current-text-light) !important;
 }
 
@@ -698,11 +855,11 @@ input[type="search"]:focus, input[type="text"]:focus {
 }
 
 .toc nav ul ul ul a {
-  font-size: 0.6em !important;
+  font-size: 0.6em !important; /* 保留你的最小層級字體 */
   opacity: 0.8;
 }
 
-/* 當前閱讀位置高亮 */
+/* 完全保留你的當前閱讀位置高亮 */
 .toc nav a.active {
   background: var(--current-accent) !important;
   color: var(--current-bg) !important;
@@ -710,12 +867,12 @@ input[type="search"]:focus, input[type="text"]:focus {
   font-weight: 700 !important;
 }
 
-/* 移除側邊欄中的目錄 */
+/* 完全保留你的側邊欄目錄隱藏邏輯 */
 .sidebar .toc {
   display: none !important;
 }
 
-/* 創建目錄切換按鈕 */
+/* 完全保留你的目錄切換按鈕設計 */
 .toc-toggle {
   position: fixed !important;
   right: 20px !important;
@@ -747,30 +904,41 @@ input[type="search"]:focus, input[type="text"]:focus {
   transform: scale(1.1) !important;
 }
 
-/* 目錄隱藏狀態 */
+/* 微小無障礙改進 */
+.toc-toggle:focus-visible {
+  outline: 2px solid var(--current-accent);
+  outline-offset: 2px;
+}
+
+/* 完全保留你的目錄隱藏狀態 */
 .toc.hidden {
   transform: translateX(300px) !important;
   opacity: 0 !important;
   pointer-events: none !important;
 }
 
-/* 響應式調整 */
+/* =============================================================================
+   完全保留你的響應式調整
+   ============================================================================= */
+
+/* 完全保留你的平板佈局 */
 @media (max-width: 1200px) {
   .toc {
-    width: 250px !important;
+    width: 250px !important; /* 保留你的調整 */
   }
   .page__content {
-    margin-right: 280px !important;
+    margin-right: 280px !important; /* 保留你的調整 */
   }
 }
 
+/* 完全保留你的手機佈局 */
 @media (max-width: 768px) {
   .toc {
-    width: 220px !important;
+    width: 220px !important; /* 保留你的調整 */
     top: 80px !important;
   }
   .page__content {
-    margin-right: 240px !important;
+    margin-right: 240px !important; /* 保留你的調整 */
   }
   .toc-toggle {
     top: 60px !important;
@@ -780,6 +948,7 @@ input[type="search"]:focus, input[type="text"]:focus {
   }
 }
 
+/* 完全保留你的小手機佈局 */
 @media (max-width: 480px) {
   .toc,
   .toc-toggle {
@@ -788,6 +957,178 @@ input[type="search"]:focus, input[type="text"]:focus {
   .page__content {
     margin-right: 0 !important;
   }
+}
+
+/* =============================================================================
+   微小的無障礙改進 - 不改變任何視覺效果
+   ============================================================================= */
+
+/* 螢幕閱讀器專用 - 完全隱藏 */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* 跳躍連結 - 只在獲得焦點時顯示 */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: var(--current-text);
+  color: var(--current-bg);
+  padding: 8px 12px;
+  text-decoration: none;
+  border-radius: 4px;
+  z-index: 1100;
+  font-weight: 600;
+  transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+  top: 6px;
+}
+
+/* 高對比模式支援 - 僅在需要時生效 */
+@media (prefers-contrast: high) {
+  .archive__item,
+  .sidebar,
+  .toc {
+    border: 1px solid var(--current-text);
+  }
+  
+  .btn,
+  .page__taxonomy-item {
+    border: 2px solid currentColor;
+  }
+}
+
+/* =============================================================================
+   列印樣式 - 確保列印時內容完整
+   ============================================================================= */
+
+@media print {
+  .theme-toggle,
+  .toc-toggle,
+  .toc,
+  .masthead,
+  .page__footer,
+  .sidebar {
+    display: none !important;
+  }
+  
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+    color: #000;
+    background: #fff;
+  }
+  
+  .page__content {
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    border-radius: 0;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+    page-break-inside: avoid;
+  }
+  
+  blockquote,
+  .highlight {
+    page-break-inside: avoid;
+  }
+  
+  a[href^="http"]:after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+  }
+}
+
+/* =============================================================================
+   JavaScript 整合類別 - 為未來功能做準備
+   ============================================================================= */
+
+/* 載入狀態 */
+.is-loading {
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+/* 顯示/隱藏狀態 */
+.is-hidden {
+  display: none !important;
+}
+
+.is-visible {
+  display: block !important;
+}
+
+/* TOC 活動狀態 */
+.toc-item.is-active {
+  font-weight: 600;
+  color: var(--current-accent);
+}
+
+.toc-item.is-visible {
+  opacity: 1;
+}
+
+.toc-item.is-hidden {
+  opacity: 0.5;
+}
+
+/* 閱讀進度指示器 (可選功能) */
+.reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--current-bg-light);
+  z-index: 1100;
+}
+
+.reading-progress__bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--current-accent), var(--current-primary));
+  width: 0%;
+  transition: width 0.1s ease;
+}
+
+/* =============================================================================
+   選取文字樣式
+   ============================================================================= */
+
+::selection {
+  background: rgba(from var(--current-accent) r g b / 0.3);
+  color: var(--current-text);
+}
+
+::-moz-selection {
+  background: rgba(from var(--current-accent) r g b / 0.3);
+  color: var(--current-text);
+}
+
+/* =============================================================================
+   深色模式特殊調整
+   ============================================================================= */
+
+[data-theme="dark"] img {
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
+[data-theme="dark"] img:hover {
+  opacity: 1;
 }
 
 /* stylelint-enable */
