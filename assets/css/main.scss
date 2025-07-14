@@ -1,317 +1,171 @@
+---
+---
+
+/* stylelint-disable */
 /* ========================================================================
-   JAPANESE DESIGN SYSTEM - PERFORMANCE OPTIMIZED
+   Font Imports
    ======================================================================== */
+/* 1. Noto Sans TC – 完整字重系列 */
 
-/* =============================================================================
-   PART 1: STRATEGIC FONT LOADING - 字體策略優化
-   ============================================================================= */
-
-/* 1. 核心字體 - 只載入必要字重 */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Potta+One:wght@100;200;300;400;500;600;700;800;900&display=swap');
+/* 2. Cormorant Garamond – 完整字重與斜體 */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+/* 3. Zen Maru Gothic – 介面主字體 */
 @import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap');
+/* 4. 其他輔助字體 */
+@import url('https://fonts.googleapis.com/css2?family=Marcellus:wght@100;300;400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@100;300;400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tenor+Sans:wght@400;500;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tuffy:wght@400;500;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Andika:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Hong+Kong:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cactus+Classical+Serif:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chiron+Sung+HK:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Hong+Kong:wght@400;500;600;700&display=swap');
 
-/* 2. 英文裝飾字體 - 精選載入 */
-@import url('https://fonts.googleapis.com/css2?family=Marcellus:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Tenor+Sans:wght@400;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital,wght@0,400;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Traditional+Chinese:wght@400;500;600;700;800;900&display=swap');
 
-/* 3. 程式碼字體 */
-@import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500&display=swap');
-
-/* 4. 傳統中文字體 - 延遲載入 */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Traditional+Chinese:wght@400;500;600&display=swap');
-
-/* Minimal Mistakes 整合 */
+/* Minimal‑Mistakes Imports (按官方順序) */
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
 @import "minimal-mistakes";
 
 /* =============================================================================
-   PART 2: 日本色彩系統 - 完整語意化設計
+   日本色票變數定義 - 日夜模式
    ============================================================================= */
 
 :root {
-  /* 字體層級系統 - 保持你的原始概念但結構化 */
-  --font-primary-tc: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
-  --font-secondary-tc: 'Shippori Mincho B1', 'Noto Serif Traditional Chinese', serif;
-  --font-interface: 'Zen Maru Gothic', system-ui, sans-serif;
+  /* 字體變數 - 分離內文與介面字體 */
+  --reading-font-main: var(--reading-font-serif); // 切換用
   
-  /* 英文字體 - 維持你的典雅風格 */
-  --font-title-en: 'Marcellus', 'Times New Roman', serif;
-  --font-body-en: 'Tenor Sans', 'Helvetica Neue', sans-serif;
-  --font-quote-en: 'DM Serif Text', Georgia, serif;
-  --font-code: 'Fira Mono', 'SF Mono', Consolas, monospace;
+  /* 介面字體 - Zen Maru Gothic (保持原有可愛風格) */
+  --interface-tc-font:  'Shippori Mincho B1', 'Chiron Sung HK', 'Noto Serif Traditional Chinese', serif;
   
-  /* 閱讀字體切換系統 - 保持你的概念 */
-  --reading-font-serif: var(--font-secondary-tc);
-  --reading-font-sans: var(--font-primary-tc);
-  --reading-font-main: var(--reading-font-serif); /* 預設使用襯線體 */
+  --interface-en-font: 'Tenor Sans', 'Helvetica Neue', 'Arial', sans-serif;
 
-  /* 日本傳統色彩 - 維持你的美學但增強對比度 */
-  /* 日間模式 (溫柔日本色票) */
-  --sakura: #ffadd6;           /* 櫻花色 - 主色調 */
-  --toki: #f5b2b2;            /* 鴇色 - 次要色 */
-  --yamabuki: #f8b500;         /* 山吹色 - 強調色 */
-  --nando: #2f5d62;           /* 納戸色 - 主文字 */
-  --ainezumi: #566c73;         /* 藍鼠 - 次要文字 */
-  --ruri: #1e50a2;            /* 瑠璃色 - 連結 */
-  --sango: #f17c67;           /* 珊瑚色 - 懸停 */
-  --wakatake: #68be8d;         /* 若竹色 - 成功 */
-  --moegi: #93b881;           /* 萌黄 - 按鈕懸停 */
-  --matcha: #c5c56a;          /* 抹茶色 - 標籤 */
+  /* 內文閱讀字體 - 改為 Kiwi Maru 為主 */
+  --reading-font-sans: 'Noto Sans TC', 'Kiwi Maru', 'Noto Sans JP', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+  --reading-font-serif: 'Chiron Sung HK', 'Cactus Classical Serif', 'Noto Serif Hong Kong', 'PingFang TC', 'Microsoft JhengHei', serif;
   
-  /* 中性色彩 - 增強可用性 */
-  --shiro: #ffffff;           /* 白 - 背景 */
-  --usuzumi: #f8fafb;         /* 薄墨 - 次要背景 */
-  --ginmouse: #e8f4f8;        /* 銀鼠 - 淡背景 */
-  --mizuiro: #b8d4e3;         /* 水色 - 邊框 */
+  --bold-title-font: 'Chiron Sung HK', 'Noto Serif JP', 'Shippori Mincho', 'Noto Serif CJK TC', serif;
 
-  /* 夜間模式 (深邃夜色) */
-  --yoru-murasaki: #4a4458;    /* 夜紫 - 主色調 */
-  --kon: #5c4a72;             /* 紺 - 次要色 */
-  --kogane: #d4af37;          /* 黃金 - 強調色 */
-  --zoge: #e8e3d3;            /* 象牙 - 主文字 */
-  --haizakura: #c8c3b8;       /* 灰櫻 - 次要文字 */
-  --asagi: #9bb8d3;           /* 淺蔥 - 連結 */
-  --beni: #e8a87c;            /* 紅 - 懸停 */
-  --kuro: #1a1a1a;            /* 黑 - 背景 */
-  --sumizumi: #2d2d2d;        /* 炭 - 次要背景 */
-  --hai: #262626;             /* 灰 - 淡背景 */
-  --tetsu: #404040;           /* 鐵 - 邊框 */
+  /* 英文字體 (保持典雅風格) */
+  --en-title-font: 'Marcellus', 'Times New Roman', serif;
+  --en-body-font: 'Andika', 'Helvetica Neue', 'Arial', sans-serif;
+  --en-accent-font: 'Hedvig Letters Serif', 'Times New Roman', serif;
+  --en-quote-font: 'DM Serif Text', 'Georgia', serif;
+  
+  --en-code-font: 'Fira Mono', 'Courier New', monospace;
 
-  /* 語意化色彩映射 - 日間模式 */
-  --color-primary: var(--sakura);
-  --color-secondary: var(--toki);
-  --color-accent: var(--yamabuki);
-  --color-text: var(--nando);
-  --color-text-muted: var(--ainezumi);
-  --color-link: var(--ruri);
-  --color-link-hover: var(--sango);
-  --color-success: var(--wakatake);
-  --color-warning: var(--yamabuki);
-  --color-tag: var(--matcha);
+  /* 日間模式色彩 (溫柔日本色票) */
+  --day-primary: #FFADD6;     /* 櫻花色 */
+  --day-secondary: #F5B2B2;   /* 鴇色 */
+  --day-accent: #F8B500;      /* 山吹色 */
+  --day-text: #2F5D62;        /* 納戸色 */
+  --day-text-light: #566C73;  /* 藍鼠 */
+  --day-link: #1E50A2;        /* 瑠璃色 */
+  --day-link-hover: #F17C67;  /* 珊瑚色 */
+  --day-bg: #FFFFFF;          /* 白色 */
+  --day-bg-light: #E8F4F8;    /* 藍白 */
+  --day-border: #B8D4E3;      /* 水色 */
+  --day-button: #68BE8D;      /* 若竹色 */
+  --day-button-hover: #93B881; /* 萌黄 */
+  --day-tag: #C5C56A;         /* 抹茶色 */
   
-  /* 背景色系統 */
-  --color-bg: var(--shiro);
-  --color-bg-elevated: var(--usuzumi);
-  --color-bg-muted: var(--ginmouse);
-  --color-border: var(--mizuiro);
-  --color-surface: var(--color-bg);
+  /* 夜間模式色彩 (溫柔夜色日本色票) */
+  --night-primary: #4A4458;    /* 紫鼠色 */
+  --night-secondary: #5C4A72;  /* 深紫苑色 */
+  --night-accent: #D4AF37;     /* 山吹色 (稍暗) */
+  --night-text: #E8E3D3;      /* 象牙色 */
+  --night-text-light: #C8C3B8; /* 灰白色 */
+  --night-link: #9BB8D3;      /* 淡瑠璃色 */
+  --night-link-hover: #E8A87C; /* 淡珊瑚色 */
+  --night-bg: #2C2C2C;        /* 深灰 */
+  --night-bg-light: #383838;   /* 中灰 */
+  --night-border: #4F4F4F;     /* 邊框灰 */
+  --night-button: #6B8E7F;     /* 暗若竹色 */
+  --night-button-hover: #7BA05B; /* 暗萌黄 */
+  --night-tag: #8B956D;        /* 暗抹茶色 */
   
-  /* 程式碼色彩 - 日間 */
-  --color-code-bg: #f8f9fa;
-  --color-code-text: #2d3748;
-  --color-code-border: #e2e8f0;
-  --color-inline-code-bg: #edf2f7;
-  --color-inline-code-text: #c53030;
-  
-  /* 間距系統 - 8px 基準 */
-  --space-xs: 0.25rem;    /* 4px */
-  --space-sm: 0.5rem;     /* 8px */
-  --space-md: 1rem;       /* 16px */
-  --space-lg: 1.5rem;     /* 24px */
-  --space-xl: 2rem;       /* 32px */
-  --space-2xl: 3rem;      /* 48px */
-  
-  /* 圓角系統 */
-  --radius-sm: 0.25rem;   /* 4px */
-  --radius-md: 0.5rem;    /* 8px */
-  --radius-lg: 0.75rem;   /* 12px */
-  --radius-xl: 1rem;      /* 16px */
-  --radius-pill: 50px;
-  
-  /* 陰影系統 */
-  --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.05);
-  --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.08);
-  --shadow-medium: 0 4px 15px rgba(0, 0, 0, 0.12);
-  --shadow-strong: 0 8px 32px rgba(0, 0, 0, 0.15);
-  
-  /* 動畫時間 */
-  --duration-fast: 150ms;
-  --duration-normal: 250ms;
-  --duration-slow: 350ms;
+  /* 預設使用日間模式 */
+  --current-primary: var(--day-primary);
+  --current-secondary: var(--day-secondary);
+  --current-accent: var(--day-accent);
+  --current-text: var(--day-text);
+  --current-text-light: var(--day-text-light);
+  --current-link: var(--day-link);
+  --current-link-hover: var(--day-link-hover);
+  --current-bg: var(--day-bg);
+  --current-bg-light: var(--day-bg-light);
+  --current-border: var(--day-border);
+  --current-button: var(--day-button);
+  --current-button-hover: var(--day-button-hover);
+  --current-tag: var(--day-tag);
 }
 
-/* 夜間模式切換 */
+/* 夜間模式變數切換 */
 [data-theme="dark"] {
-  --color-primary: var(--yoru-murasaki);
-  --color-secondary: var(--kon);
-  --color-accent: var(--kogane);
-  --color-text: var(--zoge);
-  --color-text-muted: var(--haizakura);
-  --color-link: var(--asagi);
-  --color-link-hover: var(--beni);
-  --color-success: #6b8e7f;
-  --color-warning: var(--kogane);
-  --color-tag: #8b956d;
-  
-  --color-bg: var(--kuro);
-  --color-bg-elevated: var(--sumizumi);
-  --color-bg-muted: var(--hai);
-  --color-border: var(--tetsu);
-  --color-surface: var(--sumizumi);
-  
-  /* 程式碼色彩 - 夜間 */
-  --color-code-bg: #1a202c;
-  --color-code-text: #e2e8f0;
-  --color-code-border: #2d3748;
-  --color-inline-code-bg: #2d3748;
-  --color-inline-code-text: #fc8181;
-  
-  color-scheme: dark;
+  --current-primary: var(--night-primary);
+  --current-secondary: var(--night-secondary);
+  --current-accent: var(--night-accent);
+  --current-text: var(--night-text);
+  --current-text-light: var(--night-text-light);
+  --current-link: var(--night-link);
+  --current-link-hover: var(--night-link-hover);
+  --current-bg: var(--night-bg);
+  --current-bg-light: var(--night-bg-light);
+  --current-border: var(--night-border);
+  --current-button: var(--night-button);
+  --current-button-hover: var(--night-button-hover);
+  --current-tag: var(--night-tag);
+}
+
+/* 平滑過渡效果 */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
 }
 
 /* =============================================================================
-   PART 3: 基礎設定 - 效能與可訪問性優先
-   ============================================================================= */
-
-/* 現代 CSS Reset */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-/* 尊重使用者的動作偏好 */
-@media (prefers-reduced-motion: no-preference) {
-  html {
-    scroll-behavior: smooth;
-  }
-  
-  * {
-    transition: 
-      background-color var(--duration-normal) ease,
-      color var(--duration-normal) ease,
-      border-color var(--duration-normal) ease,
-      box-shadow var(--duration-normal) ease,
-      transform var(--duration-fast) ease;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-
-html {
-  font-size: 100%;
-  text-size-adjust: 100%;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-/* =============================================================================
-   PART 4: 主體字體設定 - 保持你的風格理念
-   ============================================================================= */
-
-body {
-  font-family: var(--font-body-en), var(--reading-font-main);
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.7; /* 稍微放鬆行距 */
-  letter-spacing: 0.02em;
-  background-color: var(--color-bg);
-  color: var(--color-text);
-  font-feature-settings: "kern" 1, "liga" 1;
-}
-
-/* =============================================================================
-   PART 5: 標題層級 - 維持你的粗體+緊密理念但改善可讀性
-   ============================================================================= */
-
-h1, h2, h3, h4, h5, h6,
-.page__title, 
-.page__hero-title, 
-.site-title {
-  font-family: var(--font-title-en), var(--font-interface), var(--font-secondary-tc);
-  color: var(--color-text);
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  line-height: 1.2;
-  margin-top: 0;
-  margin-bottom: var(--space-md);
-}
-
-h1 { 
-  font-size: 2.25rem; /* 36px - 更大標題 */
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  margin-bottom: var(--space-lg);
-}
-
-h2 { 
-  font-size: 1.875rem; /* 30px */
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  margin-top: var(--space-xl);
-  margin-bottom: var(--space-md);
-}
-
-h3 { 
-  font-size: 1.5rem; /* 24px */
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  margin-top: var(--space-lg);
-}
-
-h4 { 
-  font-size: 1.25rem; /* 20px */
-  font-weight: 600;
-}
-
-h5 { 
-  font-size: 1.125rem; /* 18px */
-  font-weight: 500;
-}
-
-h6 { 
-  font-size: 1rem; /* 16px */
-  font-weight: 500;
-}
-
-/* =============================================================================
-   PART 6: 日夜切換按鈕 - 保持你的設計但增強互動
+   日夜切換按鈕樣式
    ============================================================================= */
 
 .theme-toggle {
   position: fixed;
-  top: var(--space-lg);
-  right: var(--space-lg);
+  top: 20px;
+  right: 20px;
   z-index: 1000;
-  background: var(--color-surface);
-  border: 2px solid var(--color-border);
-  border-radius: var(--radius-pill);
-  padding: var(--space-sm) var(--space-md);
+  background: var(--current-primary);
+  border: 2px solid var(--current-accent);
+  border-radius: 50px;
+  padding: 8px 15px;
   cursor: pointer;
-  font-family: var(--font-interface);
-  font-size: 0.875rem;
+  font-family: var(--interface-en-font);
+  font-size: 16px;
   font-weight: 500;
-  color: var(--color-text);
-  box-shadow: var(--shadow-medium);
+  color: var(--current-text);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10px);
-  transition: all var(--duration-normal) ease;
-  display: flex;
-  align-items: center;
-  gap: var(--space-sm);
+  transition: all 0.3s ease;
 }
 
 .theme-toggle:hover {
   transform: scale(1.05);
-  box-shadow: var(--shadow-strong);
-  border-color: var(--color-accent);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
 .theme-toggle::before {
   content: "🌸";
-  font-size: 1rem;
+  margin-right: 8px;
 }
 
 [data-theme="dark"] .theme-toggle::before {
@@ -319,314 +173,324 @@ h6 {
 }
 
 /* =============================================================================
-   PART 7: 導航系統 - 保持漸層美學但增強可用性
+   主要字體設定
    ============================================================================= */
 
+body {
+  font-family: var(--en-body-font), var(--reading-font-main) !important;
+  font-weight: 400;
+  line-height: 1.8;
+  letter-spacing: 0.02em;
+  background-color: var(--current-bg) !important;
+  color: var(--current-text) !important;
+}
+
+/* 標題字體 - 粗體 + 窄間距 */
+h1, h2, h3, h4, h5, h6,
+.page__title, .page__hero-title, .site-title {
+  font-family: var(--en-title-font), var(--interface-en-font), var(--interface-tc-font) !important;
+  color: var(--current-text) !important;
+  font-weight: 700 !important; /* 粗體 */
+  letter-spacing: -0.02em !important; /* 稍微窄一點的間距 */
+  line-height: 1.2 !important; /* 緊密行距 */
+}
+
+h1 { 
+  font-size: 1.8em; 
+  font-weight: 900 !important;
+  letter-spacing: -0.03em !important;
+  font-family: var(--en-title-font), var(--interface-en-font), var(--interface-tc-font) !important;
+}
+
+h2 { 
+  font-size: 1.6em;
+  font-weight: 700 !important;
+  letter-spacing: -0.02em !important;
+  font-family: var(--en-title-font), var(--interface-en-font), var(--interface-tc-font) !important;
+}
+
+h3 { 
+  font-size: 1.4em; 
+  font-weight: 600 !important;
+  letter-spacing: -0.01em !important;
+  font-family: var(--en-title-font), var(--interface-en-font), var(--interface-tc-font) !important;
+}
+
+/* =============================================================================
+   主要組件樣式 - 響應式主題
+   ============================================================================= */
+
+/* 頂部導航列 */
 .masthead {
   background: linear-gradient(135deg, 
-    var(--color-primary) 0%, 
-    var(--color-secondary) 50%, 
-    var(--color-bg-elevated) 100%);
-  border-bottom: 1px solid var(--color-border);
-  box-shadow: var(--shadow-soft);
-  position: sticky;
-  top: 0;
-  z-index: 999;
-  backdrop-filter: blur(10px);
+    var(--current-primary) 0%, 
+    var(--current-secondary) 50%, 
+    var(--current-bg-light) 100%) !important;
+  border-bottom: 1px solid var(--current-border) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .site-title {
-  font-family: var(--font-title-en);
-  font-weight: 700;
-  font-size: 1.5rem;
-  color: var(--color-text);
-  text-decoration: none;
+  color: var(--current-text) !important;
+  font-weight: 700 !important; /* 網站標題粗體 */
+  text-decoration: none !important;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-  letter-spacing: -0.01em;
-  transition: all var(--duration-normal) ease;
+  letter-spacing: -0.01em !important; /* 窄間距 */
+  font-family: var(--en-title-font) !important;
 }
 
 .site-title:hover {
   transform: scale(1.02);
-  text-shadow: 2px 2px 8px hsla(from var(--color-primary) h s l / 0.4);
-  color: var(--color-text);
+  text-shadow: 2px 2px 8px var(--current-primary);
 }
 
+/* 導航連結 - 保持 Zen Maru Gothic 介面風格 */
 .greedy-nav a {
-  color: var(--color-text);
-  font-size: 0.9rem;
-  font-family: var(--font-interface);
-  font-weight: 500;
-  letter-spacing: -0.005em;
-  padding: var(--space-sm) var(--space-md);
-  border-radius: var(--radius-md);
-  transition: all var(--duration-fast) ease;
+  color: var(--current-text) !important;
+  font-size: 1em;
+  font-family: var(--en-title-font), var(--interface-en-font), var(--interface-tc-font) !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.01em !important;
 }
 
 .greedy-nav a:hover {
-  color: var(--color-link);
-  background-color: hsla(from var(--color-bg-muted) h s l / 0.8);
+  color: var(--current-link) !important;
 }
 
-/* =============================================================================
-   PART 8: 頁面標題 - 保持中央對齊和裝飾但改善層級
-   ============================================================================= */
-
+/* 頁面標題 - 粗體緊密 */
 .page__title {
-  font-family: var(--font-title-en);
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--color-text);
+  color: var(--current-text) !important;
+  border-bottom: 3px solid var(--current-accent) !important;
   text-align: center;
   position: relative;
-  padding-bottom: var(--space-md);
-  margin-bottom: var(--space-xl);
-  border-bottom: 3px solid var(--color-accent);
-  letter-spacing: -0.02em;
-  line-height: 1.1;
+  padding-bottom: 15px !important;
+  margin-bottom: 25px !important;
+  font-weight: 700 !important; /* 粗體 */
+  letter-spacing: -0.02em !important; /* 窄間距 */
+  line-height: 1.1 !important; /* 緊密行距 */
+  font-family: var(--en-title-font) !important;
 }
 
-/* 可選的裝飾元素 - 保持你的美學概念 */
-.page__title--decorated::before,
-.page__title--decorated::after {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 1.2rem;
-  opacity: 0.7;
-}
+// .page__title::before {
+//   content: "🌸";
+//   position: absolute;
+//   left: -40px;
+//   top: 50%;
+//   transform: translateY(-50%);
+// }
 
-.page__title--decorated::before {
-  content: "🌸";
-  left: -3rem;
-}
+// .page__title::after {
+//   content: "🌸";
+//   position: absolute;
+//   right: -40px;
+//   top: 50%;
+//   transform: translateY(-50%);
+// }
 
-.page__title--decorated::after {
-  content: "🌸";
-  right: -3rem;
-}
+// [data-theme="dark"] .page__title::before,
+// [data-theme="dark"] .page__title::after {
+//   content: "🌙";
+// }
 
-[data-theme="dark"] .page__title--decorated::before,
-[data-theme="dark"] .page__title--decorated::after {
-  content: "🌙";
-}
-
-/* =============================================================================
-   PART 9: 連結系統 - 精緻的懸停效果
-   ============================================================================= */
-
+/* 連結樣式 */
 a {
-  color: var(--color-link);
-  text-decoration: none;
-  text-decoration-color: transparent;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 2px;
-  transition: all var(--duration-fast) ease;
+  color: var(--current-link) !important;
+  text-decoration: none !important;
+  border-bottom: 1px solid transparent;
 }
 
 a:hover {
-  color: var(--color-link-hover);
-  text-decoration-color: currentColor;
+  color: var(--current-link-hover) !important;
+  border-bottom: 1px solid var(--current-link-hover) !important;
 }
 
-a:focus-visible {
-  outline: 2px solid var(--color-accent);
-  outline-offset: 2px;
-  border-radius: var(--radius-sm);
-}
-
-/* =============================================================================
-   PART 10: 按鈕系統 - 保持漸層美學
-   ============================================================================= */
-
+/* 按鈕樣式 - 保持 Zen Maru Gothic 介面風格 */
 .btn {
   background: linear-gradient(135deg, 
-    var(--color-success) 0%, 
-    var(--color-primary) 100%);
-  color: var(--color-bg);
-  border: none;
-  border-radius: var(--radius-pill);
-  padding: var(--space-sm) var(--space-lg);
-  font-family: var(--font-interface);
-  font-weight: 600;
-  font-size: 0.875rem;
-  letter-spacing: 0.05em;
+    var(--current-button) 0%, 
+    var(--current-button-hover) 100%) !important;
+  color: var(--current-bg) !important;
+  border: none !important;
+  border-radius: 25px !important;
+  padding: 10px 20px !important;
+  font-family: var(--en-title-font), var(--interface-en-font), var(--interface-tc-font) !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.05em !important;
   text-transform: uppercase;
-  box-shadow: var(--shadow-medium);
-  cursor: pointer;
-  transition: all var(--duration-normal) ease;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
 }
 
 .btn:hover {
-  color: var(--color-bg);
+  color: var(--current-bg) !important;
   transform: translateY(-2px);
-  box-shadow: var(--shadow-strong);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
 }
 
-.btn:focus-visible {
-  outline: 2px solid var(--color-accent);
-  outline-offset: 2px;
-}
-
-/* =============================================================================
-   PART 11: 文章卡片 - 保持緊密布局但改善間距
-   ============================================================================= */
-
+/* 文章卡片 - 更密集布局 */
 .archive__item {
-  background: var(--color-surface);
-  border-left: 6px solid var(--color-tag);
-  border-radius: var(--radius-lg);
-  padding: var(--space-md) var(--space-lg);
-  margin-bottom: var(--space-md);
-  box-shadow: var(--shadow-soft);
+  background: var(--current-bg) !important;
+  border-left: 8px solid var(--current-tag) !important; /* 更細的左邊框 */
+  border-radius: 8px !important; /* 更小的圓角 */
+  padding: 15px 18px !important; /* 減少內邊距 */
+  margin-bottom: 15px !important; /* 減少卡片間距 */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important; /* 更淺的陰影 */
   position: relative;
   overflow: hidden;
-  transition: all var(--duration-normal) ease;
+  transition: all 0.2s ease; /* 更快的動畫 */
 }
 
 .archive__item:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-medium);
-  border-left-color: var(--color-accent);
+  transform: translateY(-1px); /* 更小的懸浮效果 */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12) !important;
 }
 
-.archive__item-title {
-  margin-bottom: var(--space-sm);
-  line-height: 1.3;
+/* 文章標題在卡片中 */
+.archive__item .archive__item-title {
+  margin-bottom: 8px !important; /* 減少標題下方間距 */
+  line-height: 1.3 !important; /* 緊密行距 */
 }
 
-.archive__item-title a {
-  font-family: var(--font-interface);
-  font-size: 1.125rem;
-  font-weight: 600;
-  line-height: 1.3;
-  color: var(--color-text);
+.archive__item .archive__item-title a {
+  font-size: 1.1em !important; /* 稍微小一點的標題 */
+  font-weight: 600 !important;
+  line-height: 1.3 !important;
 }
 
-.archive__item-excerpt {
-  margin-bottom: var(--space-sm);
-  font-size: 0.875rem;
-  line-height: 1.6;
-  color: var(--color-text-muted);
+/* 文章摘要 */
+.archive__item .archive__item-excerpt {
+  margin-bottom: 8px !important; /* 減少摘要下方間距 */
+  font-size: 0.7em !important; /* 稍微小一點的文字 */
+  line-height: 1.5 !important; /* 緊密行距 */
+  color: var(--current-text-light) !important;
 }
 
+/* 文章元資訊 */
 .archive__item .page__meta {
-  margin-bottom: 0;
-  font-size: 0.75rem;
-  color: var(--color-text-muted);
-  font-family: var(--font-interface);
+  margin-bottom: 0 !important; /* 移除底部間距 */
+  font-size: 0.6em !important; /* 更小的元資訊文字 */
+  color: var(--current-text-light) !important;
 }
 
-/* =============================================================================
-   PART 12: 側邊欄 - 保持漸層背景和固定定位
-   ============================================================================= */
+/* 移除多餘的間距 */
+.archive__item > *:last-child {
+  margin-bottom: 0 !important;
+}
 
+.archive__item > *:first-child {
+  margin-top: 0 !important;
+}
+
+/* 側邊欄 - 緊湊版 + 目錄樣式 */
 .sidebar {
   background: linear-gradient(135deg, 
-    var(--color-bg-elevated) 0%, 
-    hsla(from var(--color-border) h s l / 0.3) 100%);
-  padding: var(--space-lg);
-  border-radius: var(--radius-xl);
-  border: 1px solid var(--color-border);
+    var(--current-bg-light) 0%, 
+    var(--current-border) 100%) !important;
+  padding: 18px !important; /* 減少內邊距 */
+  border-radius: 16px !important; /* 更小圓角 */
+  border: 1px solid var(--current-border);
   backdrop-filter: blur(10px);
-  position: sticky;
-  top: var(--space-lg);
-  max-height: calc(100vh - var(--space-2xl));
-  overflow-y: auto;
-  box-shadow: var(--shadow-medium);
-  scrollbar-width: thin;
-  scrollbar-color: var(--color-border) transparent;
+  position: sticky !important; /* 讓側邊欄固定 */
+  top: 20px !important; /* 距離頂部 20px */
+  max-height: calc(100vh - 40px) !important; /* 最大高度 */
+  overflow-y: auto !important; /* 內容過多時可滾動 */
 }
 
-.sidebar::-webkit-scrollbar {
-  width: 4px;
-}
-
-.sidebar::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.sidebar::-webkit-scrollbar-thumb {
-  background: var(--color-border);
-  border-radius: var(--radius-sm);
-}
-
+/* 作者資訊緊湊化 */
 .author__avatar {
-  margin-bottom: var(--space-md);
-}
-
-.author__avatar img {
-  border: 4px solid var(--color-accent);
-  box-shadow: var(--shadow-medium);
-  border-radius: 50%;
+  margin-bottom: 15px !important; /* 減少頭像下方間距 */
 }
 
 .author__bio {
-  margin-bottom: var(--space-md);
-  font-size: 0.875rem;
-  line-height: 1.6;
-  color: var(--color-text-muted);
+  margin-bottom: 15px !important; /* 減少簡介下方間距 */
+  font-size: 0.9em !important; /* 稍微小一點的文字 */
+  line-height: 1.5 !important;
 }
 
 .author__urls {
-  margin-bottom: var(--space-md);
+  margin-bottom: 15px !important; /* 為目錄留出空間 */
 }
 
 .author__urls li {
-  margin-bottom: var(--space-xs);
+  margin-bottom: 5px !important; /* 減少連結間距 */
 }
 
-/* =============================================================================
-   PART 13: 標籤系統 - 保持漸層和大寫風格
-   ============================================================================= */
+/* 滾動條樣式 (for WebKit browsers) */
+.sidebar::-webkit-scrollbar,
+.toc::-webkit-scrollbar {
+  width: 4px;
+}
 
+.sidebar::-webkit-scrollbar-track,
+.toc::-webkit-scrollbar-track {
+  background: var(--current-bg-light);
+  border-radius: 2px;
+}
+
+.sidebar::-webkit-scrollbar-thumb,
+.toc::-webkit-scrollbar-thumb {
+  background: var(--current-border);
+  border-radius: 2px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover,
+.toc::-webkit-scrollbar-thumb:hover {
+  background: var(--current-tag);
+}
+
+/* 作者頭像 */
+.author__avatar img {
+  border: 4px solid var(--current-accent) !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+  border-radius: 50% !important;
+}
+
+/* 標籤 - 調整字重和間距 */
 .page__taxonomy-item {
   background: linear-gradient(135deg, 
-    var(--color-tag) 0%, 
-    var(--color-accent) 100%);
-  color: var(--color-bg);
-  border-radius: var(--radius-pill);
-  padding: var(--space-xs) var(--space-md);
-  font-family: var(--font-interface);
-  font-size: 0.75rem;
-  font-weight: 600;
+    var(--current-border) 0%, 
+    var(--current-tag) 100%) !important;
+  color: var(--current-bg) !important;
+  border-radius: 20px !important;
+  padding: 6px 15px !important;
+  font-family: var(--en-accent-font), var(--interface-en-font) !important;
+  font-size: 0.85em !important;
+  font-weight: 600 !important; /* 標籤粗體 */
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  box-shadow: var(--shadow-soft);
-  transition: all var(--duration-normal) ease;
-  display: inline-block;
-  margin: var(--space-xs);
+  letter-spacing: 0.02em !important; /* 標籤稍微窄一點 */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .page__taxonomy-item:hover {
   background: linear-gradient(135deg, 
-    var(--color-success) 0%, 
-    var(--color-primary) 100%);
+    var(--current-button) 0%, 
+    var(--current-button-hover) 100%) !important;
   transform: scale(1.05);
-  box-shadow: var(--shadow-medium);
-  color: var(--color-bg);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* =============================================================================
-   PART 14: 引用文字 - 保持詩意風格但改善可讀性
-   ============================================================================= */
-
+/* 引用文字 - 使用詩意字體 */
 blockquote {
-  border-left: 4px solid var(--color-link-hover);
-  background: linear-gradient(135deg, 
-    var(--color-bg-elevated), 
-    hsla(from var(--color-border) h s l / 0.3));
-  color: var(--color-text);
-  padding: var(--space-md) var(--space-lg);
-  margin: var(--space-lg) 0;
-  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
-  font-family: var(--font-quote-en), var(--reading-font-main);
-  font-size: 0.95rem;
-  line-height: 1.6;
+  border-left: 4px solid var(--current-link-hover) !important;
+  background: linear-gradient(135deg, var(--current-bg-light), var(--current-border)) !important;
+  color: var(--current-text) !important;
+
+  /* 🔽 原本 padding: 20px 25px → 改成更窄的 */
+  padding: 12px 16px !important;
+
+  /* 🔽 原本 margin: 25px 0 → 縮小整體佔位感 */
+  margin: 16px 0 !important;
+
+  border-radius: 0 12px 12px 0 !important;
+  font-family: var(--en-quote-font), var(--reading-font-main) !important;
+
+  /* 建議調整 */
+  font-size: 0.9em;
+  line-height: 1.5;
   font-style: italic;
-  font-weight: 400;
+  font-weight: 500;
+
   position: relative;
-  box-shadow: var(--shadow-soft);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
 blockquote::before {
@@ -634,762 +498,296 @@ blockquote::before {
   position: absolute;
   left: -15px;
   top: -10px;
-  font-size: 1rem;
-  background: var(--color-bg);
-  padding: var(--space-xs);
+  font-size: 1em;
+  background: var(--current-bg);
+  padding: 5px;
   border-radius: 50%;
-  box-shadow: var(--shadow-soft);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 [data-theme="dark"] blockquote::before {
   content: "🌌";
-  background: var(--color-bg);
+  background: var(--current-bg);
 }
 
-/* =============================================================================
-   PART 15: 程式碼區塊 - 確保兩種主題下的可見性
-   ============================================================================= */
-
-.highlight,
-pre {
-  background: var(--color-code-bg);
-  border: 1px solid var(--color-code-border);
-  border-left: 6px solid var(--color-link);
-  border-radius: var(--radius-md);
-  padding: var(--space-md);
-  margin: var(--space-lg) 0;
-  box-shadow: var(--shadow-soft);
-  overflow-x: auto;
-  position: relative;
+/* 程式碼區塊 - 緊湊版 */
+.highlight {
+  background: linear-gradient(135deg, 
+    var(--current-bg) 0%, 
+    var(--current-border) 100%) !important;
+  border-left: 8px solid var(--current-link) !important; /* 更細邊框 */
+  border-radius: 6px !important; /* 更小圓角 */
+  padding: 12px 15px !important; /* 減少內邊距 */
+  margin: 15px 0 !important; /* 減少外邊距 */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); /* 更淺陰影 */
 }
 
-.highlight code,
-pre code {
-  font-family: var(--font-code);
-  font-size: 0.875rem;
-  line-height: 1.6;
-  color: var(--color-code-text);
-  background: transparent;
-  padding: 0;
-  border-radius: 0;
-  display: block;
-  white-space: pre;
-  word-wrap: normal;
+/* 程式碼文字 */
+.highlight code {
+  font-size: 0.9em !important; /* 稍微小一點 */
+  line-height: 1.4 !important; /* 緊密行距 */
 }
 
-/* 行內程式碼 */
-code {
-  font-family: var(--font-code);
-  font-size: 0.875rem;
-  background: var(--color-inline-code-bg);
-  color: var(--color-inline-code-text);
-  padding: var(--space-xs) var(--space-sm);
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--color-border);
-  font-weight: 500;
+/* 頁腳 */
+.page__footer {
+  background: linear-gradient(135deg, 
+    var(--current-text-light) 0%, 
+    var(--current-text) 100%) !important;
+  color: var(--current-bg) !important;
+  margin-top: 50px !important;
+  padding: 30px 0 !important;
 }
 
-/* 確保程式碼區塊內的 code 不被行內樣式影響 */
-.highlight code,
-pre code {
-  background: transparent;
-  border: none;
-  color: var(--color-code-text);
-  padding: 0;
+.page__footer a {
+  color: var(--current-bg-light) !important;
 }
 
-/* 程式碼區塊滾動條 */
-.highlight::-webkit-scrollbar {
-  height: 8px;
-}
-
-.highlight::-webkit-scrollbar-track {
-  background: var(--color-bg-muted);
-  border-radius: var(--radius-sm);
-}
-
-.highlight::-webkit-scrollbar-thumb {
-  background: var(--color-border);
-  border-radius: var(--radius-sm);
-}
-
-.highlight::-webkit-scrollbar-thumb:hover {
-  background: var(--color-text-muted);
-}
-
-/* =============================================================================
-   PART 16: 文章內容區域 - 保持緊密但可讀的布局
-   ============================================================================= */
-
+/* 文章內容區域 - 減少留白 */
 .page__content {
-  background: var(--color-bg);
-  color: var(--color-text);
-  padding: var(--space-xl) var(--space-2xl);
-  border-radius: var(--radius-lg);
-  font-family: var(--font-body-en), var(--reading-font-main);
-  font-size: 1rem;
-  line-height: 1.7;
-  max-width: none;
+  background: var(--current-bg) !important;
+  color: var(--current-text) !important;
+  padding: 25px 30px !important; /* 減少內邊距 */
+  border-radius: 10px !important; /* 更小圓角 */
+  font-family: var(--en-body-font), var(--reading-font-main) !important;
+  font-size: 1.0em !important;
+  line-height: 1.5;
+  margin-right: 320px !important; /* 為右側目錄留出空間 */
 }
 
-/* 為右側目錄留出空間 - 保持你的布局概念 */
-@media (min-width: 1024px) {
-  .page__content {
-    margin-right: 320px; /* 為TOC預留空間 */
-  }
-}
-
-/* 段落樣式 - 保持你的緊密間距理念但稍微調整 */
+/* 段落樣式 - 緊密間距 */
 .page__content p {
-  margin-bottom: 1.2em; /* 稍微增加段落間距 */
+  margin-bottom: 1em !important; /* 減少段落間距 */
   text-align: justify;
-  color: var(--color-text);
-  max-width: 65ch; /* 最佳閱讀寬度 */
+  color: var(--current-text) !important;
 }
 
-/* 標題間距調整 - 保持層級感 */
+/* 標題間距調整 */
 .page__content h1,
 .page__content h2,
 .page__content h3,
 .page__content h4,
 .page__content h5,
 .page__content h6 {
-  margin-top: 1.5em;
-  margin-bottom: 0.8em;
-  color: var(--color-text);
+  margin-top: 1.2em !important; /* 減少標題上方間距 */
+  margin-bottom: 0.8em !important; /* 減少標題下方間距 */
 }
 
-.page__content h2 {
-  margin-top: 2em; /* h2 需要更多上方空間 */
-}
-
-/* 列表樣式 - 改善可讀性 */
+/* 列表間距 */
 .page__content ul,
 .page__content ol {
-  margin-bottom: 1em;
-  padding-left: 1.5em;
+  margin-bottom: 0.6em !important;
+  padding-left: 1.5em !important;
 }
 
 .page__content li {
-  margin-bottom: 0.25em;
-  line-height: 1.6;
+  margin-bottom: 0.15em !important; /* 減少列表項間距 */
 }
 
-/* 首字放大效果 - 保持你的典雅風格 */
+/* 首字放大效果 - 使用最典雅字體 */
 .page__content > p:first-of-type::first-letter {
-  font-size: 3em;
-  font-family: var(--font-title-en);
+  font-size: 1.8em;
+  font-family: var(--en-title-font);
   font-weight: 400;
   float: left;
-  line-height: 0.8;
-  margin: 0.1em 0.15em 0 0;
-  color: var(--color-accent);
-  text-shadow: 2px 2px 4px hsla(from var(--color-accent) h s l / 0.3);
+  line-height: 0.75;
+  margin: 0.05em 0.12em 0 0;
+  color: var(--current-accent);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 輸入框 */
+input[type="search"], input[type="text"] {
+  background: var(--current-bg) !important;
+  border: 2px solid var(--current-border) !important;
+  color: var(--current-text) !important;
+  border-radius: 6px !important;
+  padding: 8px 12px !important;
+  font-family: var(--interface-tc-font) !important;
+}
+
+input[type="search"]:focus, input[type="text"]:focus {
+  border-color: var(--current-link) !important;
+  outline: none !important;
+  box-shadow: 0 0 5px var(--current-link) !important;
 }
 
 /* =============================================================================
-   PART 17: 右側目錄 - 保持固定定位和優雅樣式
+   右側目錄樣式
    ============================================================================= */
 
+/* 右側目錄 */
 .toc {
-  position: fixed;
-  right: var(--space-lg);
-  top: 120px;
-  width: 240px;
-  max-height: calc(100vh - 150px);
-  overflow-y: auto;
-  z-index: 999;
-  background: var(--color-surface);
-  backdrop-filter: blur(10px);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-strong);
-  scrollbar-width: thin;
-  scrollbar-color: var(--color-border) transparent;
+  position: fixed !important;
+  right: 20px !important;
+  top: 120px !important;
+  width: 200px !important;
+  max-height: calc(100vh - 150px) !important;
+  overflow-y: auto !important;
+  z-index: 999 !important;
+  background: var(--current-bg) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid var(--current-border) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
 }
 
-.toc::-webkit-scrollbar {
-  width: 4px;
-}
-
-.toc::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.toc::-webkit-scrollbar-thumb {
-  background: var(--color-border);
-  border-radius: var(--radius-sm);
-}
-
-.toc::-webkit-scrollbar-thumb:hover {
-  background: var(--color-tag);
-}
-
-/* 目錄標題 - 保持你的設計理念 */
+/* 目錄標題 */
 .toc .nav__title {
-  background: var(--color-tag);
-  color: var(--color-text);
-  font-family: var(--font-interface);
-  font-weight: 600;
-  font-size: 0.875rem;
-  padding: var(--space-md);
-  margin: 0;
-  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+  background: var(--current-tag) !important;
+  color: var(--current-text) !important;
+  font-family: var(--en-accent-font), var(--interface-tc-font) !important;
+  font-weight: 600 !important;
+  font-size: 0.9em !important;
+  padding: 12px 15px !important;
+  margin: 0 !important;
+  border-radius: 12px 12px 0 0 !important;
   text-align: center;
   letter-spacing: 0.02em;
 }
-
-/* 可選的圖標 - 保持你的裝飾理念 */
-.toc .nav__title--with-icon::before {
+/*
+.toc .nav__title::before {
   content: "📖 ";
-  margin-right: var(--space-xs);
+  margin-right: 5px;
 }
+  */
 
 /* 目錄列表樣式 */
 .toc nav ul {
-  margin: 0;
-  padding: var(--space-md);
-  list-style: none;
+  margin: 0 !important;
+  padding: 15px !important;
+  list-style: none !important;
 }
 
 .toc nav li {
-  margin-bottom: var(--space-sm);
-  line-height: 1.2;
+  margin-bottom: 8px !important;
+  line-height: 1.0 !important;
 }
 
 .toc nav a {
-  color: var(--color-text);
-  text-decoration: none;
-  font-size: 0.8rem; /* 稍微大一點提高可讀性 */
-  font-family: var(--font-body-en), var(--reading-font-sans);
-  font-weight: 400;
-  padding: var(--space-xs) var(--space-sm);
-  border-radius: var(--radius-sm);
-  display: block;
-  transition: all var(--duration-fast) ease;
-  border-left: 3px solid transparent;
+  color: var(--current-text) !important;
+  text-decoration: none !important;
+  font-size: 0.45em !important;
+  font-family: var(--en-title-font), var(--reading-font-sans) !important;
+  font-weight: 400 !important;
+  padding: 4px 8px !important;
+  border-radius: 4px !important;
+  display: block !important;
+  transition: all 0.2s ease !important;
+  border-left: 3px solid transparent !important;
 }
 
 .toc nav a:hover {
-  background: var(--color-bg-muted);
-  color: var(--color-link);
-  border-left-color: var(--color-accent);
-  transform: translateX(3px);
+  background: var(--current-bg-light) !important;
+  color: var(--current-link) !important;
+  border-left: 3px solid var(--current-accent) !important;
+  transform: translateX(3px) !important;
 }
 
-/* 目錄層級縮排 - 保持你的層級系統 */
+/* 目錄層級縮排 */
 .toc nav ul ul {
-  padding-left: var(--space-lg);
+  padding-left: 20px !important;
 }
 
 .toc nav ul ul a {
-  font-size: 0.75rem;
-  color: var(--color-text-muted);
+  font-size: 0.8em !important;
+  color: var(--current-text-light) !important;
 }
 
 .toc nav ul ul ul {
-  padding-left: var(--space-xl);
+  padding-left: 40px !important;
 }
 
 .toc nav ul ul ul a {
-  font-size: 0.7rem;
+  font-size: 0.6em !important;
   opacity: 0.8;
 }
 
 /* 當前閱讀位置高亮 */
 .toc nav a.active {
-  background: var(--color-accent);
-  color: var(--color-bg);
-  border-left-color: var(--color-link);
-  font-weight: 600;
+  background: var(--current-accent) !important;
+  color: var(--current-bg) !important;
+  border-left: 3px solid var(--current-link) !important;
+  font-weight: 700 !important;
 }
 
-/* 移除側邊欄中的目錄以避免重複 */
+/* 移除側邊欄中的目錄 */
 .sidebar .toc {
-  display: none;
+  display: none !important;
 }
 
-/* 目錄切換按鈕 - 保持你的圓形設計 */
+/* 創建目錄切換按鈕 */
 .toc-toggle {
-  position: fixed;
-  right: var(--space-lg);
-  top: 80px;
-  z-index: 1001;
-  background: var(--color-surface);
-  border: 2px solid var(--color-border);
-  border-radius: 50%;
-  width: 44px;
-  height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  font-size: 1.1rem;
-  box-shadow: var(--shadow-medium);
-  backdrop-filter: blur(10px);
-  transition: all var(--duration-normal) ease;
+  position: fixed !important;
+  right: 20px !important;
+  top: 80px !important;
+  z-index: 1001 !important;
+  background: var(--current-primary) !important;
+  border: 2px solid var(--current-accent) !important;
+  border-radius: 50% !important;
+  width: 40px !important;
+  height: 40px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  font-size: 18px !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
+  transition: all 0.3s ease !important;
 }
 
 .toc-toggle::before {
-  content: "📋";
+  content: "📋" !important;
 }
 
 [data-theme="dark"] .toc-toggle::before {
-  content: "📄";
+  content: "📄" !important;
 }
 
 .toc-toggle:hover {
-  transform: scale(1.1);
-  box-shadow: var(--shadow-strong);
-  border-color: var(--color-accent);
+  transform: scale(1.1) !important;
 }
 
 /* 目錄隱藏狀態 */
 .toc.hidden {
-  transform: translateX(100%);
-  opacity: 0;
-  pointer-events: none;
+  transform: translateX(300px) !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
 }
 
-/* =============================================================================
-   PART 18: 輸入框系統 - 保持一致的設計語言
-   ============================================================================= */
-
-input[type="search"], 
-input[type="text"], 
-input[type="email"] {
-  background: var(--color-bg);
-  border: 2px solid var(--color-border);
-  color: var(--color-text);
-  border-radius: var(--radius-md);
-  padding: var(--space-sm) var(--space-md);
-  font-family: var(--font-interface);
-  font-size: 0.875rem;
-  transition: all var(--duration-fast) ease;
-}
-
-input[type="search"]:focus, 
-input[type="text"]:focus, 
-input[type="email"]:focus {
-  border-color: var(--color-link);
-  outline: none;
-  box-shadow: 0 0 0 3px hsla(from var(--color-link) h s l / 0.1);
-}
-
-/* =============================================================================
-   PART 19: 頁腳 - 保持漸層設計
-   ============================================================================= */
-
-.page__footer {
-  background: linear-gradient(135deg, 
-    var(--color-text-muted) 0%, 
-    var(--color-text) 100%);
-  color: var(--color-bg);
-  margin-top: var(--space-2xl);
-  padding: var(--space-2xl) 0;
-}
-
-.page__footer a {
-  color: var(--color-bg-elevated);
-  transition: color var(--duration-fast) ease;
-}
-
-.page__footer a:hover {
-  color: var(--color-bg);
-}
-
-/* =============================================================================
-   PART 20: 響應式設計 - 保持你的斷點邏輯
-   ============================================================================= */
-
-/* 平板佈局 */
+/* 響應式調整 */
 @media (max-width: 1200px) {
   .toc {
-    width: 220px;
+    width: 250px !important;
   }
-  
   .page__content {
-    margin-right: 250px;
-  }
-  
-  .theme-toggle {
-    top: var(--space-md);
-    right: var(--space-md);
+    margin-right: 280px !important;
   }
 }
 
-/* 手機佈局 */
 @media (max-width: 768px) {
-  :root {
-    --space-md: 0.75rem;
-    --space-lg: 1rem;
-    --space-xl: 1.25rem;
-    --space-2xl: 1.5rem;
+  .toc {
+    width: 220px !important;
+    top: 80px !important;
   }
+  .page__content {
+    margin-right: 240px !important;
+  }
+  .toc-toggle {
+    top: 60px !important;
+    width: 35px !important;
+    height: 35px !important;
+    font-size: 16px !important;
+  }
+}
 
+@media (max-width: 480px) {
   .toc,
   .toc-toggle {
-    display: none;
-  }
-  
-  .page__content {
-    margin-right: 0;
-    padding: var(--space-md);
-  }
-  
-  .theme-toggle {
-    top: var(--space-sm);
-    right: var(--space-sm);
-    padding: var(--space-xs) var(--space-sm);
-    font-size: 0.75rem;
-  }
-  
-  .masthead {
-    padding: var(--space-sm) 0;
-  }
-  
-  h1 {
-    font-size: 1.75rem;
-  }
-  
-  h2 {
-    font-size: 1.5rem;
-  }
-  
-  .page__title {
-    font-size: 1.75rem;
-    margin-bottom: var(--space-lg);
-  }
-  
-  .archive__item {
-    padding: var(--space-md);
-  }
-  
-  .sidebar {
-    padding: var(--space-md);
-  }
-  
-  /* 移除首字放大效果在小螢幕上 */
-  .page__content > p:first-of-type::first-letter {
-    font-size: inherit;
-    float: none;
-    margin: 0;
-    color: inherit;
-    text-shadow: none;
-  }
-}
-
-/* 小手機佈局 */
-@media (max-width: 480px) {
-  .page__content {
-    padding: var(--space-sm);
-  }
-  
-  .archive__item {
-    padding: var(--space-sm) var(--space-md);
-  }
-  
-  .sidebar {
-    padding: var(--space-sm);
-  }
-  
-  .theme-toggle {
-    padding: var(--space-xs);
-    font-size: 0.7rem;
-  }
-  
-  h1 {
-    font-size: 1.5rem;
-  }
-  
-  .page__title {
-    font-size: 1.5rem;
-  }
-  
-  /* 移除裝飾元素在極小螢幕 */
-  .page__title--decorated::before,
-  .page__title--decorated::after {
-    display: none;
-  }
-}
-
-/* =============================================================================
-   PART 21: 可訪問性增強 - 尊重使用者偏好
-   ============================================================================= */
-
-/* 高對比模式支援 */
-@media (prefers-contrast: high) {
-  :root {
-    --color-border: var(--color-text);
-    --color-bg-muted: var(--color-bg);
-  }
-  
-  [data-theme="dark"] {
-    --color-border: var(--color-text);
-    --color-bg-muted: var(--color-bg);
-  }
-  
-  .btn,
-  .page__taxonomy-item {
-    border: 2px solid currentColor;
-  }
-  
-  .archive__item {
-    border: 1px solid var(--color-border);
-  }
-}
-
-/* 螢幕閱讀器專用內容 */
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
-
-/* 跳躍連結 */
-.skip-link {
-  position: absolute;
-  top: -40px;
-  left: var(--space-sm);
-  background: var(--color-text);
-  color: var(--color-bg);
-  padding: var(--space-sm) var(--space-md);
-  text-decoration: none;
-  border-radius: var(--radius-md);
-  z-index: 1100;
-  font-weight: 600;
-  transition: top var(--duration-fast) ease;
-}
-
-.skip-link:focus {
-  top: var(--space-sm);
-}
-
-/* 焦點指示器 */
-.focus-ring:focus-visible {
-  outline: 2px solid var(--color-accent);
-  outline-offset: 2px;
-  border-radius: var(--radius-sm);
-}
-
-/* =============================================================================
-   PART 22: 效能優化 - 現代 CSS 技術
-   ============================================================================= */
-
-/* GPU 加速關鍵元素 */
-.theme-toggle,
-.btn,
-.archive__item,
-.toc-toggle {
-  will-change: transform;
-  transform: translateZ(0);
-}
-
-/* 字體渲染優化 */
-.page__content {
-  font-variant-numeric: oldstyle-nums;
-  font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
-  text-rendering: optimizeLegibility;
-}
-
-/* 容器查詢 (漸進增強) */
-@container (min-width: 600px) {
-  .archive__item {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: var(--space-md);
-    align-items: start;
-  }
-  
-  .archive__item-title {
-    grid-column: 1;
-  }
-  
-  .page__meta {
-    grid-column: 2;
-    grid-row: 1;
-    text-align: right;
-    white-space: nowrap;
-  }
-  
-  .archive__item-excerpt {
-    grid-column: 1 / -1;
-  }
-}
-
-/* =============================================================================
-   PART 23: JavaScript 整合類別 - 為互動做準備
-   ============================================================================= */
-
-/* 載入狀態 */
-.is-loading {
-  pointer-events: none;
-  opacity: 0.6;
-  cursor: wait;
-}
-
-/* 顯示/隱藏狀態 */
-.is-hidden {
-  display: none !important;
-}
-
-.is-visible {
-  display: block !important;
-}
-
-/* TOC 活動狀態 */
-.toc-item.is-active {
-  font-weight: 600;
-  color: var(--color-accent);
-}
-
-.toc-item.is-visible {
-  opacity: 1;
-}
-
-.toc-item.is-hidden {
-  opacity: 0.5;
-}
-
-/* 漸進顯示動畫 */
-.js .reveal {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity var(--duration-slow) ease, transform var(--duration-slow) ease;
-}
-
-.js .reveal.is-revealed {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* 閱讀進度指示器 */
-.reading-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background: var(--color-bg-muted);
-  z-index: 1100;
-}
-
-.reading-progress__bar {
-  height: 100%;
-  background: linear-gradient(90deg, var(--color-accent), var(--color-primary));
-  width: 0%;
-  transition: width var(--duration-fast) ease;
-}
-
-/* =============================================================================
-   PART 24: 列印樣式 - 保持內容完整性
-   ============================================================================= */
-
-@media print {
-  .theme-toggle,
-  .toc-toggle,
-  .toc,
-  .masthead,
-  .page__footer,
-  .sidebar,
-  .reading-progress {
     display: none !important;
   }
-  
-  body {
-    font-size: 12pt;
-    line-height: 1.4;
-    color: #000;
-    background: #fff;
-  }
-  
   .page__content {
-    margin: 0;
-    padding: 0;
-    box-shadow: none;
-    border-radius: 0;
-    max-width: none;
-  }
-  
-  h1, h2, h3, h4, h5, h6 {
-    page-break-after: avoid;
-    page-break-inside: avoid;
-  }
-  
-  blockquote,
-  .highlight {
-    page-break-inside: avoid;
-  }
-  
-  a[href^="http"]:after {
-    content: " (" attr(href) ")";
-    font-size: 0.8em;
+    margin-right: 0 !important;
   }
 }
-
-/* =============================================================================
-   PART 25: 實驗性功能 - 漸進增強
-   ============================================================================= */
-
-/* CSS 滾動捕捉 */
-@supports (scroll-snap-type: y mandatory) {
-  .article-list {
-    scroll-snap-type: y proximity;
-  }
-  
-  .archive__item {
-    scroll-snap-align: start;
-  }
-}
-
-/* 現代選取樣式 */
-::selection {
-  background: hsla(from var(--color-accent) h s l / 0.3);
-  color: var(--color-text);
-}
-
-::-moz-selection {
-  background: hsla(from var(--color-accent) h s l / 0.3);
-  color: var(--color-text);
-}
-
-/* 深色模式圖片調整 */
-[data-theme="dark"] img {
-  opacity: 0.9;
-  transition: opacity var(--duration-normal) ease;
-}
-
-[data-theme="dark"] img:hover {
-  opacity: 1;
-}
-
-/* =============================================================================
-   PART 26: 除錯工具 (生產環境請移除)
-   ============================================================================= */
-
-/* 解除註解以進行佈局除錯 */
-/*
-.debug * {
-  outline: 1px solid red !important;
-}
-
-.debug .toc {
-  outline: 2px solid blue !important;
-}
-
-.debug .sidebar {
-  outline: 2px solid green !important;
-}
-
-.debug .page__content {
-  outline: 2px solid purple !important;
-}
-*/
 
 /* stylelint-enable */
