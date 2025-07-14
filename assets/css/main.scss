@@ -278,7 +278,7 @@ h3 {
 
 .greedy-nav a:hover {
   color: var(--current-link) !important;
-  background: var(--current-bg-light) !important; /* 🔥 新增：懸停時淡背景 */
+  background: var(--current-bg) !important; /* 🔥 新增：懸停時淡背景 */
   border-radius: 4px !important; /* 🔥 新增：小圓角 */
   padding: 4px 8px !important; /* 🔥 新增：內邊距 */
 }
