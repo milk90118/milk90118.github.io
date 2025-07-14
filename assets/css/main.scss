@@ -242,8 +242,8 @@ h3 {
 
 /* 頂部導航列 */
 .masthead {
-  background: var(--current-border) !important;
-  border-bottom: none !important; /* 🔥 修正：移除邊框 */
+  background: var(--current-bg) !important; /* 🔥 修正：統一使用主背景色 */
+  border-bottom: none !important;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -273,17 +273,20 @@ h3 {
   font-family: var(--en-title-font), var(--interface-en-font), var(--interface-tc-font) !important;
   font-weight: 600 !important;
   letter-spacing: -0.01em !important;
-  background: var(--current-border) !important;
+  /* 🔥 修正：移除背景色，與導覽列統一 */
 }
 
 .greedy-nav a:hover {
   color: var(--current-link) !important;
+  background: var(--current-bg-light) !important; /* 🔥 新增：懸停時淡背景 */
+  border-radius: 4px !important; /* 🔥 新增：小圓角 */
+  padding: 4px 8px !important; /* 🔥 新增：內邊距 */
 }
 
 /* 頁面標題 - 粗體緊密 */
 .page__title {
   color: var(--current-text) !important;
-  background: var(--current-border) !important;
+  /* 🔥 修正：移除背景色，保持乾淨 */
   border-bottom: 3px solid var(--current-accent) !important;
   text-align: center;
   position: relative;
