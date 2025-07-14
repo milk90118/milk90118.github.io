@@ -46,7 +46,7 @@
 
 :root {
   /* 字體變數 - 分離內文與介面字體 */
-  --reading-font-main: var(--reading-font-serif); // 切換用
+  --reading-font-main: var(--reading-font-serif);
   
   /* 介面字體 - Serif */
   --interface-tc-font:  'Shippori Mincho B1', 'Chiron Sung HK', 'Noto Serif Traditional Chinese', serif;
@@ -245,41 +245,53 @@ h3 {
    ============================================================================= */
 
 /* 1. 強制覆蓋 Minimal Mistakes 的導航列樣式 */
+.layout--single .masthead,
+.layout--home .masthead,
+.layout--archive .masthead,
+.layout--splash .masthead,
+.layout--posts .masthead,
+.layout--categories .masthead,
+.layout--tags .masthead,
+.layout--collection .masthead,
+.layout--search .masthead,
+.masthead.masthead--fixed,
 .masthead {
   background: var(--current-bg) !important;
-  background-color: var(--current-bg) !important; /* 額外保險 */
+  background-color: var(--current-bg) !important;
+  background-image: none !important;
   border-bottom: 1px solid var(--current-border) !important;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
   transition: all 0.3s ease !important;
 }
 
-/* 2. 確保夜間模式時導航列變暗 */
-[data-theme="dark"] .masthead {
-  background: var(--night-bg) !important;
-  background-color: var(--night-bg) !important;
-  border-bottom: 1px solid var(--night-border) !important;
+/* 3. 夜間模式陰影調整 - 使用統一變數系統 */
+[data-theme="dark"] .masthead,
+[data-theme="dark"] .masthead.masthead--fixed {
   box-shadow: 0 2px 10px rgba(255, 255, 255, 0.05) !important;
 }
 
-/* 3. 修復導航容器 */
-.masthead__inner-wrap {
+/* 4. 確保導航內部元素完全透明 */
+.masthead__inner-wrap,
+.greedy-nav,
+.greedy-nav__list,
+.visible-links {
   background: transparent !important;
   background-color: transparent !important;
+  background-image: none !important;
 }
 
-/* 4. 修復網站標題 */
-.site-title {
+/* 5. 網站標題 - 統一使用變數系統 */
+.site-title,
+.site-title:visited {
   color: var(--current-text) !important;
   background: transparent !important;
+  background-color: transparent !important;
   font-weight: 700 !important;
   text-decoration: none !important;
   text-shadow: none !important;
   letter-spacing: -0.01em !important;
   font-family: var(--en-title-font) !important;
-}
-
-.site-title:visited {
-  color: var(--current-text) !important;
+  transition: all 0.2s ease !important;
 }
 
 .site-title:hover {
@@ -287,17 +299,15 @@ h3 {
   transform: scale(1.02);
 }
 
-/* 5. 修復導航連結 */
-.greedy-nav {
-  background: transparent !important;
-  background-color: transparent !important;
-}
-
-.greedy-nav a {
+/* 6. 導航連結 - 完全重置並使用變數系統 */
+.greedy-nav a,
+.greedy-nav .visible-links a,
+.visible-links .masthead__menu-item {
   color: var(--current-text) !important;
   background: transparent !important;
   background-color: transparent !important;
-  font-size: 1em;
+  background-image: none !important;
+  font-size: 1em !important;
   font-family: var(--en-title-font), var(--interface-en-font), var(--interface-tc-font) !important;
   font-weight: 600 !important;
   letter-spacing: -0.01em !important;
@@ -305,103 +315,163 @@ h3 {
   padding: 8px 12px !important;
   border-radius: 6px !important;
   transition: all 0.2s ease !important;
+  border: none !important;
+  text-shadow: none !important;
 }
 
-.greedy-nav a:visited {
+.greedy-nav a:visited,
+.greedy-nav .visible-links a:visited {
   color: var(--current-text) !important;
 }
 
-.greedy-nav a:hover {
+.greedy-nav a:hover,
+.greedy-nav .visible-links a:hover,
+.visible-links .masthead__menu-item:hover {
   color: var(--current-link) !important;
   background: var(--current-bg-light) !important;
   background-color: var(--current-bg-light) !important;
   transform: translateY(-1px);
+  text-decoration: none !important;
 }
 
-/* 6. 修復導航列表 */
-.greedy-nav__list {
+/* 7. 修復導航列表項目 */
+.greedy-nav__list li,
+.visible-links li {
   background: transparent !important;
   background-color: transparent !important;
+  background-image: none !important;
 }
 
-.greedy-nav__list li {
-  background: transparent !important;
-  background-color: transparent !important;
-}
-
-/* 7. 修復搜尋按鈕（如果有的話） */
-.search__toggle {
+/* 8. 搜尋按鈕修復 */
+.search__toggle,
+.search__toggle:visited {
   color: var(--current-text) !important;
   background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  text-shadow: none !important;
 }
 
 .search__toggle:hover {
   color: var(--current-link) !important;
+  background: var(--current-bg-light) !important;
 }
 
-/* 8. 修復手機版選單按鈕 */
-.greedy-nav__toggle {
+/* 9. 手機版選單按鈕 */
+.greedy-nav__toggle,
+.greedy-nav__toggle:visited {
   color: var(--current-text) !important;
   background: transparent !important;
+  background-color: transparent !important;
   border: 2px solid var(--current-border) !important;
   border-radius: 6px !important;
+  text-shadow: none !important;
 }
 
 .greedy-nav__toggle:hover {
   color: var(--current-link) !important;
   border-color: var(--current-link) !important;
+  background: var(--current-bg-light) !important;
 }
 
-/* 9. 手機版展開選單 */
-.greedy-nav__list--overlay {
+/* 10. 手機版展開選單 */
+.greedy-nav__list--overlay,
+.hidden-links {
   background: var(--current-bg) !important;
+  background-color: var(--current-bg) !important;
   border: 1px solid var(--current-border) !important;
   border-radius: 8px !important;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15) !important;
 }
 
-.greedy-nav__list--overlay a {
+.greedy-nav__list--overlay a,
+.hidden-links a {
   color: var(--current-text) !important;
+  background: transparent !important;
   border-bottom: 1px solid var(--current-border) !important;
+  padding: 12px 16px !important;
 }
 
-.greedy-nav__list--overlay a:hover {
+.greedy-nav__list--overlay a:hover,
+.hidden-links a:hover {
   background: var(--current-bg-light) !important;
   color: var(--current-link) !important;
 }
 
-/* 10. 確保所有子元素都跟隨主題 */
-.masthead * {
-  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease !important;
+/* 11. 強制移除所有可能的背景圖片和樣式 */
+.masthead *,
+.masthead::before,
+.masthead::after {
+  background-image: none !important;
+  text-shadow: none !important;
 }
 
-/* 11. 修復可能的白色背景強制覆蓋 */
+/* 12. 確保過渡效果應用到所有導航元素 */
 .masthead,
-.masthead__inner-wrap,
-.greedy-nav,
-.greedy-nav__list {
-  background-image: none !important; /* 移除可能的背景圖片 */
+.masthead *,
+.site-title,
+.greedy-nav a,
+.search__toggle,
+.greedy-nav__toggle {
+  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
 }
 
-/* 12. 額外的夜間模式確保 */
-[data-theme="dark"] .masthead,
-[data-theme="dark"] .masthead__inner-wrap,
-[data-theme="dark"] .greedy-nav,
-[data-theme="dark"] .greedy-nav__list {
-  background: var(--night-bg) !important;
-  background-color: var(--night-bg) !important;
-  color: var(--night-text) !important;
+/* 13. 修復可能的固定導航列樣式 */
+.masthead--fixed {
+  position: fixed !important;
+  top: 0 !important;
+  background: var(--current-bg) !important;
+  background-color: var(--current-bg) !important;
+  backdrop-filter: blur(10px) !important;
 }
 
-[data-theme="dark"] .site-title,
-[data-theme="dark"] .greedy-nav a {
-  color: var(--night-text) !important;
+/* 14. 處理可能的 Active 狀態 */
+.greedy-nav a.current,
+.greedy-nav a[aria-current="page"],
+.visible-links a.current {
+  color: var(--current-link) !important;
+  background: var(--current-bg-light) !important;
+  font-weight: 700 !important;
 }
 
-[data-theme="dark"] .greedy-nav a:hover {
-  color: var(--night-link) !important;
-  background: var(--night-bg-light) !important;
+/* 15. 最後的保險 - 覆蓋任何剩餘的 skin 樣式 */
+body .masthead {
+  background: var(--current-bg) !important;
+  background-color: var(--current-bg) !important;
 }
+
+html body .masthead {
+  background: var(--current-bg) !important;
+  background-color: var(--current-bg) !important;
+}
+
+/* 16. 特殊情況：如果使用了 skin */
+.skin-default .masthead,
+.skin-air .masthead,
+.skin-aqua .masthead,
+.skin-contrast .masthead,
+.skin-dark .masthead,
+.skin-dirt .masthead,
+.skin-mint .masthead,
+.skin-neon .masthead,
+.skin-plum .masthead,
+.skin-sunrise .masthead {
+  background: var(--current-bg) !important;
+  background-color: var(--current-bg) !important;
+  background-image: none !important;
+}
+
+/* 17. Debug 用 - 暫時測試（使用時請取消註解） */
+/*
+.masthead {
+  background: red !important;
+  background-color: red !important;
+}
+[data-theme="dark"] .masthead {
+  background: blue !important;
+  background-color: blue !important;
+}
+*/
 
 /* 頁面標題 - 粗體緊密 */
 .page__title {
