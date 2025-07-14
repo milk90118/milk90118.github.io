@@ -256,14 +256,14 @@ h3 {
 .layout--search .masthead,
 .masthead.masthead--fixed,
 .masthead {
-  background: var(--current-bg) !important;
-  background-color: var(--current-bg) !important;
-  background-image: none !important;
-  border-bottom: 1px solid var(--current-border) !important;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
-  transition: all 0.3s ease !important;
+  background: linear-gradient(135deg, 
+    rgba(from var(--current-bg) r g b / 0.95) 0%, 
+    rgba(from var(--current-bg) r g b / 0.8) 50%, 
+    rgba(from var(--current-bg) r g b / 0.9) 100%) !important; /* 🔥 修正：透明漸層 */
+  border-bottom: none !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px) !important; /* 🔥 新增：毛玻璃效果 */
 }
-
 /* 3. 夜間模式陰影調整 - 使用統一變數系統 */
 [data-theme="dark"] .masthead,
 [data-theme="dark"] .masthead.masthead--fixed {
@@ -328,7 +328,7 @@ h3 {
 .greedy-nav .visible-links a:hover,
 .visible-links .masthead__menu-item:hover {
   color: var(--current-link) !important;
-  background: var(--current-bg-light) !important;
+  background: rgba(from var(--current-bg-light) r g b / 0.6) !important;
   background-color: var(--current-bg-light) !important;
   transform: translateY(-1px);
   text-decoration: none !important;
