@@ -242,30 +242,29 @@ h3 {
 
 /* 頂部導航列 */
 .masthead {
-  background: var(--current-border) !important; /* 🔥 修改：與網頁頂部相同底色 */
-  border-bottom: 1px solid var(--current-border) !important;
+  background: var(--current-border) !important;
+  border-bottom: 1px solid var(--current-text-light) !important; /* 🔥 修正：改用深一點的顏色做邊框 */
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .site-title {
-  color: var(--current-text) !important; /* 🔥 確保文字清楚顯示 */
+  color: var(--current-text) !important; /* 🔥 修正：移除背景色 */
   font-weight: 700 !important; /* 網站標題粗體 */
   text-decoration: none !important;
-  text-shadow: none !important; /* 🔥 移除陰影確保清晰 */
+  text-shadow: none !important;
   letter-spacing: -0.01em !important; /* 窄間距 */
   font-family: var(--en-title-font) !important;
 }
 
 .site-title:hover {
   transform: scale(1.02);
-  color: var(--current-link) !important; /* 🔥 懸停時改變顏色而非陰影 */
+  color: var(--current-link) !important;
 }
 
-/* 🔥 新增：夜間模式導覽列陰影調整 */
+/* 夜間模式導覽列陰影調整 */
 [data-theme="dark"] .masthead {
-  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.05); /* 夜間模式淡白色陰影 */
+  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.05);
 }
-
 [data-theme="dark"] .site-title {
   color: var(--current-text) !important; /* 🔥 確保文字清楚顯示 */
 }
