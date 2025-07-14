@@ -748,7 +748,6 @@ blockquote::before {
   color: var(--current-text) !important; /* 🔥 修復：確保文字可見 */
 }
 
-* Info Notice - 確保文字可見 */
 .notice--info {
   background: var(--current-bg-light) !important;
   border: 2px solid var(--current-link) !important; /* 🔥 修復：用邊框顯示顏色 */
