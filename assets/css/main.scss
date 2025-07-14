@@ -242,7 +242,7 @@ h3 {
 
 /* 頂部導航列 */
 .masthead {
-  background: var(--current-bg) !important; /* 🔥 修改：與網頁頂部相同底色 */
+  background: var(--current-border) !important; /* 🔥 修改：與網頁頂部相同底色 */
   border-bottom: 1px solid var(--current-border) !important;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
