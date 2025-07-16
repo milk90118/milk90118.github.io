@@ -46,7 +46,7 @@
 
 :root {
   /* 字體變數 - 分離內文與介面字體 */
-  --reading-font-main: var(--reading-font-serif);
+  --reading-font-main: var(--reading-font-serif); // 切換用
   
   /* 介面字體 - Serif */
   --interface-tc-font:  'Shippori Mincho B1', 'Chiron Sung HK', 'Noto Serif Traditional Chinese', serif;
@@ -68,7 +68,7 @@
   --en-code-font: 'Fira Mono', 'Courier New', monospace;
 
   /* 日間模式色彩 (溫柔日本色票) */
-  --day-primary: #F17C67;     /* 珊瑚朱 */
+  --day-primary: #FFADD6;     /* 櫻花色 */
   --day-secondary: #F5B2B2;   /* 鴇色 */
   --day-accent: #F8B500;      /* 山吹色 */
   --day-text: #2F5D62;        /* 納戸色 */
@@ -216,14 +216,14 @@ h1, h2, h3, h4, h5, h6,
 }
 
 h1 { 
-  font-size: 1.6em; 
+  font-size: 1.8em; 
   font-weight: 900 !important;
   letter-spacing: -0.03em !important;
   font-family: var(--en-title-font), var(--interface-en-font), var(--interface-tc-font) !important;
 }
 
 h2 { 
-  font-size: 1.45em;
+  font-size: 1.6em;
   font-weight: 700 !important;
   letter-spacing: -0.02em !important;
   font-family: var(--en-title-font), var(--interface-en-font), var(--interface-tc-font) !important;
@@ -240,203 +240,46 @@ h3 {
    主要組件樣式 - 響應式主題
    ============================================================================= */
 
-/* =============================================================================
-   🔥 修復導航列主題切換問題
-   ============================================================================= */
-
-/* 1. 強制覆蓋 Minimal Mistakes 的導航列樣式
-.layout--single .masthead,
-.layout--home .masthead,
-.layout--archive .masthead,
-.layout--splash .masthead,
-.layout--posts .masthead,
-.layout--categories .masthead,
-.layout--tags .masthead,
-.layout--collection .masthead,
-.layout--search .masthead,
-.masthead.masthead--fixed,*/
+/* 頂部導航列 */
 .masthead {
   background: linear-gradient(135deg, 
-    rgba(from var(--current-bg) r g b / 0.95) 0%, 
-    rgba(from var(--current-bg) r g b / 0.8) 50%, 
-    rgba(from var(--current-bg) r g b / 0.9) 100%) !important; /* 🔥 修正：透明漸層 */
-  border-bottom: none !important;
+    var(--current-primary) 0%, 
+    var(--current-secondary) 50%, 
+    var(--current-bg-light) 100%) !important;
+  border-bottom: 1px solid var(--current-border) !important;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(10px) !important; /* 🔥 新增：毛玻璃效果 */
-}
-/* 3. 夜間模式陰影調整 - 使用統一變數系統 */
-[data-theme="dark"] .masthead,
-[data-theme="dark"] .masthead.masthead--fixed {
-  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.05) !important;
 }
 
-/* 4. 確保導航內部元素完全透明 */
-.masthead__inner-wrap,
-.greedy-nav,
-.greedy-nav__list,
-.visible-links {
-  background: transparent !important;
-  background-color: transparent !important;
-  background-image: none !important;
-}
-
-/* 5. 網站標題 - 統一使用變數系統 */
-.site-title,
-.site-title:visited {
+.site-title {
   color: var(--current-text) !important;
-  background: transparent !important;
-  background-color: transparent !important;
-  font-weight: 700 !important;
+  font-weight: 700 !important; /* 網站標題粗體 */
   text-decoration: none !important;
-  text-shadow: none !important;
-  letter-spacing: -0.01em !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  letter-spacing: -0.01em !important; /* 窄間距 */
   font-family: var(--en-title-font) !important;
-  transition: all 0.2s ease !important;
 }
 
 .site-title:hover {
-  color: var(--current-link) !important;
   transform: scale(1.02);
+  text-shadow: 2px 2px 8px var(--current-primary);
 }
 
-/* 6. 導航連結 - 完全重置並使用變數系統 */
-.greedy-nav a,
-.greedy-nav .visible-links a,
-.visible-links .masthead__menu-item {
+/* 導航連結 - 保持 Zen Maru Gothic 介面風格 */
+.greedy-nav a {
   color: var(--current-text) !important;
-  background: transparent !important;
-  background-color: transparent !important;
-  background-image: none !important;
-  font-size: 1em !important;
+  font-size: 1em;
   font-family: var(--en-title-font), var(--interface-en-font), var(--interface-tc-font) !important;
   font-weight: 600 !important;
   letter-spacing: -0.01em !important;
-  text-decoration: none !important;
-  padding: 8px 12px !important;
-  border-radius: 6px !important;
-  transition: all 0.2s ease !important;
-  border: none !important;
-  text-shadow: none !important;
 }
 
-.greedy-nav a:visited,
-.greedy-nav .visible-links a:visited {
-  color: var(--current-text) !important;
-}
-
-.greedy-nav a:hover,
-.greedy-nav .visible-links a:hover,
-.visible-links .masthead__menu-item:hover {
+.greedy-nav a:hover {
   color: var(--current-link) !important;
-  background: rgba(from var(--current-bg-light) r g b / 0.6) !important;
-  background-color: var(--current-bg-light) !important;
-  transform: translateY(-1px);
-  text-decoration: none !important;
 }
-
-/* 7. 修復導航列表項目 */
-.greedy-nav__list li,
-.visible-links li {
-  background: transparent !important;
-  background-color: transparent !important;
-  background-image: none !important;
-}
-
-/* 8. 搜尋按鈕修復 */
-.search__toggle,
-.search__toggle:visited {
-  color: var(--current-text) !important;
-  background: transparent !important;
-  background-color: transparent !important;
-  border: none !important;
-  text-shadow: none !important;
-}
-
-.search__toggle:hover {
-  color: var(--current-link) !important;
-  background: var(--current-bg-light) !important;
-}
-
-
-/* 11. 強制移除所有可能的背景圖片和樣式 */
-.masthead *,
-.masthead::before,
-.masthead::after {
-  background-image: none !important;
-  text-shadow: none !important;
-}
-
-/* 12. 確保過渡效果應用到所有導航元素 */
-.masthead,
-.masthead *,
-.site-title,
-.greedy-nav a,
-.search__toggle,
-.greedy-nav__toggle {
-  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
-}
-
-/* 13. 修復可能的固定導航列樣式 */
-.masthead--fixed {
-  position: fixed !important;
-  top: 0 !important;
-  background: var(--current-bg) !important;
-  background-color: var(--current-bg) !important;
-  backdrop-filter: blur(10px) !important;
-}
-
-/* 14. 處理可能的 Active 狀態 */
-.greedy-nav a.current,
-.greedy-nav a[aria-current="page"],
-.visible-links a.current {
-  color: var(--current-link) !important;
-  background: var(--current-bg-light) !important;
-  font-weight: 700 !important;
-}
-
-/* 15. 最後的保險 - 覆蓋任何剩餘的 skin 樣式 */
-body .masthead {
-  background: var(--current-bg) !important;
-  background-color: var(--current-bg) !important;
-}
-
-html body .masthead {
-  background: var(--current-bg) !important;
-  background-color: var(--current-bg) !important;
-}
-
-/* 16. 特殊情況：如果使用了 skin */
-.skin-default .masthead,
-.skin-air .masthead,
-.skin-aqua .masthead,
-.skin-contrast .masthead,
-.skin-dark .masthead,
-.skin-dirt .masthead,
-.skin-mint .masthead,
-.skin-neon .masthead,
-.skin-plum .masthead,
-.skin-sunrise .masthead {
-  background: var(--current-bg) !important;
-  background-color: var(--current-bg) !important;
-  background-image: none !important;
-}
-
-/* 17. Debug 用 - 暫時測試（使用時請取消註解） */
-/*
-.masthead {
-  background: red !important;
-  background-color: red !important;
-}
-[data-theme="dark"] .masthead {
-  background: blue !important;
-  background-color: blue !important;
-}
-*/
 
 /* 頁面標題 - 粗體緊密 */
 .page__title {
   color: var(--current-text) !important;
-  /* 🔥 修正：移除背景色，保持乾淨 */
   border-bottom: 3px solid var(--current-accent) !important;
   text-align: center;
   position: relative;
@@ -702,41 +545,37 @@ blockquote::before {
 
 /* Primary Notice */
 .notice--primary {
-  background: var(--current-bg-light) !important; /* 🔥 修復：使用淡背景 */
-  border: 2px solid var(--current-primary) !important; /* 🔥 修復：用邊框顯示顏色 */
-  border-left: 4px solid var(--current-primary) !important;
-  color: var(--current-text) !important; /* 🔥 修復：確保文字可見 */
+  background: var(--current-primary) !important;
+  border-left-color: var(--current-accent) !important;
+  color: var(--current-text) !important;
 }
 
+/* Info Notice */
 .notice--info {
   background: var(--current-bg-light) !important;
-  border: 2px solid var(--current-link) !important; /* 🔥 修復：用邊框顯示顏色 */
-  border-left: 4px solid var(--current-link) !important;
-  color: var(--current-text) !important; /* 🔥 修復：確保文字可見 */
+  border-left-color: var(--current-link) !important;
+  color: var(--current-text) !important;
 }
 
-/* Warning Notice - 確保文字可見 */
+/* Warning Notice */
 .notice--warning {
-  background: var(--current-bg-light) !important; /* 🔥 修復：使用淡背景 */
-  border: 2px solid var(--current-accent) !important; /* 🔥 修復：用邊框顯示顏色 */
-  border-left: 4px solid var(--current-accent) !important;
-  color: var(--current-text) !important; /* 🔥 修復：確保文字可見 */
+  background: var(--current-accent) !important;
+  border-left-color: var(--current-link-hover) !important;
+  color: var(--current-text) !important;
 }
 
-/* Danger Notice - 確保文字可見 */
+/* Danger Notice */
 .notice--danger {
-  background: var(--current-bg-light) !important; /* 🔥 修復：使用淡背景 */
-  border: 2px solid var(--current-link-hover) !important; /* 🔥 修復：用邊框顯示顏色 */
-  border-left: 4px solid var(--current-link-hover) !important;
-  color: var(--current-text) !important; /* 🔥 修復：確保文字可見 */
+  background: var(--current-link-hover) !important;
+  border-left-color: var(--current-text) !important;
+  color: var(--current-bg) !important;
 }
 
-/* Success Notice - 確保文字可見 */
+/* Success Notice */
 .notice--success {
-  background: var(--current-bg-light) !important; /* 🔥 修復：使用淡背景 */
-  border: 2px solid var(--current-button) !important; /* 🔥 修復：用邊框顯示顏色 */
-  border-left: 4px solid var(--current-button) !important;
-  color: var(--current-text) !important; /* 🔥 修復：確保文字可見 */
+  background: var(--current-button) !important;
+  border-left-color: var(--current-button-hover) !important;
+  color: var(--current-bg) !important;
 }
 
 /* Notice 內的標題 */
@@ -931,9 +770,7 @@ input[type="search"]:focus, input[type="text"]:focus {
   max-height: calc(100vh - 150px) !important;
   overflow-y: auto !important;
   z-index: 999 !important;
-  background: linear-gradient(135deg, 
-    var(--current-bg-light) 0%, 
-    var(--current-border) 100%) !important; /* 🔥 修改：與 sidebar 相同的漸層背景 */
+  background: var(--current-bg) !important;
   backdrop-filter: blur(10px) !important;
   border: 1px solid var(--current-border) !important;
   border-radius: 12px !important;
