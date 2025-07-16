@@ -243,12 +243,11 @@ h3 {
 /* 頂部導航列 */
 .masthead {
   background: linear-gradient(135deg, 
-    rgba(from var(--current-bg) r g b / 0.95) 0%, 
-    rgba(from var(--current-bg) r g b / 0.8) 50%, 
-    rgba(from var(--current-bg) r g b / 0.9) 100%) !important; /* 🔥 修正：透明漸層 */
-  border-bottom: none !important;
+    var(--current-primary) 0%, 
+    var(--current-secondary) 50%, 
+    var(--current-bg-light) 100%) !important;
+  border-bottom: 1px solid var(--current-border) !important;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(10px) !important; /* 🔥 新增：毛玻璃效果 */
 }
 
 .site-title {
