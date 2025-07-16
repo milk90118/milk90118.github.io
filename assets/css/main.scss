@@ -250,6 +250,13 @@ h3 {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
+.masthead *,
+.masthead::before,
+.masthead::after {
+  background-image: none !important;
+  text-shadow: none !important;
+}
+
 .site-title {
   color: var(--current-text) !important;
   font-weight: 700 !important; /* 網站標題粗體 */
