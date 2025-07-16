@@ -251,11 +251,6 @@ h3 {
   backdrop-filter: blur(10px) !important; /* 🔥 新增：毛玻璃效果 */
 }
 
-[data-theme="dark"] .masthead,
-[data-theme="dark"] .masthead.masthead--fixed {
-  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.05) !important;
-}
-
 .site-title {
   color: var(--current-text) !important;
   font-weight: 700 !important; /* 網站標題粗體 */
