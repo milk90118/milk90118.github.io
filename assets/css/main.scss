@@ -216,14 +216,14 @@ h1, h2, h3, h4, h5, h6,
 }
 
 h1 { 
-  font-size: 1.8em; 
+  font-size: 1.6em; 
   font-weight: 900 !important;
   letter-spacing: -0.03em !important;
   font-family: var(--en-title-font), var(--interface-en-font), var(--interface-tc-font) !important;
 }
 
 h2 { 
-  font-size: 1.6em;
+  font-size: 1.45em;
   font-weight: 700 !important;
   letter-spacing: -0.02em !important;
   font-family: var(--en-title-font), var(--interface-en-font), var(--interface-tc-font) !important;
@@ -244,7 +244,7 @@ h3 {
    🔥 修復導航列主題切換問題
    ============================================================================= */
 
-/* 1. 強制覆蓋 Minimal Mistakes 的導航列樣式 */
+/* 1. 強制覆蓋 Minimal Mistakes 的導航列樣式
 .layout--single .masthead,
 .layout--home .masthead,
 .layout--archive .masthead,
@@ -254,7 +254,7 @@ h3 {
 .layout--tags .masthead,
 .layout--collection .masthead,
 .layout--search .masthead,
-.masthead.masthead--fixed,
+.masthead.masthead--fixed,*/
 .masthead {
   background: linear-gradient(135deg, 
     rgba(from var(--current-bg) r g b / 0.95) 0%, 
