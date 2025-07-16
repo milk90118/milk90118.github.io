@@ -276,6 +276,16 @@ h3 {
   margin: 0 !important;
 }
 
+.masthead *,
+.masthead::before,
+.masthead::after {
+  background: none !important;
+  background-image: none !important;
+  background-color: transparent !important;
+  text-shadow: none !important;
+  box-shadow: none !important;
+}
+
 .site-title {
   color: var(--current-text) !important;
   font-weight: 700 !important; /* 網站標題粗體 */
