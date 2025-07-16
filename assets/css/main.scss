@@ -240,7 +240,7 @@ h3 {
    主要組件樣式 - 響應式主題
    ============================================================================= */
 
-/* 頂部導航列 */
+/* 頂部導航列
 .masthead {
   background: linear-gradient(135deg, 
     var(--current-primary) 0%, 
@@ -248,13 +248,32 @@ h3 {
     var(--current-bg) 100%) !important;
   border-bottom: 1px solid var(--current-border) !important;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.masthead *,
-.masthead::before,
-.masthead::after {
+} */
+.masthead {
+  /* 移除原始背景設定 */
+  background: none !important;
   background-image: none !important;
-  text-shadow: none !important;
+  background-color: transparent !important;
+  
+  /* 套用新的漸層背景 */
+  background: linear-gradient(135deg, 
+    var(--current-primary) 0%, 
+    var(--current-secondary) 50%, 
+    var(--current-bg) 100%) !important;
+  
+  /* 覆蓋原始邊框和陰影 */
+  border-bottom: 1px solid var(--current-border) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
+  
+  /* 確保位置和尺寸 */
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 20 !important;
+  width: 100% !important;
+  
+  /* 移除原始的 padding 和 margin */
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
 .site-title {
@@ -386,7 +405,7 @@ a:hover {
 /* 文章摘要 */
 .archive__item .archive__item-excerpt {
   margin-bottom: 8px !important; /* 減少摘要下方間距 */
-  font-size: 0.7em !important; /* 稍微小一點的文字 */
+  font-size: 0.6em !important; /* 稍微小一點的文字 */
   line-height: 1.5 !important; /* 緊密行距 */
   color: var(--current-text-light) !important;
 }
@@ -394,7 +413,7 @@ a:hover {
 /* 文章元資訊 */
 .archive__item .page__meta {
   margin-bottom: 0 !important; /* 移除底部間距 */
-  font-size: 0.6em !important; /* 更小的元資訊文字 */
+  font-size: 0.5em !important; /* 更小的元資訊文字 */
   color: var(--current-text-light) !important;
 }
 
